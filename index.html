@@ -14,11 +14,10 @@
         <p class="subtitle">从做牌到防守的全面攻略 — 会打更会赢</p>
         <nav class="tab-nav">
           <button class="tab-btn active" data-tab="basics">基础概念</button>
+          <button class="tab-btn" data-tab="strategy">敲牌与攻防</button>
           <button class="tab-btn" data-tab="building">做牌攻略</button>
           <button class="tab-btn" data-tab="efficiency">听牌效率</button>
-          <button class="tab-btn" data-tab="danger">危险牌分析</button>
-          <button class="tab-btn" data-tab="strategy">阶段策略</button>
-          <button class="tab-btn" data-tab="priority">出牌优先级</button>
+          <button class="tab-btn" data-tab="defense">防守出牌</button>
           <button class="tab-btn" data-tab="probability">概率速查表</button>
           <button class="tab-btn" data-tab="practice">实战练习</button>
         </nav>
@@ -825,8 +824,13 @@
         </div>
       </section>
 
-      <!-- ==================== 危险牌分析 ==================== -->
-      <section id="tab-danger" class="tab-content">
+      <!-- ==================== 防守出牌 ==================== -->
+      <section id="tab-defense" class="tab-content">
+        <div class="card callout">
+          <h2>防守出牌总览</h2>
+          <p>上海敲麻中，有人敲了就是 100% 确定的危险信号。本章帮你完成两件事：<strong>识别危险牌</strong>（哪些牌最可能让你放炮）和<strong>安全出牌</strong>（该打什么牌才不会点炮）。</p>
+        </div>
+
         <div class="card">
           <h2>危险牌等级一览</h2>
           <p>以下按危险程度从高到低排列，帮助你快速判断手中哪些牌最危险：</p>
@@ -935,313 +939,10 @@
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- ==================== 阶段策略 ==================== -->
-      <section id="tab-strategy" class="tab-content">
-        <div class="card">
-          <h2>牌局三大阶段策略</h2>
-          <p>一局牌大约 <strong>18~20轮</strong>（每人摸打各18次左右），可以<strong>粗略</strong>按轮数分为三个阶段。但请注意：轮数只是参考，真正的攻防转换点取决于<strong>场上已敲家数</strong>（详见下方「动态阶段判断」）。</p>
-        </div>
-
-        <div class="phase-container">
-          <div class="phase-card phase-early">
-            <div class="phase-header">
-              <div class="phase-number">1</div>
-              <h3>前期（第1~6轮）</h3>
-              <span class="phase-tag">整理期 · 大胆出牌</span>
-            </div>
-            <div class="phase-body">
-              <h4>🎯 核心目标</h4>
-              <p>整理手牌，规划牌型方向</p>
-
-              <h4>📋 操作要点</h4>
-              <ul>
-                <li><strong>优先打字牌</strong>：除非你手里有对子/刻子的字牌，否则先把孤张字牌打出去</li>
-                <li><strong>打幺九牌</strong>：1和9的连接性最差，没有搭配就早出</li>
-                <li><strong>少打中间张</strong>：4/5/6留在手里，等摸到好的搭子再组合</li>
-                <li><strong>规划敲的时机</strong>：提前想好你的牌型方向，为后续敲牌做准备</li>
-              </ul>
-
-              <h4>⚠️ 防守提示</h4>
-              <div class="tip-box">
-                前期一般没人敲，点炮概率较低。但如果有人第一轮就碰牌，要警惕其牌型已经较好，可能很快就敲。
-              </div>
-
-              <h4>🃏 口诀</h4>
-              <div class="mnemonic">"前六轮，先理牌；字幺九，大胆甩；中间张，留下来"</div>
-            </div>
-          </div>
-
-          <div class="phase-card phase-mid">
-            <div class="phase-header">
-              <div class="phase-number">2</div>
-              <h3>中期（第7~12轮）</h3>
-              <span class="phase-tag">博弈期 · 攻守兼备</span>
-            </div>
-            <div class="phase-body">
-              <h4>🎯 核心目标</h4>
-              <p>判断自己能否听牌敲牌，同时密切关注有没有人敲了</p>
-
-              <h4>📋 操作要点</h4>
-              <ul>
-                <li><strong>评估自己的牌</strong>：如果离听牌还有3张以上，且已有人敲了，考虑转为防守</li>
-                <li><strong>跟打策略</strong>：尽量跟着上家或对面打过的牌出，减少点炮风险</li>
-                <li><strong>注意各家牌河</strong>：谁的牌河里没有某个花色？谁碰了很多牌？谁可能快敲了？</li>
-                <li><strong>关注敲家</strong>：一旦有人敲了，立即分析他的副露和牌河，推断他听什么</li>
-              </ul>
-
-              <h4>⚠️ 防守提示</h4>
-              <div class="tip-box">
-                中期往往开始出现第一个敲家。一旦有人敲了，这不再是猜测——他确定在等牌了！每打一张都要想一想：这张敲家可能要吗？
-              </div>
-
-              <h4>🃏 口诀</h4>
-              <div class="mnemonic">"中间段，看牌河；跟着打，少犯错；拿不定，打熟落"</div>
-            </div>
-          </div>
-
-          <div class="phase-card phase-late">
-            <div class="phase-header">
-              <div class="phase-number">3</div>
-              <h3>后期（第13轮以后）</h3>
-              <span class="phase-tag">决胜期 · 防守为主</span>
-            </div>
-            <div class="phase-body">
-              <h4>🎯 核心目标</h4>
-              <p>如果自己没有敲，以防守为第一要务</p>
-
-              <h4>📋 操作要点</h4>
-              <ul>
-                <li><strong>拆搭子求安全</strong>：如果你没敲且场上已有人敲了，果断拆搭子改打安全牌</li>
-                <li><strong>数牌</strong>：关注每张关键牌出了几张，优先打出已出3张的牌</li>
-                <li><strong>跟打敲家摸切</strong>：敲家敲后打出的牌就是他不需要的，跟打这些牌很安全</li>
-                <li><strong>绝不冒险</strong>：手里拿着危险牌宁可不敲不胡也不能放炮</li>
-              </ul>
-
-              <h4>⚠️ 防守提示</h4>
-              <div class="tip-box danger">
-                后期多家已敲时，你打出的任何一张生张都可能是炮！<br>
-                <strong>黄金法则：有人敲了你没敲，就老老实实打安全牌，能黄庄也是赢。</strong>
-              </div>
-
-              <h4>🃏 口诀</h4>
-              <div class="mnemonic">"后半场，保为先；危险牌，死不沾；能黄庄，也是赢"</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card callout">
-          <h2>动态阶段判断：看谁敲了！</h2>
-          <p>上面按轮数划分的前中后期只是一个<strong>粗略参考</strong>。上海敲麻最大的优势是——<strong>听牌是公开信息</strong>！真正决定你该进攻还是防守的核心信号是——</p>
-          <div class="key-insight">
-            <div class="key-insight-icon">🔑</div>
-            <div class="key-insight-text">
-              <strong>场上已经有多少家敲了？</strong><br>
-              在上海敲麻中，你不需要猜谁听牌了——有人敲了你就100%确定他在等牌。<br>
-              即使是第7轮（按轮数算中期），如果已有两家敲了，你就应该<strong>立即进入防守模式</strong>。<br>
-              反过来，如果到了第14轮但没人敲，你的进攻窗口仍然开着。
-            </div>
-          </div>
-
-          <h3>敲家的听牌范围推断</h3>
-          <p>虽然敲不亮牌，但你可以通过以下线索推断敲家在听什么：</p>
-          <div class="signal-grid">
-            <div class="signal-item signal-strong">
-              <div class="signal-label">高价值线索</div>
-              <ul>
-                <li><strong>副露花色</strong>：碰/杠了什么花色 → 他在做这个花色</li>
-                <li><strong>牌河缺色</strong>：某花色完全没打过 → 他在收集这个花色</li>
-                <li><strong>敲后摸切</strong>：敲了之后打出的牌 = 他不需要的牌 = 安全牌线索</li>
-                <li><strong>手牌数量</strong>：碰了多副？手里还剩几张？可推算搭子结构</li>
-              </ul>
-            </div>
-            <div class="signal-item signal-moderate">
-              <div class="signal-label">辅助线索</div>
-              <ul>
-                <li><strong>敲前最后打的牌</strong>：他拆掉了什么？说明那个方向他放弃了</li>
-                <li><strong>打牌顺序</strong>：先打字牌再打幺九 → 可能做平和；大量打某花色 → 不做这个花色</li>
-                <li><strong>场上已出牌统计</strong>：结合缺色推断，排除不可能的听牌</li>
-              </ul>
-            </div>
-            <div class="signal-item signal-weak">
-              <div class="signal-label">接近敲牌的预警</div>
-              <ul>
-                <li>碰了2~3副牌，手牌很少 → 可能马上就敲</li>
-                <li>突然开始打安全牌/字牌 → 在做最后整理</li>
-                <li>门清玩家突然打出中间张 → 可能在调整听口准备敲</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>已敲家数 × 攻防策略矩阵</h2>
-          <p class="card-desc">根据你<strong>自己的状态</strong>和<strong>场上已敲的家数</strong>，动态选择进攻或防守策略。上海敲麻的优势：敲是公开的，你不用猜！</p>
-
-          <table class="prob-table strategy-matrix">
-            <thead>
-              <tr>
-                <th>你的状态 ＼ 已敲家数</th>
-                <th>0家敲</th>
-                <th>1家敲</th>
-                <th>2家敲</th>
-                <th>3家敲</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>你已敲</strong></td>
-                <td><span class="strat-tag strat-attack">全力进攻</span><br><small>等自摸或吃牌胡</small></td>
-                <td><span class="strat-tag strat-attack">积极进攻</span><br><small>敲后锁定，安心等牌</small></td>
-                <td><span class="strat-tag strat-balance">等牌即可</span><br><small>敲后摸啥打啥，无法主动防守</small></td>
-                <td><span class="strat-tag strat-balance">等牌即可</span><br><small>摸啥打啥，看运气</small></td>
-              </tr>
-              <tr>
-                <td><strong>差1~2张听牌（未敲）</strong></td>
-                <td><span class="strat-tag strat-attack">积极进攻</span><br><small>加速组牌，争取敲牌</small></td>
-                <td><span class="strat-tag strat-balance">攻守兼备</span><br><small>推进但不打敲家可能要的牌</small></td>
-                <td><span class="strat-tag strat-defend">偏向防守</span><br><small>除非安全牌能推进，否则防守</small></td>
-                <td><span class="strat-tag strat-defend">放弃进攻</span><br><small>转全防，保不点炮</small></td>
-              </tr>
-              <tr>
-                <td><strong>差3张以上（未敲）</strong></td>
-                <td><span class="strat-tag strat-balance">正常整理</span><br><small>按前期策略整理手牌</small></td>
-                <td><span class="strat-tag strat-defend">偏向防守</span><br><small>整理时优先保留安全牌</small></td>
-                <td><span class="strat-tag strat-defend">全面防守</span><br><small>放弃胡牌，求平安</small></td>
-                <td><span class="strat-tag strat-full-defend">死守不出</span><br><small>打绝张和跟打，宁可黄庄</small></td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="tip-box" style="margin-top: 1rem;">
-            <strong>核心原则：</strong>「已敲家数越多、你离敲牌越远 → 越要防守」。上海敲麻的好处是你不用猜——有人敲了就是100%确定的危险信号。注意：你敲了之后手牌锁定，摸啥打啥，已经无法主动防守了，所以<strong>敲之前要想清楚</strong>。
-          </div>
-
-          <h4>🃏 口诀</h4>
-          <div class="mnemonic">"敲了没有看得见，一家敲了心不慌，两家敲了要提防，三家敲了死守庄"</div>
-        </div>
-
-        <div class="card">
-          <h2>敲牌时机策略</h2>
-          <p class="card-desc">敲了就锁定手牌，是不可逆的决定。什么时候敲最合适？</p>
-
-          <div class="danger-level danger-low">
-            <div class="danger-header">
-              <span class="danger-badge safe">适合敲</span>
-              <span class="danger-title">听牌面宽 + 还没人敲</span>
-            </div>
-            <div class="danger-body">
-              <p class="danger-explain">你听的牌种类多（比如听两头），且场上剩余张数多，胡牌概率高。别人还没敲说明竞争小，此时果断敲。</p>
-            </div>
-          </div>
-
-          <div class="danger-level danger-low">
-            <div class="danger-header">
-              <span class="danger-badge low">可以敲</span>
-              <span class="danger-title">听牌面较窄但牌型番数高</span>
-            </div>
-            <div class="danger-body">
-              <p class="danger-explain">比如你做的清一色只差一张，虽然听口窄但胡了翻数高，赌一把值得。不敲就永远没法胡。</p>
-            </div>
-          </div>
-
-          <div class="danger-level danger-medium">
-            <div class="danger-header">
-              <span class="danger-badge medium">谨慎敲</span>
-              <span class="danger-title">听的牌场上已出很多 / 多家已敲</span>
-            </div>
-            <div class="danger-body">
-              <p class="danger-explain">你听的牌场上已出了2~3张，胡牌概率很低。而且一旦敲了手牌锁定，摸到危险牌也必须打出去——可能反而给别的敲家送炮。</p>
-            </div>
-          </div>
-
-          <div class="danger-level danger-high">
-            <div class="danger-header">
-              <span class="danger-badge high">不建议敲</span>
-              <span class="danger-title">听口极窄 + 已有多家敲了</span>
-            </div>
-            <div class="danger-body">
-              <p class="danger-explain">你听的牌几乎没希望了（比如听绝张），而且敲后锁定手牌，被迫摸啥打啥，面对其他敲家的等牌毫无防守能力。不如不敲，保持灵活防守。</p>
-            </div>
-          </div>
-
-          <div class="tip-box" style="margin-top: 1rem;">
-            <strong>敲牌的代价：</strong>手牌锁定后你丧失了防守能力！摸到什么就必须打什么，即使那张牌对敲家来说是极危险牌。所以敲之前一定要权衡：你胡牌的概率 vs 你被迫打出危险牌的风险。
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>有人敲了，我该怎么办？</h2>
-          <p class="card-desc">对手敲了是明确的危险信号。以下是针对性的防守策略：</p>
-
-          <h3>第一步：立即分析敲家听什么</h3>
-          <ul>
-            <li>看他的<strong>副露</strong>：碰了什么花色？碰碰胡还是顺子？</li>
-            <li>看他的<strong>牌河</strong>：哪个花色一张没打？那就是他在做的花色</li>
-            <li>看他<strong>敲后打出的牌</strong>：这些牌是他摸到的、不需要的 = 安全牌线索</li>
-            <li>算<strong>剩余牌</strong>：他可能听的那些牌，场上出了几张？</li>
-          </ul>
-
-          <h3>第二步：调整出牌策略</h3>
-          <ul>
-            <li><strong>绝对避开</strong>：敲家做的花色中未出现过的中间张</li>
-            <li><strong>优先打</strong>：敲家敲后刚摸切的同张牌、已出3~4张的牌、绝张</li>
-            <li><strong>跟打敲家</strong>：敲家敲后打出什么，你跟着打同张牌最安全</li>
-            <li><strong>必要时拆牌</strong>：宁可拆掉自己的好搭子，也不要给敲家送炮</li>
-          </ul>
-
-          <h3>第三步：多家敲了怎么办？</h3>
-          <div class="tip-box danger">
-            多家敲了时，你要同时避开<strong>所有敲家</strong>的危险牌。优先打绝张、已出3张的牌、所有敲家都摸切过的牌。如果手里全是危险牌，尝试拆搭子找安全出路。实在没有安全牌？优先打对付<strong>番数最高</strong>的那家最安全的方向。
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>防守决策流程图（有人敲了时）</h2>
-          <div class="flowchart">
-            <div class="flow-node start">有人敲了，你需要打出一张牌</div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-node decision">手里有没有100%安全牌？<br><small>（已出4张的绝张 / 敲家敲后刚摸切的同张牌）</small></div>
-            <div class="flow-branch">
-              <div class="flow-path yes">
-                <span class="flow-label">有 →</span>
-                <div class="flow-node action safe">打安全牌</div>
-              </div>
-              <div class="flow-path no">
-                <span class="flow-label">没有 ↓</span>
-              </div>
-            </div>
-            <div class="flow-node decision">有没有相对安全牌？<br><small>（已出3张的牌 / 敲家大量打过的花色的牌 / 已出2张的字牌）</small></div>
-            <div class="flow-branch">
-              <div class="flow-path yes">
-                <span class="flow-label">有 →</span>
-                <div class="flow-node action medium">打相对安全牌</div>
-              </div>
-              <div class="flow-path no">
-                <span class="flow-label">没有 ↓</span>
-              </div>
-            </div>
-            <div class="flow-node decision">能否拆掉搭子换安全？</div>
-            <div class="flow-branch">
-              <div class="flow-path yes">
-                <span class="flow-label">能 →</span>
-                <div class="flow-node action medium">拆搭子，选择不在敲家做的花色里的牌</div>
-              </div>
-              <div class="flow-path no">
-                <span class="flow-label">不能 ↓</span>
-              </div>
-            </div>
-            <div class="flow-node action danger">选择最不可能被敲家需要的那张打<br><small>（优先避开敲家的花色；打幺九 > 打敲家已弃花色 > 最后才打敲家花色的生张中间张）</small></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== 出牌优先级 ==================== -->
-      <section id="tab-priority" class="tab-content">
         <div class="card">
           <h2>出牌优先级速查指南</h2>
-          <p>打牌最核心的问题就是「该出哪张」。不同阶段的出牌逻辑完全不同——进攻时考虑效率，防守时考虑安全。本页按阶段整理了出牌优先级，帮你在每一步都做出更好的选择。</p>
+          <p>打牌最核心的问题就是「该出哪张」。不同阶段的出牌逻辑完全不同——进攻时考虑效率，防守时考虑安全。以下按阶段整理了出牌优先级，帮你在每一步都做出更好的选择。</p>
           <div class="tip-box">
             <strong>核心思路：</strong>前期打废牌腾空间，中期看局势灵活打，后期打安全牌保命。出牌顺序的本质是——<strong>先出价值低的、后出有用的；先出安全的、后出危险的</strong>。
           </div>
@@ -1604,6 +1305,311 @@
           <h2>一句话总结</h2>
           <div class="mnemonic">"没人敲，理牌快；有人敲，保命来；字幺九先滚蛋，中间张最后甩"</div>
           <div class="mnemonic" style="margin-top:.5rem">"绝张最安全，跟打也保险；生张中间张，打了就完蛋"</div>
+        </div>
+      </section>
+
+      <!-- ==================== 敲牌与攻防 ==================== -->
+      <section id="tab-strategy" class="tab-content">
+        <div class="card callout">
+          <h2>上海敲麻的核心决策</h2>
+          <p>「敲」是上海敲麻的灵魂规则——<strong>不敲就永远不能胡</strong>，但敲了就丧失全部防守能力。何时敲、何时攻、何时守，是影响你长期收益（EV）最大的三个决策。</p>
+        </div>
+
+        <div class="card">
+          <h2>牌局三大阶段策略</h2>
+          <p>一局牌大约 <strong>18~20轮</strong>（每人摸打各18次左右），可以<strong>粗略</strong>按轮数分为三个阶段。但请注意：轮数只是参考，真正的攻防转换点取决于<strong>场上已敲家数</strong>（详见下方「动态阶段判断」）。</p>
+        </div>
+
+        <div class="phase-container">
+          <div class="phase-card phase-early">
+            <div class="phase-header">
+              <div class="phase-number">1</div>
+              <h3>前期（第1~6轮）</h3>
+              <span class="phase-tag">整理期 · 大胆出牌</span>
+            </div>
+            <div class="phase-body">
+              <h4>🎯 核心目标</h4>
+              <p>整理手牌，规划牌型方向</p>
+
+              <h4>📋 操作要点</h4>
+              <ul>
+                <li><strong>优先打字牌</strong>：除非你手里有对子/刻子的字牌，否则先把孤张字牌打出去</li>
+                <li><strong>打幺九牌</strong>：1和9的连接性最差，没有搭配就早出</li>
+                <li><strong>少打中间张</strong>：4/5/6留在手里，等摸到好的搭子再组合</li>
+                <li><strong>规划敲的时机</strong>：提前想好你的牌型方向，为后续敲牌做准备</li>
+              </ul>
+
+              <h4>⚠️ 防守提示</h4>
+              <div class="tip-box">
+                前期一般没人敲，点炮概率较低。但如果有人第一轮就碰牌，要警惕其牌型已经较好，可能很快就敲。
+              </div>
+
+              <h4>🃏 口诀</h4>
+              <div class="mnemonic">"前六轮，先理牌；字幺九，大胆甩；中间张，留下来"</div>
+            </div>
+          </div>
+
+          <div class="phase-card phase-mid">
+            <div class="phase-header">
+              <div class="phase-number">2</div>
+              <h3>中期（第7~12轮）</h3>
+              <span class="phase-tag">博弈期 · 攻守兼备</span>
+            </div>
+            <div class="phase-body">
+              <h4>🎯 核心目标</h4>
+              <p>判断自己能否听牌敲牌，同时密切关注有没有人敲了</p>
+
+              <h4>📋 操作要点</h4>
+              <ul>
+                <li><strong>评估自己的牌</strong>：如果离听牌还有3张以上，且已有人敲了，考虑转为防守</li>
+                <li><strong>跟打策略</strong>：尽量跟着上家或对面打过的牌出，减少点炮风险</li>
+                <li><strong>注意各家牌河</strong>：谁的牌河里没有某个花色？谁碰了很多牌？谁可能快敲了？</li>
+                <li><strong>关注敲家</strong>：一旦有人敲了，立即分析他的副露和牌河，推断他听什么</li>
+              </ul>
+
+              <h4>⚠️ 防守提示</h4>
+              <div class="tip-box">
+                中期往往开始出现第一个敲家。一旦有人敲了，这不再是猜测——他确定在等牌了！每打一张都要想一想：这张敲家可能要吗？
+              </div>
+
+              <h4>🃏 口诀</h4>
+              <div class="mnemonic">"中间段，看牌河；跟着打，少犯错；拿不定，打熟落"</div>
+            </div>
+          </div>
+
+          <div class="phase-card phase-late">
+            <div class="phase-header">
+              <div class="phase-number">3</div>
+              <h3>后期（第13轮以后）</h3>
+              <span class="phase-tag">决胜期 · 防守为主</span>
+            </div>
+            <div class="phase-body">
+              <h4>🎯 核心目标</h4>
+              <p>如果自己没有敲，以防守为第一要务</p>
+
+              <h4>📋 操作要点</h4>
+              <ul>
+                <li><strong>拆搭子求安全</strong>：如果你没敲且场上已有人敲了，果断拆搭子改打安全牌</li>
+                <li><strong>数牌</strong>：关注每张关键牌出了几张，优先打出已出3张的牌</li>
+                <li><strong>跟打敲家摸切</strong>：敲家敲后打出的牌就是他不需要的，跟打这些牌很安全</li>
+                <li><strong>绝不冒险</strong>：手里拿着危险牌宁可不敲不胡也不能放炮</li>
+              </ul>
+
+              <h4>⚠️ 防守提示</h4>
+              <div class="tip-box danger">
+                后期多家已敲时，你打出的任何一张生张都可能是炮！<br>
+                <strong>黄金法则：有人敲了你没敲，就老老实实打安全牌，能黄庄也是赢。</strong>
+              </div>
+
+              <h4>🃏 口诀</h4>
+              <div class="mnemonic">"后半场，保为先；危险牌，死不沾；能黄庄，也是赢"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card callout">
+          <h2>动态阶段判断：看谁敲了！</h2>
+          <p>上面按轮数划分的前中后期只是一个<strong>粗略参考</strong>。上海敲麻最大的优势是——<strong>听牌是公开信息</strong>！真正决定你该进攻还是防守的核心信号是——</p>
+          <div class="key-insight">
+            <div class="key-insight-icon">🔑</div>
+            <div class="key-insight-text">
+              <strong>场上已经有多少家敲了？</strong><br>
+              在上海敲麻中，你不需要猜谁听牌了——有人敲了你就100%确定他在等牌。<br>
+              即使是第7轮（按轮数算中期），如果已有两家敲了，你就应该<strong>立即进入防守模式</strong>。<br>
+              反过来，如果到了第14轮但没人敲，你的进攻窗口仍然开着。
+            </div>
+          </div>
+
+          <h3>敲家的听牌范围推断</h3>
+          <p>虽然敲不亮牌，但你可以通过以下线索推断敲家在听什么：</p>
+          <div class="signal-grid">
+            <div class="signal-item signal-strong">
+              <div class="signal-label">高价值线索</div>
+              <ul>
+                <li><strong>副露花色</strong>：碰/杠了什么花色 → 他在做这个花色</li>
+                <li><strong>牌河缺色</strong>：某花色完全没打过 → 他在收集这个花色</li>
+                <li><strong>敲后摸切</strong>：敲了之后打出的牌 = 他不需要的牌 = 安全牌线索</li>
+                <li><strong>手牌数量</strong>：碰了多副？手里还剩几张？可推算搭子结构</li>
+              </ul>
+            </div>
+            <div class="signal-item signal-moderate">
+              <div class="signal-label">辅助线索</div>
+              <ul>
+                <li><strong>敲前最后打的牌</strong>：他拆掉了什么？说明那个方向他放弃了</li>
+                <li><strong>打牌顺序</strong>：先打字牌再打幺九 → 可能做平和；大量打某花色 → 不做这个花色</li>
+                <li><strong>场上已出牌统计</strong>：结合缺色推断，排除不可能的听牌</li>
+              </ul>
+            </div>
+            <div class="signal-item signal-weak">
+              <div class="signal-label">接近敲牌的预警</div>
+              <ul>
+                <li>碰了2~3副牌，手牌很少 → 可能马上就敲</li>
+                <li>突然开始打安全牌/字牌 → 在做最后整理</li>
+                <li>门清玩家突然打出中间张 → 可能在调整听口准备敲</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>已敲家数 × 攻防策略矩阵</h2>
+          <p class="card-desc">根据你<strong>自己的状态</strong>和<strong>场上已敲的家数</strong>，动态选择进攻或防守策略。上海敲麻的优势：敲是公开的，你不用猜！</p>
+
+          <table class="prob-table strategy-matrix">
+            <thead>
+              <tr>
+                <th>你的状态 ＼ 已敲家数</th>
+                <th>0家敲</th>
+                <th>1家敲</th>
+                <th>2家敲</th>
+                <th>3家敲</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>你已敲</strong></td>
+                <td><span class="strat-tag strat-attack">全力进攻</span><br><small>等自摸或吃牌胡</small></td>
+                <td><span class="strat-tag strat-attack">积极进攻</span><br><small>敲后锁定，安心等牌</small></td>
+                <td><span class="strat-tag strat-balance">等牌即可</span><br><small>敲后摸啥打啥，无法主动防守</small></td>
+                <td><span class="strat-tag strat-balance">等牌即可</span><br><small>摸啥打啥，看运气</small></td>
+              </tr>
+              <tr>
+                <td><strong>差1~2张听牌（未敲）</strong></td>
+                <td><span class="strat-tag strat-attack">积极进攻</span><br><small>加速组牌，争取敲牌</small></td>
+                <td><span class="strat-tag strat-balance">攻守兼备</span><br><small>推进但不打敲家可能要的牌</small></td>
+                <td><span class="strat-tag strat-defend">偏向防守</span><br><small>除非安全牌能推进，否则防守</small></td>
+                <td><span class="strat-tag strat-defend">放弃进攻</span><br><small>转全防，保不点炮</small></td>
+              </tr>
+              <tr>
+                <td><strong>差3张以上（未敲）</strong></td>
+                <td><span class="strat-tag strat-balance">正常整理</span><br><small>按前期策略整理手牌</small></td>
+                <td><span class="strat-tag strat-defend">偏向防守</span><br><small>整理时优先保留安全牌</small></td>
+                <td><span class="strat-tag strat-defend">全面防守</span><br><small>放弃胡牌，求平安</small></td>
+                <td><span class="strat-tag strat-full-defend">死守不出</span><br><small>打绝张和跟打，宁可黄庄</small></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="tip-box" style="margin-top: 1rem;">
+            <strong>核心原则：</strong>「已敲家数越多、你离敲牌越远 → 越要防守」。上海敲麻的好处是你不用猜——有人敲了就是100%确定的危险信号。注意：你敲了之后手牌锁定，摸啥打啥，已经无法主动防守了，所以<strong>敲之前要想清楚</strong>。
+          </div>
+
+          <h4>🃏 口诀</h4>
+          <div class="mnemonic">"敲了没有看得见，一家敲了心不慌，两家敲了要提防，三家敲了死守庄"</div>
+        </div>
+
+        <div class="card">
+          <h2>敲牌时机策略</h2>
+          <p class="card-desc">敲了就锁定手牌，是不可逆的决定。什么时候敲最合适？</p>
+
+          <div class="danger-level danger-low">
+            <div class="danger-header">
+              <span class="danger-badge safe">适合敲</span>
+              <span class="danger-title">听牌面宽 + 还没人敲</span>
+            </div>
+            <div class="danger-body">
+              <p class="danger-explain">你听的牌种类多（比如听两头），且场上剩余张数多，胡牌概率高。别人还没敲说明竞争小，此时果断敲。</p>
+            </div>
+          </div>
+
+          <div class="danger-level danger-low">
+            <div class="danger-header">
+              <span class="danger-badge low">可以敲</span>
+              <span class="danger-title">听牌面较窄但牌型番数高</span>
+            </div>
+            <div class="danger-body">
+              <p class="danger-explain">比如你做的清一色只差一张，虽然听口窄但胡了翻数高，赌一把值得。不敲就永远没法胡。</p>
+            </div>
+          </div>
+
+          <div class="danger-level danger-medium">
+            <div class="danger-header">
+              <span class="danger-badge medium">谨慎敲</span>
+              <span class="danger-title">听的牌场上已出很多 / 多家已敲</span>
+            </div>
+            <div class="danger-body">
+              <p class="danger-explain">你听的牌场上已出了2~3张，胡牌概率很低。而且一旦敲了手牌锁定，摸到危险牌也必须打出去——可能反而给别的敲家送炮。</p>
+            </div>
+          </div>
+
+          <div class="danger-level danger-high">
+            <div class="danger-header">
+              <span class="danger-badge high">不建议敲</span>
+              <span class="danger-title">听口极窄 + 已有多家敲了</span>
+            </div>
+            <div class="danger-body">
+              <p class="danger-explain">你听的牌几乎没希望了（比如听绝张），而且敲后锁定手牌，被迫摸啥打啥，面对其他敲家的等牌毫无防守能力。不如不敲，保持灵活防守。</p>
+            </div>
+          </div>
+
+          <div class="tip-box" style="margin-top: 1rem;">
+            <strong>敲牌的代价：</strong>手牌锁定后你丧失了防守能力！摸到什么就必须打什么，即使那张牌对敲家来说是极危险牌。所以敲之前一定要权衡：你胡牌的概率 vs 你被迫打出危险牌的风险。
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>有人敲了，我该怎么办？</h2>
+          <p class="card-desc">对手敲了是明确的危险信号。以下是针对性的防守策略：</p>
+
+          <h3>第一步：立即分析敲家听什么</h3>
+          <ul>
+            <li>看他的<strong>副露</strong>：碰了什么花色？碰碰胡还是顺子？</li>
+            <li>看他的<strong>牌河</strong>：哪个花色一张没打？那就是他在做的花色</li>
+            <li>看他<strong>敲后打出的牌</strong>：这些牌是他摸到的、不需要的 = 安全牌线索</li>
+            <li>算<strong>剩余牌</strong>：他可能听的那些牌，场上出了几张？</li>
+          </ul>
+
+          <h3>第二步：调整出牌策略</h3>
+          <ul>
+            <li><strong>绝对避开</strong>：敲家做的花色中未出现过的中间张</li>
+            <li><strong>优先打</strong>：敲家敲后刚摸切的同张牌、已出3~4张的牌、绝张</li>
+            <li><strong>跟打敲家</strong>：敲家敲后打出什么，你跟着打同张牌最安全</li>
+            <li><strong>必要时拆牌</strong>：宁可拆掉自己的好搭子，也不要给敲家送炮</li>
+          </ul>
+
+          <h3>第三步：多家敲了怎么办？</h3>
+          <div class="tip-box danger">
+            多家敲了时，你要同时避开<strong>所有敲家</strong>的危险牌。优先打绝张、已出3张的牌、所有敲家都摸切过的牌。如果手里全是危险牌，尝试拆搭子找安全出路。实在没有安全牌？优先打对付<strong>番数最高</strong>的那家最安全的方向。
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>防守决策流程图（有人敲了时）</h2>
+          <div class="flowchart">
+            <div class="flow-node start">有人敲了，你需要打出一张牌</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-node decision">手里有没有100%安全牌？<br><small>（已出4张的绝张 / 敲家敲后刚摸切的同张牌）</small></div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">有 →</span>
+                <div class="flow-node action safe">打安全牌</div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">没有 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node decision">有没有相对安全牌？<br><small>（已出3张的牌 / 敲家大量打过的花色的牌 / 已出2张的字牌）</small></div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">有 →</span>
+                <div class="flow-node action medium">打相对安全牌</div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">没有 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node decision">能否拆掉搭子换安全？</div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">能 →</span>
+                <div class="flow-node action medium">拆搭子，选择不在敲家做的花色里的牌</div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">不能 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node action danger">选择最不可能被敲家需要的那张打<br><small>（优先避开敲家的花色；打幺九 > 打敲家已弃花色 > 最后才打敲家花色的生张中间张）</small></div>
+          </div>
         </div>
       </section>
 
