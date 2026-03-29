@@ -18,6 +18,7 @@
           <button class="tab-btn" data-tab="efficiency">听牌效率</button>
           <button class="tab-btn" data-tab="danger">危险牌分析</button>
           <button class="tab-btn" data-tab="strategy">阶段策略</button>
+          <button class="tab-btn" data-tab="priority">出牌优先级</button>
           <button class="tab-btn" data-tab="probability">概率速查表</button>
           <button class="tab-btn" data-tab="practice">实战练习</button>
         </nav>
@@ -1233,6 +1234,376 @@
             </div>
             <div class="flow-node action danger">选择最不可能被敲家需要的那张打<br><small>（优先避开敲家的花色；打幺九 > 打敲家已弃花色 > 最后才打敲家花色的生张中间张）</small></div>
           </div>
+        </div>
+      </section>
+
+      <!-- ==================== 出牌优先级 ==================== -->
+      <section id="tab-priority" class="tab-content">
+        <div class="card">
+          <h2>出牌优先级速查指南</h2>
+          <p>打牌最核心的问题就是「该出哪张」。不同阶段的出牌逻辑完全不同——进攻时考虑效率，防守时考虑安全。本页按阶段整理了出牌优先级，帮你在每一步都做出更好的选择。</p>
+          <div class="tip-box">
+            <strong>核心思路：</strong>前期打废牌腾空间，中期看局势灵活打，后期打安全牌保命。出牌顺序的本质是——<strong>先出价值低的、后出有用的；先出安全的、后出危险的</strong>。
+          </div>
+        </div>
+
+        <!-- 进攻阶段 -->
+        <div class="card">
+          <h2>一、进攻阶段（未听牌时）</h2>
+          <p>还没听牌前，你的目标是尽快向听牌推进。这时候需要把「废牌」清理出去，保留有用的搭子。</p>
+
+          <div class="priority-list">
+            <div class="priority-item">
+              <div class="priority-rank rank-1">1</div>
+              <div class="priority-body">
+                <div class="priority-title">先打孤张字牌</div>
+                <div class="priority-desc">
+                  <p>手里没有对子的风牌、箭牌最先出，连接性最差只能碰成刻子。越早打越安全——前期出字牌基本没有放炮风险。</p>
+                  <div class="priority-example">
+                    <span class="tile feng">东风</span> <span class="tile feng">北风</span> 手里各只有一张 → 第一时间打掉
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="priority-item">
+              <div class="priority-rank rank-2">2</div>
+              <div class="priority-body">
+                <div class="priority-title">再打孤张幺九（1、9）</div>
+                <div class="priority-desc">
+                  <p>1 和 9 只能组成一种顺子（123 或 789），利用率低。如果没有相邻的 2 或 8 配合，果断扔掉。</p>
+                  <div class="priority-example">
+                    <span class="tile tiao">一条</span> 周围没有二条三条 → 尽早打出
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="priority-item">
+              <div class="priority-rank rank-3">3</div>
+              <div class="priority-body">
+                <div class="priority-title">然后打孤张 2、8</div>
+                <div class="priority-desc">
+                  <p>2 和 8 能组两种顺子（如 123/234），比幺九好一点。但如果是孤张且做牌方向不在这个花色，也可以出。</p>
+                  <div class="priority-example">
+                    <span class="tile tong">二筒</span> 周围没有搭配，且你在做万子方向 → 可以打
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="priority-item">
+              <div class="priority-rank rank-4">4</div>
+              <div class="priority-body">
+                <div class="priority-title">拆弱搭留强搭</div>
+                <div class="priority-desc">
+                  <p>搭子太多必须拆时，优先拆效率低的搭子。搭子效率：<strong>两面搭（如 56）&gt; 对子 &gt; 边搭（如 12）≥ 嵌搭（如 35）</strong>。</p>
+                  <div class="priority-example">
+                    <span class="tile wan">一万</span><span class="tile wan">二万</span>（边搭，只听三万）vs <span class="tile tiao">五条</span><span class="tile tiao">六条</span>（两面搭，听四条和七条）→ 拆边搭，留两面搭
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="priority-item">
+              <div class="priority-rank rank-5">5</div>
+              <div class="priority-body">
+                <div class="priority-title">对子尽量留着</div>
+                <div class="priority-desc">
+                  <p>对子用途灵活——可以碰成刻子加速，也可以做将头。除非做牌方向明确不需要，否则先别拆。</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="priority-item">
+              <div class="priority-rank rank-6">6</div>
+              <div class="priority-body">
+                <div class="priority-title">中间张（4/5/6）最后打</div>
+                <div class="priority-desc">
+                  <p>4、5、6 连接性最强，能组成最多种顺子。即使暂时是孤张，后续摸到搭配的概率也最高，留到最后。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mnemonic">"字牌幺九先出手，边张嵌搭跟着走；对子中张要留住，搭子效率心里有"</div>
+        </div>
+
+        <!-- 做牌方向确定后 -->
+        <div class="card">
+          <h2>二、方向明确后（收窄花色）</h2>
+          <p>当你决定了做牌方向（比如做混一色、清一色），出牌优先级需要调整：</p>
+
+          <table class="prob-table">
+            <thead>
+              <tr>
+                <th>优先级</th>
+                <th>该打的牌</th>
+                <th>说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="danger-badge safe">1</span></td>
+                <td>非目标花色的孤张</td>
+                <td>做万子混一色 → 条子、筒子的孤张先全部清掉</td>
+              </tr>
+              <tr>
+                <td><span class="danger-badge safe">2</span></td>
+                <td>非目标花色的搭子</td>
+                <td>不在你做的花色里的搭子，果断拆掉</td>
+              </tr>
+              <tr>
+                <td><span class="danger-badge low">3</span></td>
+                <td>目标花色内的弱搭</td>
+                <td>同花色里的嵌搭、边搭，如果空间不够可以拆</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="tip-box" style="margin-top: 1rem;">
+            <strong>注意暴露信号：</strong>当你大量打出某个花色时，其他玩家会看出你的方向。特别是做混一色/清一色时，你的牌河会非常明显。所以尽量在前期（大家都在清理的时候）完成花色切换，这样暴露感没那么强。
+          </div>
+        </div>
+
+        <!-- 听牌前 -->
+        <div class="card">
+          <h2>三、听牌前夕（一上听 / 准备敲）</h2>
+          <p>只差一步就听牌了，这时候出牌需要同时考虑<strong>效率</strong>和<strong>安全性</strong>。</p>
+
+          <div class="signal-grid">
+            <div class="signal-item signal-strong">
+              <div class="signal-label">关注点1：听牌面宽度</div>
+              <ul>
+                <li>选择能形成<strong>两面听</strong>的拆法，而不是嵌张或单骑</li>
+                <li>听两种牌（最多 8 张可胡）远优于听一种（最多 4 张）</li>
+                <li>宁可多等一轮也要听个好牌面</li>
+              </ul>
+            </div>
+            <div class="signal-item signal-moderate">
+              <div class="signal-label">关注点2：出牌安全性</div>
+              <ul>
+                <li>推进时优先打已出 2~3 张的牌（放炮风险低）</li>
+                <li>避免打生张中间张——万一还没听就先放了炮</li>
+                <li>有人碰了多副同花色 → 该花色的牌尽量别碰</li>
+              </ul>
+            </div>
+            <div class="signal-item signal-weak">
+              <div class="signal-label">关注点3：敲后代价</div>
+              <ul>
+                <li>敲了之后摸啥打啥，听牌越宽越好</li>
+                <li>听面太窄（如单骑绝张）不如先不敲，保留灵活性</li>
+                <li>多家已敲时更要三思——敲后失去防守能力</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 防守阶段 -->
+        <div class="card">
+          <h2>四、防守阶段（有人敲了之后）</h2>
+          <p>有人敲了就是 100% 确定的危险信号。这时候出牌的首要原则是<strong>安全</strong>，不是效率。</p>
+
+          <div class="priority-list defense">
+            <div class="priority-item">
+              <div class="priority-rank rank-def-1">1</div>
+              <div class="priority-body">
+                <div class="priority-title">绝张（已出 4 张的牌）</div>
+                <div class="priority-desc">
+                  <p>物理上不可能有人用这张牌胡牌。<strong>对所有人都 100% 安全</strong>，多家敲了时的最优先选择。</p>
+                  <div class="priority-tag"><span class="danger-badge safe">0% 风险</span> 对所有人安全</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="priority-item">
+              <div class="priority-rank rank-def-2">2</div>
+              <div class="priority-body">
+                <div class="priority-title">敲家的摸切牌（敲后打出的同张牌）</div>
+                <div class="priority-desc">
+                  <p>敲家敲后手牌锁定，摸啥打啥。他打出来的牌 = 他不需要的牌。跟打同张牌对<strong>该敲家</strong>安全。</p>
+                  <div class="priority-tag"><span class="danger-badge safe">极低风险</span> 对该敲家安全 <span class="danger-badge medium" style="margin-left:.5rem">注意</span> 多家敲时对其他敲家不一定安全</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="priority-item">
+              <div class="priority-rank rank-def-3">3</div>
+              <div class="priority-body">
+                <div class="priority-title">已出 3 张的牌</div>
+                <div class="priority-desc">
+                  <p>最多只剩 1 张在别人手里，只有做将头或单骑才用得上，放炮概率约 2~5%。</p>
+                  <div class="priority-tag"><span class="danger-badge low">2~5% 风险</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="priority-item">
+              <div class="priority-rank rank-def-4">4</div>
+              <div class="priority-body">
+                <div class="priority-title">敲家已弃花色的牌</div>
+                <div class="priority-desc">
+                  <p>敲家大量打出某花色 → 他不做这个花色。该花色的牌对他来说相对安全，但要注意对其他人是否危险。</p>
+                  <div class="priority-tag"><span class="danger-badge low">较低风险</span> 需结合全场判断</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="priority-item">
+              <div class="priority-rank rank-def-5">5</div>
+              <div class="priority-body">
+                <div class="priority-title">已出 2 张的幺九/字牌</div>
+                <div class="priority-desc">
+                  <p>幺九本身连接性弱，加上已出 2 张，被用到的可能性较低。</p>
+                  <div class="priority-tag"><span class="danger-badge medium">8~15% 风险</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="priority-item">
+              <div class="priority-rank rank-def-6">6</div>
+              <div class="priority-body">
+                <div class="priority-title">拆自己的搭子换安全</div>
+                <div class="priority-desc">
+                  <p>手里实在没有安全牌？拆掉自己的搭子，选不在敲家花色方向里的牌打出。放弃进攻保平安。</p>
+                  <div class="priority-tag"><span class="danger-badge medium">视情况而定</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="priority-item priority-danger">
+              <div class="priority-rank rank-def-x">✗</div>
+              <div class="priority-body">
+                <div class="priority-title">绝对避免：敲家花色的生张中间张</div>
+                <div class="priority-desc">
+                  <p>敲家做的花色中、全场从未出现过的 4/5/6，放炮概率可能高达 <strong>35~50%</strong>。这是最危险的牌，除非万不得已绝不能打。</p>
+                  <div class="priority-tag"><span class="danger-badge critical">35~50% 风险</span> 极度危险</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mnemonic" style="margin-top:1.2rem">"绝张第一跟打二，三张已出排第三；敲家弃色可以碰，生张中间死不沾"</div>
+        </div>
+
+        <!-- 多家敲了 -->
+        <div class="card callout">
+          <h2>五、多家敲了怎么办？</h2>
+          <p>两家甚至三家都敲了时，危险成倍增加。你需要找到<strong>对所有敲家都安全</strong>的牌：</p>
+
+          <table class="prob-table">
+            <thead>
+              <tr>
+                <th>安全等级</th>
+                <th>牌的类型</th>
+                <th>原因</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="danger-badge safe">最安全</span></td>
+                <td>绝张（已出 4 张）</td>
+                <td>对所有人都 0% 风险，唯一的绝对安全牌</td>
+              </tr>
+              <tr>
+                <td><span class="danger-badge low">很安全</span></td>
+                <td>所有敲家都摸切过的同张牌</td>
+                <td>对每个敲家分别验证过安全</td>
+              </tr>
+              <tr>
+                <td><span class="danger-badge low">较安全</span></td>
+                <td>已出 3 张的牌</td>
+                <td>最多剩 1 张，放炮概率极低</td>
+              </tr>
+              <tr>
+                <td><span class="danger-badge medium">谨慎</span></td>
+                <td>仅对其中一家安全的牌</td>
+                <td>对另一家可能是危险牌，需要取舍</td>
+              </tr>
+              <tr>
+                <td><span class="danger-badge critical">极危险</span></td>
+                <td>任何敲家花色方向的生张</td>
+                <td>可能同时命中多家，绝对不打</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="tip-box danger" style="margin-top: 1rem;">
+            <strong>多家敲 = 缩紧出牌！</strong>宁可拆掉自己所有的好搭子，也不要冒险打生张给别人送炮。能黄庄也是赢——不赔就是赚。
+          </div>
+        </div>
+
+        <!-- 通用原则总结 -->
+        <div class="card">
+          <h2>六、通用原则</h2>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-icon">🛡️</div>
+              <h3>安全优先原则</h3>
+              <p>整局都应遵循「先打安全度高的牌」。前期把将来可能变危险的牌早点处理掉，别等到后期被迫出牌</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">👁️</div>
+              <h3>读牌池信息</h3>
+              <p>每一张被打出的牌都是信息。谁打了什么、碰了什么、什么花色没出现过——这些是判断安全牌的核心依据</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🎨</div>
+              <h3>花色信号识别</h3>
+              <p>某家一直不打某花色 → 大概率在做混一色/清一色。该花色的牌对他来说危险度极高，要尽量避开</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">📊</div>
+              <h3>数牌的习惯</h3>
+              <p>养成数关键牌的习惯：出了几张？还剩几张？4 张全出 = 绝对安全，3 张已出 = 基本安全</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">⚖️</div>
+              <h3>效率 vs 安全</h3>
+              <p>没人敲时侧重效率（快速推进），有人敲了侧重安全（减少放炮）。攻防切换要果断</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">💡</div>
+              <h3>不囤危险牌</h3>
+              <p>如果手里有明显将来会变危险的牌（如某家在收集的花色），趁没人敲的时候赶紧打掉，别等到被动</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 总决策流程图 -->
+        <div class="card">
+          <h2>出牌决策总流程</h2>
+          <div class="flowchart">
+            <div class="flow-node start">该出哪张牌？</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-node decision">场上有没有人敲了？</div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">有人敲了 →</span>
+                <div class="flow-node action danger">进入防守出牌<br><small>绝张 > 跟打摸切 > 已出3张 > 弃色牌 > 拆搭子</small></div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">没人敲 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node decision">你的做牌方向确定了吗？</div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">确定了 →</span>
+                <div class="flow-node action medium">打非目标花色<br><small>清理其他花色的孤张和搭子</small></div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">还没确定 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node action safe">按通用优先级整理<br><small>孤张字牌 > 孤张幺九 > 孤张2/8 > 拆弱搭 > 留对子和中间张</small></div>
+          </div>
+        </div>
+
+        <div class="card callout">
+          <h2>一句话总结</h2>
+          <div class="mnemonic">"没人敲，理牌快；有人敲，保命来；字幺九先滚蛋，中间张最后甩"</div>
+          <div class="mnemonic" style="margin-top:.5rem">"绝张最安全，跟打也保险；生张中间张，打了就完蛋"</div>
         </div>
       </section>
 

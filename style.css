@@ -438,6 +438,66 @@ body {
 .prob-table.has-hover tbody tr:hover td { color: #fff; }
 .prob-table.has-hover th.col-highlight { color: #fff; }
 
+/* ===== Priority List ===== */
+.priority-list { display: flex; flex-direction: column; gap: .8rem; margin-top: 1rem; }
+.priority-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--bg-card-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  transition: transform .15s;
+}
+.priority-item:hover { transform: translateX(4px); }
+.priority-item.priority-danger {
+  border-color: var(--critical);
+  background: rgba(192,57,43,.08);
+}
+
+.priority-rank {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 800;
+  flex-shrink: 0;
+  color: #fff;
+}
+.rank-1 { background: var(--safe); }
+.rank-2 { background: #27ae60; }
+.rank-3 { background: var(--low); }
+.rank-4 { background: var(--medium); }
+.rank-5 { background: var(--accent-warm); }
+.rank-6 { background: var(--text-dim); }
+
+.rank-def-1 { background: var(--safe); }
+.rank-def-2 { background: #27ae60; }
+.rank-def-3 { background: var(--low); }
+.rank-def-4 { background: #5dade2; }
+.rank-def-5 { background: var(--medium); }
+.rank-def-6 { background: var(--accent-warm); }
+.rank-def-x { background: var(--critical); font-size: .9rem; }
+
+.priority-body { flex: 1; min-width: 0; }
+.priority-title { font-weight: 700; font-size: 1rem; color: var(--text); margin-bottom: .3rem; }
+.priority-desc { font-size: .9rem; color: var(--text-dim); }
+.priority-desc p { margin-bottom: .4rem; }
+.priority-example {
+  background: rgba(78,205,196,.06);
+  padding: .5rem .8rem;
+  border-radius: 6px;
+  margin-top: .4rem;
+  font-size: .85rem;
+  border-left: 2px solid var(--primary-dim);
+}
+.priority-tag { margin-top: .4rem; display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; font-size: .82rem; }
+
+@media (max-width: 700px) {
+  .priority-item { padding: .8rem; gap: .7rem; }
+  .priority-rank { width: 30px; height: 30px; font-size: .85rem; }
+}
+
 /* ===== Practice / Quiz ===== */
 .quiz-card {
   background: var(--bg-card);
