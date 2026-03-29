@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>上海敲麻 · 防炮宝典</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="hero">
+      <div class="hero-inner">
+        <h1>🀄 上海敲麻 · 防炮宝典</h1>
+        <p class="subtitle">新手必看的防守攻略 — 从此告别点炮</p>
+        <nav class="tab-nav">
+          <button class="tab-btn active" data-tab="basics">基础概念</button>
+          <button class="tab-btn" data-tab="danger">危险牌分析</button>
+          <button class="tab-btn" data-tab="strategy">阶段策略</button>
+          <button class="tab-btn" data-tab="probability">概率速查表</button>
+          <button class="tab-btn" data-tab="practice">实战练习</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+
+      <!-- ==================== 基础概念 ==================== -->
+      <section id="tab-basics" class="tab-content active">
+        <div class="card">
+          <h2>什么是「点炮」？</h2>
+          <p>点炮（放炮）指你打出的牌正好是别人胡牌所需的那张牌，导致你需要<strong>全额支付</strong>该玩家的胡牌分数。在上海敲麻中，点炮的代价尤其大，因为：</p>
+          <ul>
+            <li><strong>单人赔付</strong>：放炮者独自承担全部赔付，不像自摸是三家均摊</li>
+            <li><strong>翻数叠加</strong>：上海敲麻的翻数计算可以非常高，一次点炮可能输掉整场的筹码</li>
+            <li><strong>心态影响</strong>：连续点炮容易打乱节奏，陷入恶性循环</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>上海敲麻的核心特点</h2>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="feature-icon">🎯</div>
+              <h3>百搭牌</h3>
+              <p>每局有一张百搭牌（财神），可以替代任何牌。百搭牌使得听牌面变宽，防守更难</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">💰</div>
+              <h3>翻数计算</h3>
+              <p>基本分 × 2^翻数。清一色、杠上开花等番型翻数很高，点炮代价极大</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🔄</div>
+              <h3>敲麻规则</h3>
+              <p>可以「敲」（明杠别人打出的牌），敲麻后牌面暴露更多信息，需要善于读牌</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">🛡️</div>
+              <h3>防守优先</h3>
+              <p>在上海敲麻中，会守比会攻更重要。减少点炮是提高胜率的第一步</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>读牌的基本思路</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>观察牌河</h3>
+                <p>牌河是最重要的信息来源。注意每家打出了什么牌，打牌的顺序暗示了手牌结构</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>注意吃碰杠</h3>
+                <p>副露（吃/碰/杠）会暴露花色倾向。如果某家碰了很多万子，当心他做清一色</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>数关键牌</h3>
+                <p>关注已经出现的牌数量。4张都出完的牌是绝对安全的，3张已出的牌相对安全</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>判断听牌</h3>
+                <p>根据对手副露和牌河，推断其可能的听牌范围，避开危险区域</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 危险牌分析 ==================== -->
+      <section id="tab-danger" class="tab-content">
+        <div class="card">
+          <h2>危险牌等级一览</h2>
+          <p>以下按危险程度从高到低排列，帮助你快速判断手中哪些牌最危险：</p>
+
+          <div class="danger-level danger-critical">
+            <div class="danger-header">
+              <span class="danger-badge critical">极危险</span>
+              <span class="danger-title">对手已碰两副同花色 + 该花色的中间张</span>
+            </div>
+            <div class="danger-body">
+              <div class="tile-example">
+                <p>例：下家碰了 <span class="tile wan">三万</span> <span class="tile wan">六万</span>，你手里有 <span class="tile wan">四万</span> <span class="tile wan">五万</span></p>
+              </div>
+              <p class="danger-explain">对手极可能做清一色或混一色，中间张（3~7）的危险系数极高</p>
+            </div>
+          </div>
+
+          <div class="danger-level danger-high">
+            <div class="danger-header">
+              <span class="danger-badge high">高危险</span>
+              <span class="danger-title">牌河中没有出现的生张（尤其是中间张 4/5/6）</span>
+            </div>
+            <div class="danger-body">
+              <div class="tile-example">
+                <p>全场没有人打过的 <span class="tile tiao">五条</span>，或只出现过一张的 <span class="tile wan">四万</span></p>
+              </div>
+              <p class="danger-explain">生张 = 全场很少出现的牌。别人都没打说明大家都在用，或者有人在等这张牌</p>
+            </div>
+          </div>
+
+          <div class="danger-level danger-medium">
+            <div class="danger-header">
+              <span class="danger-badge medium">中危险</span>
+              <span class="danger-title">对手刚打过的牌的相邻牌</span>
+            </div>
+            <div class="danger-body">
+              <div class="tile-example">
+                <p>对手刚打了 <span class="tile tiao">六条</span>，那 <span class="tile tiao">三条</span>（隔两张）可能安全，但 <span class="tile tiao">四条</span> <span class="tile tiao">八条</span> 需要注意</p>
+              </div>
+              <p class="danger-explain">对手拆掉一张牌后，可能保留了相邻的搭子，正在等附近的牌</p>
+            </div>
+          </div>
+
+          <div class="danger-level danger-low">
+            <div class="danger-header">
+              <span class="danger-badge low">较安全</span>
+              <span class="danger-title">对手刚打出的同一张牌 / 牌河已出3~4张的牌</span>
+            </div>
+            <div class="danger-body">
+              <div class="tile-example">
+                <p>上家刚打了 <span class="tile tong">八筒</span>，你也有 <span class="tile tong">八筒</span>，这张跟打相对安全</p>
+              </div>
+              <p class="danger-explain">「跟打」是最基本的防守手段：别人刚打出没人胡，你再打同一张通常安全</p>
+            </div>
+          </div>
+
+          <div class="danger-level danger-safe">
+            <div class="danger-header">
+              <span class="danger-badge safe">安全</span>
+              <span class="danger-title">已经出现4张的字牌 / 对手打过的原张</span>
+            </div>
+            <div class="danger-body">
+              <p class="danger-explain">4张全出 = 物理上不可能有人再用这张牌胡牌。这是100%安全的</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>各种牌型的危险系数</h2>
+          <div class="tile-danger-chart">
+            <div class="chart-row header">
+              <span class="chart-cell">牌</span>
+              <span class="chart-cell">连接性</span>
+              <span class="chart-cell">可被听的组合数</span>
+              <span class="chart-cell">危险等级</span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-cell tile-label">4、5、6（中间张）</span>
+              <span class="chart-cell">最强</span>
+              <span class="chart-cell">可构成顺子数：3种</span>
+              <span class="chart-cell"><span class="bar bar-5"></span></span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-cell tile-label">3、7</span>
+              <span class="chart-cell">较强</span>
+              <span class="chart-cell">可构成顺子数：2种</span>
+              <span class="chart-cell"><span class="bar bar-4"></span></span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-cell tile-label">2、8</span>
+              <span class="chart-cell">中等</span>
+              <span class="chart-cell">可构成顺子数：2种</span>
+              <span class="chart-cell"><span class="bar bar-3"></span></span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-cell tile-label">1、9（幺九牌）</span>
+              <span class="chart-cell">较弱</span>
+              <span class="chart-cell">可构成顺子数：1种</span>
+              <span class="chart-cell"><span class="bar bar-2"></span></span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-cell tile-label">东南西北中发白（字牌）</span>
+              <span class="chart-cell">仅对子/刻子</span>
+              <span class="chart-cell">只能碰/杠</span>
+              <span class="chart-cell"><span class="bar bar-1"></span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 阶段策略 ==================== -->
+      <section id="tab-strategy" class="tab-content">
+        <div class="card">
+          <h2>牌局三大阶段策略</h2>
+          <p>一局牌大约 <strong>18~20轮</strong>（每人摸打各18次左右），可以分为三个阶段来制定策略：</p>
+        </div>
+
+        <div class="phase-container">
+          <div class="phase-card phase-early">
+            <div class="phase-header">
+              <div class="phase-number">1</div>
+              <h3>前期（第1~6轮）</h3>
+              <span class="phase-tag">整理期 · 大胆出牌</span>
+            </div>
+            <div class="phase-body">
+              <h4>🎯 核心目标</h4>
+              <p>整理手牌，规划牌型方向</p>
+
+              <h4>📋 操作要点</h4>
+              <ul>
+                <li><strong>优先打字牌</strong>：除非你手里有对子/刻子的字牌，否则先把孤张字牌打出去</li>
+                <li><strong>打幺九牌</strong>：1和9的连接性最差，没有搭配就早出</li>
+                <li><strong>少打中间张</strong>：4/5/6留在手里，等摸到好的搭子再组合</li>
+                <li><strong>注意百搭牌</strong>：确认本局的百搭（财神），有百搭牌要善用</li>
+              </ul>
+
+              <h4>⚠️ 防守提示</h4>
+              <div class="tip-box">
+                前期点炮概率较低（约5~8%），但不代表可以完全不防。如果有人第一轮就碰牌，要警惕其牌型已经较好。
+              </div>
+
+              <h4>🃏 口诀</h4>
+              <div class="mnemonic">"前六轮，先理牌；字幺九，大胆甩；中间张，留下来"</div>
+            </div>
+          </div>
+
+          <div class="phase-card phase-mid">
+            <div class="phase-header">
+              <div class="phase-number">2</div>
+              <h3>中期（第7~12轮）</h3>
+              <span class="phase-tag">博弈期 · 攻守兼备</span>
+            </div>
+            <div class="phase-body">
+              <h4>🎯 核心目标</h4>
+              <p>判断自己能否听牌，同时观察对手状态</p>
+
+              <h4>📋 操作要点</h4>
+              <ul>
+                <li><strong>评估自己的牌</strong>：如果离听牌还有3张以上，考虑转为防守</li>
+                <li><strong>跟打策略</strong>：尽量跟着上家或对面打过的牌出，减少点炮风险</li>
+                <li><strong>注意各家牌河</strong>：谁的牌河里没有某个花色？谁碰了很多牌？</li>
+                <li><strong>卡位出牌</strong>：尽量选择对手刚打过的花色出牌</li>
+              </ul>
+
+              <h4>⚠️ 防守提示</h4>
+              <div class="tip-box">
+                中期是点炮高发期（概率约15~25%）。此时至少有一家接近听牌状态，每打一张都要想一想：这张谁可能要？
+              </div>
+
+              <h4>🃏 口诀</h4>
+              <div class="mnemonic">"中间段，看牌河；跟着打，少犯错；拿不定，打熟落"</div>
+            </div>
+          </div>
+
+          <div class="phase-card phase-late">
+            <div class="phase-header">
+              <div class="phase-number">3</div>
+              <h3>后期（第13轮以后）</h3>
+              <span class="phase-tag">决胜期 · 防守为主</span>
+            </div>
+            <div class="phase-body">
+              <h4>🎯 核心目标</h4>
+              <p>如果自己没有听牌，以防守为第一要务</p>
+
+              <h4>📋 操作要点</h4>
+              <ul>
+                <li><strong>拆搭子求安全</strong>：拆掉自己的搭子，改打安全牌</li>
+                <li><strong>数牌</strong>：关注每张关键牌出了几张，优先打出已出3张的牌</li>
+                <li><strong>打字牌优先</strong>：如果字牌还有安全的（已出2-3张），优先出</li>
+                <li><strong>绝不冒险</strong>：手里拿着危险牌宁可打不胡也不能放炮</li>
+              </ul>
+
+              <h4>⚠️ 防守提示</h4>
+              <div class="tip-box danger">
+                后期点炮概率最高（约30~45%）！多家听牌时，你打出的任何一张生张都可能是炮。<br>
+                <strong>黄金法则：摸到什么安全牌就打什么，不要贪胡。</strong>
+              </div>
+
+              <h4>🃏 口诀</h4>
+              <div class="mnemonic">"后半场，保为先；危险牌，死不沾；能黄庄，也是赢"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>防守决策流程图</h2>
+          <div class="flowchart">
+            <div class="flow-node start">你需要打出一张牌</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-node decision">手里有没有100%安全牌？<br><small>（已出4张的牌 / 刚被打出的同张牌）</small></div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">有 →</span>
+                <div class="flow-node action safe">打安全牌</div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">没有 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node decision">有没有相对安全牌？<br><small>（已出2~3张的字牌 / 对手牌河中的同花色牌）</small></div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">有 →</span>
+                <div class="flow-node action medium">打相对安全牌</div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">没有 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node decision">能否拆掉搭子换安全？</div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">能 →</span>
+                <div class="flow-node action medium">拆搭子，选危险更小的那张</div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">不能 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node action danger">选择被最少人需要的那张打<br><small>（优先打幺九 > 打对手已亮花色 > 最后才打生张中间张）</small></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 概率速查表 ==================== -->
+      <section id="tab-probability" class="tab-content">
+        <div class="card">
+          <h2>危险牌概率速查表</h2>
+          <p>以下概率基于数学模型计算，结合上海敲麻的实际场景。实际危险度还需结合牌面信息综合判断。</p>
+
+          <div class="filter-bar">
+            <label>按场景筛选：</label>
+            <select id="scenario-filter">
+              <option value="all">全部场景</option>
+              <option value="early">前期（1~6轮）</option>
+              <option value="mid">中期（7~12轮）</option>
+              <option value="late">后期（13+轮）</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>一、按牌面位置分类的固有危险度</h3>
+          <p class="card-desc">不考虑场上信息时，每张牌被别人用来组成胡牌组合的理论概率</p>
+          <table class="prob-table" id="position-table">
+            <thead>
+              <tr>
+                <th>牌面位置</th>
+                <th>可组成的顺子</th>
+                <th>连接性评分</th>
+                <th>固有危险指数</th>
+                <th>示例</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>5（正中）</strong></td>
+                <td>345, 456, 567</td>
+                <td class="score-5">★★★★★</td>
+                <td><span class="prob-bar" style="--w:100%">100%</span></td>
+                <td>五万、五条、五筒</td>
+              </tr>
+              <tr>
+                <td><strong>4 和 6</strong></td>
+                <td>234/345/456 或 456/567/678</td>
+                <td class="score-5">★★★★★</td>
+                <td><span class="prob-bar" style="--w:100%">100%</span></td>
+                <td>四万、六条</td>
+              </tr>
+              <tr>
+                <td><strong>3 和 7</strong></td>
+                <td>123/234/345 或 567/678/789</td>
+                <td class="score-4">★★★★</td>
+                <td><span class="prob-bar" style="--w:80%">80%</span></td>
+                <td>三筒、七万</td>
+              </tr>
+              <tr>
+                <td><strong>2 和 8</strong></td>
+                <td>123/234 或 678/789</td>
+                <td class="score-3">★★★</td>
+                <td><span class="prob-bar" style="--w:60%">60%</span></td>
+                <td>二条、八筒</td>
+              </tr>
+              <tr>
+                <td><strong>1 和 9（幺九）</strong></td>
+                <td>仅123 或 789</td>
+                <td class="score-2">★★</td>
+                <td><span class="prob-bar" style="--w:35%">35%</span></td>
+                <td>一万、九条</td>
+              </tr>
+              <tr>
+                <td><strong>字牌（风牌）</strong></td>
+                <td>无顺子，仅刻子</td>
+                <td class="score-1">★</td>
+                <td><span class="prob-bar" style="--w:20%">20%</span></td>
+                <td>东南西北</td>
+              </tr>
+              <tr>
+                <td><strong>字牌（箭牌）</strong></td>
+                <td>无顺子，仅刻子（可做番）</td>
+                <td class="score-1">★ +番</td>
+                <td><span class="prob-bar" style="--w:25%">25%</span></td>
+                <td>中发白</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>二、场上已出张数 × 剩余危险概率</h3>
+          <p class="card-desc">某张牌在场上已出现的张数越多，剩余牌对你的威胁就越小</p>
+          <table class="prob-table" id="seen-table">
+            <thead>
+              <tr>
+                <th>场上已出张数</th>
+                <th>剩余张数</th>
+                <th>对手持有概率</th>
+                <th>放炮危险评估</th>
+                <th>建议</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0张（生张）</td>
+                <td>最多3张在对手手中</td>
+                <td><span class="prob-bar danger" style="--w:95%">~70-95%</span></td>
+                <td><span class="danger-badge critical">极危险</span></td>
+                <td>尽量不打，尤其是中间张</td>
+              </tr>
+              <tr>
+                <td>1张</td>
+                <td>最多2张在对手手中</td>
+                <td><span class="prob-bar high" style="--w:65%">~45-65%</span></td>
+                <td><span class="danger-badge high">高危险</span></td>
+                <td>谨慎，结合牌河判断</td>
+              </tr>
+              <tr>
+                <td>2张</td>
+                <td>最多1张在对手手中</td>
+                <td><span class="prob-bar medium" style="--w:35%">~20-35%</span></td>
+                <td><span class="danger-badge medium">中危险</span></td>
+                <td>相对可打，但中间张仍需注意</td>
+              </tr>
+              <tr>
+                <td>3张</td>
+                <td>最多1张（仅可能被单骑/做将）</td>
+                <td><span class="prob-bar low" style="--w:12%">~5-12%</span></td>
+                <td><span class="danger-badge low">较安全</span></td>
+                <td>基本安全，可优先出</td>
+              </tr>
+              <tr>
+                <td>4张（绝张）</td>
+                <td>0张</td>
+                <td><span class="prob-bar safe" style="--w:0%">0%</span></td>
+                <td><span class="danger-badge safe">绝对安全</span></td>
+                <td>100%安全，放心出</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>三、阶段 × 牌型综合放炮概率</h3>
+          <p class="card-desc">综合考虑牌局阶段和牌面位置的放炮概率参考值</p>
+          <table class="prob-table" id="combined-table">
+            <thead>
+              <tr>
+                <th>牌面 ＼ 阶段</th>
+                <th>前期 (1~6轮)</th>
+                <th>中期 (7~12轮)</th>
+                <th>后期 (13+轮)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>中间张生张 (4/5/6)</strong></td>
+                <td><span class="cell-prob p-medium">8~12%</span></td>
+                <td><span class="cell-prob p-high">18~30%</span></td>
+                <td><span class="cell-prob p-critical">35~50%</span></td>
+              </tr>
+              <tr>
+                <td><strong>边张生张 (3/7)</strong></td>
+                <td><span class="cell-prob p-low">5~8%</span></td>
+                <td><span class="cell-prob p-medium">12~22%</span></td>
+                <td><span class="cell-prob p-high">25~40%</span></td>
+              </tr>
+              <tr>
+                <td><strong>幺九生张 (1/9)</strong></td>
+                <td><span class="cell-prob p-low">3~5%</span></td>
+                <td><span class="cell-prob p-medium">8~15%</span></td>
+                <td><span class="cell-prob p-medium">15~25%</span></td>
+              </tr>
+              <tr>
+                <td><strong>字牌生张</strong></td>
+                <td><span class="cell-prob p-safe">2~4%</span></td>
+                <td><span class="cell-prob p-low">5~10%</span></td>
+                <td><span class="cell-prob p-medium">10~18%</span></td>
+              </tr>
+              <tr>
+                <td><strong>已出1张的中间张</strong></td>
+                <td><span class="cell-prob p-low">4~7%</span></td>
+                <td><span class="cell-prob p-medium">10~18%</span></td>
+                <td><span class="cell-prob p-high">20~32%</span></td>
+              </tr>
+              <tr>
+                <td><strong>已出2张的任意牌</strong></td>
+                <td><span class="cell-prob p-safe">2~3%</span></td>
+                <td><span class="cell-prob p-low">5~10%</span></td>
+                <td><span class="cell-prob p-medium">8~15%</span></td>
+              </tr>
+              <tr>
+                <td><strong>跟打（上家刚出的牌）</strong></td>
+                <td><span class="cell-prob p-safe">1~2%</span></td>
+                <td><span class="cell-prob p-safe">2~5%</span></td>
+                <td><span class="cell-prob p-low">3~8%</span></td>
+              </tr>
+              <tr>
+                <td><strong>已出3张的牌</strong></td>
+                <td><span class="cell-prob p-safe">&lt;1%</span></td>
+                <td><span class="cell-prob p-safe">1~3%</span></td>
+                <td><span class="cell-prob p-safe">2~5%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card callout">
+          <h3>💡 如何使用概率表</h3>
+          <ol>
+            <li><strong>先看阶段</strong>：当前是前中后哪个阶段？</li>
+            <li><strong>再看牌面</strong>：你要打的牌是中间张、边张还是字牌？</li>
+            <li><strong>查已出张数</strong>：这张牌场上出了几张？</li>
+            <li><strong>综合判断</strong>：结合以上三点，对照表格评估风险</li>
+            <li><strong>决策</strong>：风险>15%时要谨慎，>25%时建议换牌</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ==================== 实战练习 ==================== -->
+      <section id="tab-practice" class="tab-content">
+        <div class="card">
+          <h2>实战场景练习</h2>
+          <p>在以下场景中，选择你认为最安全的出牌方案。点击选项查看分析。</p>
+        </div>
+
+        <div id="practice-area"></div>
+
+        <div class="card" style="text-align:center; margin-top:2rem;">
+          <button id="next-quiz" class="btn-primary">下一题</button>
+          <div id="score-display" class="score-box">
+            已答 <span id="answered">0</span> 题，正确 <span id="correct">0</span> 题
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>🀄 上海敲麻防炮宝典 · 新手入门教学 · 祝你少点炮，多自摸！</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
