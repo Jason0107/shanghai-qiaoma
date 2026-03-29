@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tabContents.forEach(c => c.classList.remove("active"));
       btn.classList.add("active");
       document.getElementById("tab-" + target).classList.add("active");
+      buildSidebar();
     });
   });
 
@@ -478,4 +479,79 @@ document.addEventListener("DOMContentLoaded", () => {
 
     hoverTable.addEventListener("mouseleave", clearHighlight);
   }
+
+  /* ===================== Sidebar Navigation ===================== */
+  function buildSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const activeTab = document.querySelector('.tab-content.active');
+    if (!sidebar || !activeTab) return;
+
+    const cards = activeTab.querySelectorAll('.card');
+    const headings = [];
+    cards.forEach((card, i) => {
+      const h2 = card.querySelector(':scope > h2');
+      if (h2) {
+        const id = 'nav-' + activeTab.id.replace('tab-', '') + '-' + i;
+        card.id = id;
+        headings.push({ id, text: h2.textContent });
+      }
+    });
+
+    if (headings.length === 0) {
+      sidebar.innerHTML = '';
+      return;
+    }
+
+    let html = '<div class="sidebar-title">本页目录</div><ul class="sidebar-nav">';
+    headings.forEach(h => {
+      html += '<li><a class="sidebar-link" href="#' + h.id + '" data-target="' + h.id + '">' + h.text + '</a></li>';
+    });
+    html += '</ul>';
+    sidebar.innerHTML = html;
+
+    sidebar.querySelectorAll('.sidebar-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.getElementById(link.dataset.target);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    updateScrollSpy();
+  }
+
+  function updateScrollSpy() {
+    const links = document.querySelectorAll('.sidebar-link');
+    if (links.length === 0) return;
+
+    const navBar = document.querySelector('.tab-nav-bar');
+    const offset = navBar ? navBar.offsetHeight + 30 : 80;
+    const scrollPos = window.scrollY + offset;
+
+    let activeLink = null;
+    links.forEach(link => {
+      const target = document.getElementById(link.dataset.target);
+      if (target && target.offsetTop <= scrollPos) {
+        activeLink = link;
+      }
+    });
+
+    links.forEach(l => l.classList.remove('active'));
+    if (activeLink) activeLink.classList.add('active');
+  }
+
+  let scrollTicking = false;
+  window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+      requestAnimationFrame(() => {
+        updateScrollSpy();
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
+  });
+
+  buildSidebar();
 });

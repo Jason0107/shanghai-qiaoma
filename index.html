@@ -12,19 +12,24 @@
       <div class="hero-inner">
         <h1>🀄 上海敲麻 · 新手宝典</h1>
         <p class="subtitle">从做牌到防守的全面攻略 — 会打更会赢</p>
-        <nav class="tab-nav">
-          <button class="tab-btn active" data-tab="basics">基础概念</button>
-          <button class="tab-btn" data-tab="strategy">敲牌与攻防</button>
-          <button class="tab-btn" data-tab="building">做牌攻略</button>
-          <button class="tab-btn" data-tab="efficiency">听牌效率</button>
-          <button class="tab-btn" data-tab="defense">防守出牌</button>
-          <button class="tab-btn" data-tab="probability">概率速查表</button>
-          <button class="tab-btn" data-tab="practice">实战练习</button>
-        </nav>
       </div>
     </header>
 
-    <main class="container">
+    <div class="tab-nav-bar">
+      <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="basics">基础概念</button>
+        <button class="tab-btn" data-tab="strategy">敲牌与攻防</button>
+        <button class="tab-btn" data-tab="building">做牌攻略</button>
+        <button class="tab-btn" data-tab="efficiency">听牌效率</button>
+        <button class="tab-btn" data-tab="defense">防守出牌</button>
+        <button class="tab-btn" data-tab="probability">概率速查表</button>
+        <button class="tab-btn" data-tab="practice">实战练习</button>
+      </nav>
+    </div>
+
+    <div class="layout-wrapper">
+      <aside class="sidebar" id="sidebar"></aside>
+      <main class="container">
 
       <!-- ==================== 基础概念 ==================== -->
       <section id="tab-basics" class="tab-content active">
@@ -1840,12 +1845,13 @@
       </section>
 
     </main>
+    </div>
 
     <footer>
       <p>🀄 上海敲麻新手宝典 · 入门到进阶 · 祝你少点炮，多自摸！</p>
     </footer>
   </div>
 
-  <script src="app.js?v=2"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
