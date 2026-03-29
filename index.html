@@ -213,7 +213,7 @@
       <section id="tab-strategy" class="tab-content">
         <div class="card">
           <h2>牌局三大阶段策略</h2>
-          <p>一局牌大约 <strong>18~20轮</strong>（每人摸打各18次左右），可以分为三个阶段来制定策略：</p>
+          <p>一局牌大约 <strong>18~20轮</strong>（每人摸打各18次左右），可以<strong>粗略</strong>按轮数分为三个阶段。但请注意：轮数只是参考，真正的攻防转换点取决于<strong>场上听牌家数</strong>（详见下方「动态阶段判断」）。</p>
         </div>
 
         <div class="phase-container">
@@ -301,6 +301,95 @@
               <div class="mnemonic">"后半场，保为先；危险牌，死不沾；能黄庄，也是赢"</div>
             </div>
           </div>
+        </div>
+
+        <div class="card callout">
+          <h2>动态阶段判断：不只看轮数！</h2>
+          <p>上面按轮数划分的前中后期只是一个<strong>粗略参考</strong>。实际打牌时，真正决定你该进攻还是防守的核心信号是——</p>
+          <div class="key-insight">
+            <div class="key-insight-icon">🔑</div>
+            <div class="key-insight-text">
+              <strong>场上有多少家疑似听牌？</strong><br>
+              即使是第7轮（按轮数算中期），如果已有两家大量副露、手牌很少，你就应该<strong>立即进入后期防守模式</strong>。<br>
+              反过来，如果到了第14轮但没人碰牌吃牌，大家手牌都比较多，场面可能还是"中期"状态。
+            </div>
+          </div>
+
+          <h3>听牌信号识别</h3>
+          <div class="signal-grid">
+            <div class="signal-item signal-strong">
+              <div class="signal-label">强听牌信号</div>
+              <ul>
+                <li>手牌剩余 ≤6 张（多次碰/杠）</li>
+                <li>突然改变打牌节奏（比如之前慢现在快）</li>
+                <li>开始打出之前一直保留的安全牌</li>
+                <li>摸牌后犹豫再打出（可能在选择打哪张安全牌）</li>
+              </ul>
+            </div>
+            <div class="signal-item signal-moderate">
+              <div class="signal-label">中等听牌信号</div>
+              <ul>
+                <li>碰了1~2副牌，手牌 7~9 张</li>
+                <li>牌河花色分布很集中（某花色极少打出）</li>
+                <li>开始打幺九和字牌（可能在做最后整理）</li>
+              </ul>
+            </div>
+            <div class="signal-item signal-weak">
+              <div class="signal-label">未听牌信号</div>
+              <ul>
+                <li>手牌还有 10+ 张，无副露</li>
+                <li>牌河花色分布均匀</li>
+                <li>仍在打中间张（说明还在整理）</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>听牌家数 × 攻防策略矩阵</h2>
+          <p class="card-desc">根据你<strong>自己的状态</strong>和<strong>场上疑似听牌的家数</strong>，动态选择进攻或防守策略</p>
+
+          <table class="prob-table strategy-matrix">
+            <thead>
+              <tr>
+                <th>你的状态 ＼ 疑似听牌家数</th>
+                <th>0家听牌</th>
+                <th>1家听牌</th>
+                <th>2家听牌</th>
+                <th>3家听牌</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>你已听牌</strong></td>
+                <td><span class="strat-tag strat-attack">全力进攻</span><br><small>无需防守，争取自摸</small></td>
+                <td><span class="strat-tag strat-attack">积极进攻</span><br><small>适当注意那家的花色</small></td>
+                <td><span class="strat-tag strat-balance">攻守平衡</span><br><small>听牌但避打明显危险牌</small></td>
+                <td><span class="strat-tag strat-balance">谨慎进攻</span><br><small>只等自摸，不换听</small></td>
+              </tr>
+              <tr>
+                <td><strong>差1~2张听牌</strong></td>
+                <td><span class="strat-tag strat-attack">积极进攻</span><br><small>加速组牌，争取听牌</small></td>
+                <td><span class="strat-tag strat-balance">攻守兼备</span><br><small>推进但不打极危险牌</small></td>
+                <td><span class="strat-tag strat-defend">偏向防守</span><br><small>除非安全牌能推进，否则防守</small></td>
+                <td><span class="strat-tag strat-defend">放弃进攻</span><br><small>转全防，保不点炮</small></td>
+              </tr>
+              <tr>
+                <td><strong>差3张以上</strong></td>
+                <td><span class="strat-tag strat-balance">正常整理</span><br><small>按前期策略整理手牌</small></td>
+                <td><span class="strat-tag strat-defend">偏向防守</span><br><small>整理时优先保留安全牌</small></td>
+                <td><span class="strat-tag strat-defend">全面防守</span><br><small>放弃胡牌，求平安</small></td>
+                <td><span class="strat-tag strat-full-defend">死守不出</span><br><small>打绝张和跟打，宁可黄庄</small></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="tip-box" style="margin-top: 1rem;">
+            <strong>核心原则：</strong>「听牌家数越多、你离听牌越远 → 越要防守」。不要只盯着轮数，要时刻感知场上的危险气氛。即使你只差一张听牌，如果三家都疑似听了，打出一张生张的放炮概率高达 50% 以上，远不如守住不赔。
+          </div>
+
+          <h4>🃏 口诀</h4>
+          <div class="mnemonic">"听牌多少看碰杠，一家听了心不慌，两家听了要提防，三家听了死守庄"</div>
         </div>
 
         <div class="card">

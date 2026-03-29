@@ -280,6 +280,68 @@ body {
   letter-spacing: .05em;
 }
 
+/* ===== Key Insight Box ===== */
+.key-insight {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: rgba(255,163,77,.08);
+  border: 1.5px solid var(--accent-warm);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+  margin: 1rem 0 1.5rem;
+}
+.key-insight-icon { font-size: 2rem; flex-shrink: 0; line-height: 1; }
+.key-insight-text { font-size: .93rem; line-height: 1.7; }
+.key-insight-text strong { color: var(--accent-warm); }
+
+/* ===== Signal Grid ===== */
+.signal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.signal-item {
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--border);
+}
+.signal-item ul { padding-left: 1.2rem; margin-top: .5rem; }
+.signal-item li { font-size: .88rem; margin-bottom: .3rem; color: var(--text-dim); }
+.signal-label {
+  font-weight: 700;
+  font-size: .9rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: .5rem;
+}
+.signal-strong { background: rgba(231,76,60,.06); }
+.signal-strong .signal-label { color: var(--high); }
+.signal-moderate { background: rgba(243,156,18,.06); }
+.signal-moderate .signal-label { color: var(--medium); }
+.signal-weak { background: rgba(46,204,113,.06); }
+.signal-weak .signal-label { color: var(--safe); }
+
+/* ===== Strategy Matrix ===== */
+.strategy-matrix td, .strategy-matrix th { text-align: center; vertical-align: middle; }
+.strategy-matrix td:first-child { text-align: left; }
+.strategy-matrix th:first-child { text-align: left; }
+.strategy-matrix td small { display: block; color: var(--text-dim); font-size: .78rem; margin-top: .3rem; }
+
+.strat-tag {
+  display: inline-block;
+  padding: .2rem .7rem;
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.strat-attack { background: rgba(46,204,113,.2); color: var(--safe); }
+.strat-balance { background: rgba(243,156,18,.2); color: var(--medium); }
+.strat-defend { background: rgba(231,76,60,.15); color: var(--high); }
+.strat-full-defend { background: rgba(192,57,43,.25); color: var(--critical); }
+
 /* ===== Flowchart ===== */
 .flowchart { display: flex; flex-direction: column; align-items: center; gap: .3rem; padding: 1.5rem 0; }
 .flow-node {
@@ -326,25 +388,27 @@ body {
 .prob-table tbody tr:hover { background: rgba(78,205,196,.04); }
 
 .prob-bar {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 600;
+  font-size: .82rem;
+  white-space: nowrap;
+}
+.prob-bar::before {
+  content: '';
+  display: block;
   height: 8px;
   border-radius: 4px;
   background: var(--primary);
-  width: var(--w);
-  vertical-align: middle;
-  margin-right: .5rem;
+  width: var(--w, 0%);
   min-width: 3px;
 }
-.prob-bar.danger { background: var(--critical); }
-.prob-bar.high { background: var(--high); }
-.prob-bar.medium { background: var(--medium); }
-.prob-bar.low { background: var(--low); }
-.prob-bar.safe { background: var(--safe); }
-
-.prob-bar::after {
-  content: attr(style);
-  display: none;
-}
+.prob-bar.danger::before { background: var(--critical); }
+.prob-bar.high::before { background: var(--high); }
+.prob-bar.medium::before { background: var(--medium); }
+.prob-bar.low::before { background: var(--low); }
+.prob-bar.safe::before { background: var(--safe); }
 
 .score-5 { color: var(--critical); }
 .score-4 { color: var(--high); }
