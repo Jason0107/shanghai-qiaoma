@@ -366,17 +366,13 @@ body {
 .cell-prob.p-high { background: rgba(231,76,60,.15); color: var(--high); }
 .cell-prob.p-critical { background: rgba(192,57,43,.2); color: var(--critical); }
 
-.filter-bar {
-  display: flex; align-items: center; gap: .8rem; margin-top: 1rem;
-}
-.filter-bar select {
-  background: var(--bg-card-alt);
-  color: var(--text);
-  border: 1px solid var(--border);
-  padding: .4rem .8rem;
-  border-radius: 8px;
-  font-size: .9rem;
-}
+.card-hint { color: var(--text-dim); font-size: .85rem; margin-top: .5rem; }
+
+/* Column highlight on hover */
+.prob-table.has-hover col.col-highlight { background: rgba(78,205,196,.06); }
+.prob-table.has-hover tbody tr:hover { background: rgba(78,205,196,.1); }
+.prob-table.has-hover tbody tr:hover td { color: #fff; }
+.prob-table.has-hover th.col-highlight { color: #fff; }
 
 /* ===== Practice / Quiz ===== */
 .quiz-card {

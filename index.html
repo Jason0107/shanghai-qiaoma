@@ -349,15 +349,7 @@
           <h2>危险牌概率速查表</h2>
           <p>以下概率基于数学模型计算，结合上海敲麻的实际场景。实际危险度还需结合牌面信息综合判断。</p>
 
-          <div class="filter-bar">
-            <label>按场景筛选：</label>
-            <select id="scenario-filter">
-              <option value="all">全部场景</option>
-              <option value="early">前期（1~6轮）</option>
-              <option value="mid">中期（7~12轮）</option>
-              <option value="late">后期（13+轮）</option>
-            </select>
-          </div>
+          <p class="card-hint">💡 鼠标悬停在表格的行或列上可高亮查看</p>
         </div>
 
         <div class="card">
@@ -483,7 +475,10 @@
         <div class="card">
           <h3>三、阶段 × 牌型综合放炮概率</h3>
           <p class="card-desc">综合考虑牌局阶段和牌面位置的放炮概率参考值</p>
-          <table class="prob-table" id="combined-table">
+          <table class="prob-table has-hover" id="combined-table">
+            <colgroup>
+              <col><col><col><col>
+            </colgroup>
             <thead>
               <tr>
                 <th>牌面 ＼ 阶段</th>

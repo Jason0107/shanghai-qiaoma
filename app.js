@@ -291,29 +291,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderQuiz();
 
-  /* ===================== Scenario Filter (Probability Tab) ===================== */
-  const scenarioFilter = document.getElementById("scenario-filter");
-  if (scenarioFilter) {
-    scenarioFilter.addEventListener("change", () => {
-      const val = scenarioFilter.value;
-      const table = document.getElementById("combined-table");
-      if (!table) return;
-      const cols = table.querySelectorAll("th");
-      const colMap = { early: 1, mid: 2, late: 3 };
+  /* ===================== Table Column Highlight ===================== */
+  const hoverTable = document.getElementById("combined-table");
+  if (hoverTable) {
+    const cols = hoverTable.querySelectorAll("col");
+    const ths = hoverTable.querySelectorAll("thead th");
 
-      cols.forEach((th, i) => {
-        if (i === 0) return;
-        th.style.opacity = (val === "all" || colMap[val] === i) ? "1" : ".3";
-      });
+    function clearHighlight() {
+      cols.forEach(c => c.classList.remove("col-highlight"));
+      ths.forEach(t => t.classList.remove("col-highlight"));
+    }
 
-      table.querySelectorAll("tbody tr").forEach(row => {
-        const cells = row.querySelectorAll("td");
-        cells.forEach((td, i) => {
-          if (i === 0) return;
-          td.style.opacity = (val === "all" || colMap[val] === i) ? "1" : ".3";
-          td.style.transform = (val !== "all" && colMap[val] === i) ? "scale(1.05)" : "";
-        });
+    hoverTable.querySelectorAll("td, th").forEach(cell => {
+      cell.addEventListener("mouseenter", () => {
+        clearHighlight();
+        const idx = Array.from(cell.parentNode.children).indexOf(cell);
+        if (idx > 0 && cols[idx]) {
+          cols[idx].classList.add("col-highlight");
+          ths[idx].classList.add("col-highlight");
+        }
       });
     });
+
+    hoverTable.addEventListener("mouseleave", clearHighlight);
   }
 });
