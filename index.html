@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>上海敲麻 · 防炮宝典</title>
+  <title>上海敲麻 · 新手宝典</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="app">
     <header class="hero">
       <div class="hero-inner">
-        <h1>🀄 上海敲麻 · 防炮宝典</h1>
-        <p class="subtitle">新手必看的防守攻略 — 从此告别点炮</p>
+        <h1>🀄 上海敲麻 · 新手宝典</h1>
+        <p class="subtitle">从做牌到防守的全面攻略 — 会打更会赢</p>
         <nav class="tab-nav">
           <button class="tab-btn active" data-tab="basics">基础概念</button>
+          <button class="tab-btn" data-tab="building">做牌攻略</button>
+          <button class="tab-btn" data-tab="efficiency">听牌效率</button>
           <button class="tab-btn" data-tab="danger">危险牌分析</button>
           <button class="tab-btn" data-tab="strategy">阶段策略</button>
           <button class="tab-btn" data-tab="probability">概率速查表</button>
@@ -150,6 +152,484 @@
               <h3>杠上开花</h3>
               <p>杠牌后从牌墙补的那张牌正好胡牌。属于运气成分，但杠牌后的补牌仍需注意</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 做牌攻略 ==================== -->
+      <section id="tab-building" class="tab-content">
+        <div class="card">
+          <h2>做牌方向选择</h2>
+          <p>开局拿到手牌后，第一件事就是判断做什么番型。选对方向事半功倍，选错方向越打越乱。</p>
+        </div>
+
+        <div class="card callout">
+          <h2>番型选择决策流程</h2>
+          <p>按以下顺序检查你的起手牌，确定做牌方向：</p>
+          <div class="flowchart">
+            <div class="flow-node start">拿到起手牌，开始判断</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-node decision">某个花色有 7 张以上吗？<br><small>（包括字牌辅助）</small></div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">有 →</span>
+                <div class="flow-node action safe">考虑做清一色或混一色</div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">没有 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node decision">对子/刻子有 4 组以上吗？</div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">有 →</span>
+                <div class="flow-node action safe">考虑做碰碰胡</div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">没有 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node decision">手牌搭子丰富、连接性好吗？</div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">好 →</span>
+                <div class="flow-node action safe">做门清，不吃不碰</div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">一般 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node action medium">做普通胡牌，灵活吃碰推进</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>各番型做牌指南</h2>
+
+          <div class="building-type">
+            <div class="danger-level danger-safe">
+              <div class="danger-header">
+                <span class="danger-badge safe">推荐</span>
+                <span class="danger-title">门清 — 最安全、最灵活的打法</span>
+              </div>
+              <div class="danger-body">
+                <h4>适合条件</h4>
+                <ul>
+                  <li>手牌搭子多、连接性好（顺子搭配丰富）</li>
+                  <li>花色分布均匀，没有明显集中倾向</li>
+                  <li>不急着胡牌，有耐心等自摸</li>
+                </ul>
+                <h4>做牌要点</h4>
+                <ul>
+                  <li><strong>全程不吃不碰</strong>，保持手牌隐蔽性，对手读不到你的牌</li>
+                  <li>前期整理时打掉孤张字牌和幺九，保留中间张搭子</li>
+                  <li>由于不副露，对手很难判断你的方向，敲牌时给他们的防守压力最大</li>
+                </ul>
+                <h4>优缺点</h4>
+                <p>✅ 加番、信息隐蔽、防守灵活（没暴露手牌）<br>❌ 进度慢，完全靠摸牌运气，没有吃碰加速手段</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="building-type">
+            <div class="danger-level danger-low">
+              <div class="danger-header">
+                <span class="danger-badge low">常见</span>
+                <span class="danger-title">混一色 — 一色花 + 字牌，番数与速度兼顾</span>
+              </div>
+              <div class="danger-body">
+                <h4>适合条件</h4>
+                <ul>
+                  <li>某花色有 <strong>5~7 张</strong>，同时有 2~3 组字牌（对子或刻子）</li>
+                  <li>已经有该花色的搭子或刻子</li>
+                </ul>
+                <h4>做牌要点</h4>
+                <ul>
+                  <li>前期把<strong>不需要的其他两个花色</strong>打掉，保留目标花色 + 字牌</li>
+                  <li>可以碰字牌加速（碰发、碰风都行），也可以碰/吃目标花色的牌</li>
+                  <li>注意：你打出的牌会暴露方向！其他两个花色大量打出 → 对手一看就知道你在做什么</li>
+                </ul>
+                <h4>优缺点</h4>
+                <p>✅ 番数较高、可通过碰牌加速、字牌可做翻<br>❌ 方向容易被读牌，敲了之后对手能缩小你的听牌范围</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="building-type">
+            <div class="danger-level danger-medium">
+              <div class="danger-header">
+                <span class="danger-badge medium">高番</span>
+                <span class="danger-title">清一色 — 纯一色花，翻数最高但难度大</span>
+              </div>
+              <div class="danger-body">
+                <h4>适合条件</h4>
+                <ul>
+                  <li>某花色有 <strong>8 张以上</strong>，搭子丰富</li>
+                  <li>该花色的中间张（3~7）手里有多张，连接性强</li>
+                </ul>
+                <h4>做牌要点</h4>
+                <ul>
+                  <li>前期迅速把其他花色和字牌全部打掉</li>
+                  <li>积极碰/吃目标花色的牌，加速组牌</li>
+                  <li>做清一色时要有<strong>心理准备被读牌</strong>：你的牌河和副露会非常明显</li>
+                  <li>好处是：对手知道你做什么，但不知道你<strong>具体听哪张</strong>，同花色里的每张牌对他们都是压力</li>
+                </ul>
+                <h4>优缺点</h4>
+                <p>✅ 翻数最高，一把回本；听牌面可能很宽（同花色多张可胡）<br>❌ 方向完全暴露，对手会全力封锁你的花色；需要花色集中度很高才能做成</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="building-type">
+            <div class="danger-level danger-high">
+              <div class="danger-header">
+                <span class="danger-badge high">特殊</span>
+                <span class="danger-title">碰碰胡 — 全刻子，靠碰牌加速</span>
+              </div>
+              <div class="danger-body">
+                <h4>适合条件</h4>
+                <ul>
+                  <li>起手有 <strong>4 组以上对子</strong>，其中 2~3 组已经是刻子更好</li>
+                  <li>字牌对子多（字牌容易碰到）</li>
+                </ul>
+                <h4>做牌要点</h4>
+                <ul>
+                  <li>把所有<strong>顺子搭子拆掉</strong>（因为碰碰胡不允许顺子），只保留对子/刻子</li>
+                  <li>积极碰牌，每碰一次就距离听牌更近一步</li>
+                  <li>字牌对子优先保留（碰牌机会多），数牌对子看连接性决定去留</li>
+                </ul>
+                <h4>优缺点</h4>
+                <p>✅ 碰牌加速快，不依赖自摸顺序<br>❌ 碰牌多导致副露多，手牌暴露严重；听牌面通常较窄（单骑或对碰）</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>番型优先级参考矩阵</h2>
+          <p class="card-desc">根据起手牌的特征，参考以下优先级来选择做牌方向</p>
+
+          <table class="prob-table">
+            <thead>
+              <tr>
+                <th>起手牌特征</th>
+                <th>推荐番型</th>
+                <th>优先级</th>
+                <th>理由</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>单色 8+ 张，搭子丰富</td>
+                <td><strong>清一色</strong></td>
+                <td><span class="cell-prob p-critical">最高番</span></td>
+                <td>花色高度集中，做成翻数最高</td>
+              </tr>
+              <tr>
+                <td>单色 5~7 张 + 字牌 2~3 组</td>
+                <td><strong>混一色</strong></td>
+                <td><span class="cell-prob p-high">高番</span></td>
+                <td>花色集中且有字牌辅助，平衡番数与难度</td>
+              </tr>
+              <tr>
+                <td>对子 4+ 组，含字牌对子</td>
+                <td><strong>碰碰胡</strong></td>
+                <td><span class="cell-prob p-medium">中番</span></td>
+                <td>对子多适合碰牌加速</td>
+              </tr>
+              <tr>
+                <td>搭子丰富，分布均匀</td>
+                <td><strong>门清</strong></td>
+                <td><span class="cell-prob p-low">稳健</span></td>
+                <td>连接性好靠自摸，信息隐蔽</td>
+              </tr>
+              <tr>
+                <td>啥都不集中，孤张多</td>
+                <td><strong>普通胡</strong></td>
+                <td><span class="cell-prob p-safe">基础</span></td>
+                <td>灵活吃碰组牌，先胡为赢</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h2>中途换方向的信号</h2>
+          <p>做牌方向不是一成不变的。当出现以下情况时，果断转向：</p>
+          <div class="signal-grid">
+            <div class="signal-item signal-strong">
+              <div class="signal-label">必须换方向</div>
+              <ul>
+                <li>做清一色/混一色但关键搭子被别人碰走了</li>
+                <li>做碰碰胡但对子一直摸不到，反而顺子搭子变多</li>
+                <li>做门清但到中期还差3张以上，且有人已敲</li>
+              </ul>
+            </div>
+            <div class="signal-item signal-moderate">
+              <div class="signal-label">可以考虑换</div>
+              <ul>
+                <li>原方向的关键牌场上已出2~3张</li>
+                <li>摸到的牌完全不配合原方向，反而另一个方向自然成型</li>
+                <li>多家已敲，继续做牌风险大于收益</li>
+              </ul>
+            </div>
+            <div class="signal-item signal-weak">
+              <div class="signal-label">不要轻易换</div>
+              <ul>
+                <li>只是暂时摸不到好牌，但搭子结构仍然合理</li>
+                <li>前期还在整理阶段，方向尚未确定</li>
+                <li>没有人敲，进攻窗口仍然开放</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mnemonic">"做牌定方向，中途看牌况；摸牌不配合，果断换跑道"</div>
+        </div>
+      </section>
+
+      <!-- ==================== 听牌效率 ==================== -->
+      <section id="tab-efficiency" class="tab-content">
+        <div class="card">
+          <h2>听牌形状与胡牌概率</h2>
+          <p>同样是听牌，<strong>听什么形状</strong>直接决定你能胡牌的概率。听牌面越宽，每轮胡牌的机会就越大。</p>
+        </div>
+
+        <div class="card">
+          <h3>一、听牌形状概率表</h3>
+          <p class="card-desc">假设听的牌全部没出过（最理想情况），各种听牌形状的最大可胡张数</p>
+          <table class="prob-table">
+            <thead>
+              <tr>
+                <th>听牌形状</th>
+                <th>说明</th>
+                <th>可胡牌种数</th>
+                <th>最大剩余张数</th>
+                <th>胡牌效率</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>两面听（两头听）</strong></td>
+                <td>如 45 听 3 和 6</td>
+                <td>2种</td>
+                <td>最多8张</td>
+                <td><span class="cell-prob p-safe">最高</span></td>
+              </tr>
+              <tr>
+                <td><strong>双碰听（对碰）</strong></td>
+                <td>如 两对 AA BB 听 A 或 B</td>
+                <td>2种</td>
+                <td>最多4张</td>
+                <td><span class="cell-prob p-low">较高</span></td>
+              </tr>
+              <tr>
+                <td><strong>嵌张听（卡张）</strong></td>
+                <td>如 35 听 4</td>
+                <td>1种</td>
+                <td>最多4张</td>
+                <td><span class="cell-prob p-medium">中等</span></td>
+              </tr>
+              <tr>
+                <td><strong>边张听</strong></td>
+                <td>如 12 听 3，或 89 听 7</td>
+                <td>1种</td>
+                <td>最多4张</td>
+                <td><span class="cell-prob p-medium">中等</span></td>
+              </tr>
+              <tr>
+                <td><strong>单骑听（单吊）</strong></td>
+                <td>如 手里一张 A 做将，听 A</td>
+                <td>1种</td>
+                <td>最多3张</td>
+                <td><span class="cell-prob p-high">较低</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tip-box" style="margin-top: 1rem;">
+            <strong>核心结论：</strong>两面听 >> 其他听法。做牌时尽量保留两面搭子（如 45、56、67），拆掉嵌张和边张搭子，让最终听牌时尽可能是两面听。
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>二、实际胡牌概率参考</h3>
+          <p class="card-desc">考虑场上已出牌情况后，各听牌形状在敲了之后的大致每轮胡牌概率</p>
+          <table class="prob-table">
+            <thead>
+              <tr>
+                <th>听牌形状</th>
+                <th>听的牌剩余多</th>
+                <th>听的牌剩余少</th>
+                <th>听的牌近绝张</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>两面听</strong></td>
+                <td><span class="cell-prob p-safe">10~18%/轮</span></td>
+                <td><span class="cell-prob p-low">5~10%/轮</span></td>
+                <td><span class="cell-prob p-medium">2~5%/轮</span></td>
+              </tr>
+              <tr>
+                <td><strong>双碰听</strong></td>
+                <td><span class="cell-prob p-low">5~10%/轮</span></td>
+                <td><span class="cell-prob p-medium">3~6%/轮</span></td>
+                <td><span class="cell-prob p-high">1~3%/轮</span></td>
+              </tr>
+              <tr>
+                <td><strong>嵌张/边张</strong></td>
+                <td><span class="cell-prob p-medium">4~8%/轮</span></td>
+                <td><span class="cell-prob p-high">2~4%/轮</span></td>
+                <td><span class="cell-prob p-critical">≤1%/轮</span></td>
+              </tr>
+              <tr>
+                <td><strong>单骑</strong></td>
+                <td><span class="cell-prob p-medium">3~6%/轮</span></td>
+                <td><span class="cell-prob p-high">1~3%/轮</span></td>
+                <td><span class="cell-prob p-critical">≤1%/轮</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tip-box" style="margin-top: 1rem;">
+            <strong>敲牌决策参考：</strong>两面听且剩余张多 → 果断敲；单骑或嵌张且剩余张少 → 三思而后敲（见「阶段策略」中的敲牌时机）。
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>做牌时的出牌优先级</h2>
+          <p>前中期在向听牌推进时，哪些牌该先打、哪些该留？以下是通用优先级：</p>
+
+          <h3>该先打（优先丢弃）</h3>
+          <table class="prob-table">
+            <thead>
+              <tr>
+                <th>优先级</th>
+                <th>牌型</th>
+                <th>理由</th>
+                <th>示例</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="danger-badge safe">1</span></td>
+                <td>孤张字牌</td>
+                <td>只能碰成刻子，连接性最差</td>
+                <td>手里一张东风，没有第二张</td>
+              </tr>
+              <tr>
+                <td><span class="danger-badge safe">2</span></td>
+                <td>孤张幺九（1、9）</td>
+                <td>只能组一种顺子（123或789），连接性弱</td>
+                <td>一条没有搭配的 2 条</td>
+              </tr>
+              <tr>
+                <td><span class="danger-badge low">3</span></td>
+                <td>孤张边张（2、8）</td>
+                <td>可组两种顺子，但不如中间张</td>
+                <td>二万没有搭配的 1 或 3 万</td>
+              </tr>
+              <tr>
+                <td><span class="danger-badge medium">4</span></td>
+                <td>嵌张搭子</td>
+                <td>如 35 只听一张 4，效率低</td>
+                <td>三筒+五筒（只听四筒）</td>
+              </tr>
+              <tr>
+                <td><span class="danger-badge high">5</span></td>
+                <td>边张搭子</td>
+                <td>如 12 只听 3，效率低</td>
+                <td>一条+二条（只听三条）</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>该留着（优先保留）</h3>
+          <table class="prob-table">
+            <thead>
+              <tr>
+                <th>优先级</th>
+                <th>牌型</th>
+                <th>理由</th>
+                <th>示例</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="danger-badge critical">最高</span></td>
+                <td>两面搭子（连续两张中间张）</td>
+                <td>听两头，效率最高</td>
+                <td>五条+六条（听四条和七条）</td>
+              </tr>
+              <tr>
+                <td><span class="danger-badge high">很高</span></td>
+                <td>对子（尤其是字牌对子）</td>
+                <td>可以碰成刻子，或做将头</td>
+                <td>两张发、两张五万</td>
+              </tr>
+              <tr>
+                <td><span class="danger-badge medium">较高</span></td>
+                <td>连续三张（已成顺子）</td>
+                <td>已组成完整一组，不要拆</td>
+                <td>三四五万</td>
+              </tr>
+              <tr>
+                <td><span class="danger-badge low">中等</span></td>
+                <td>孤张中间张（4/5/6）</td>
+                <td>连接性最强，后续容易摸到搭配</td>
+                <td>一张五筒，周围还没搭配</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card callout">
+          <h2>搭子取舍口诀</h2>
+          <div class="mnemonic">"两面搭子是宝贝，嵌张边张可以废"</div>
+          <div class="mnemonic" style="margin-top:.5rem">"字牌幺九先打出，中间张留等好组"</div>
+          <div class="mnemonic" style="margin-top:.5rem">"对子留着碰或将，三连顺子不要拆"</div>
+        </div>
+
+        <div class="card">
+          <h2>向听数与推进节奏</h2>
+          <p>「向听数」就是你距离听牌还差几步。向听数越小越接近听牌。</p>
+
+          <table class="prob-table">
+            <thead>
+              <tr>
+                <th>向听数</th>
+                <th>含义</th>
+                <th>大约在哪个阶段</th>
+                <th>策略建议</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>3向听以上</strong></td>
+                <td>离听牌还很远</td>
+                <td>应在前期</td>
+                <td>专注整理手牌，打孤张，定方向</td>
+              </tr>
+              <tr>
+                <td><strong>2向听</strong></td>
+                <td>差两步听牌</td>
+                <td>中期正常</td>
+                <td>继续推进，但注意场上有没有人快敲了</td>
+              </tr>
+              <tr>
+                <td><strong>1向听</strong></td>
+                <td>再进一张就听</td>
+                <td>中期偏后</td>
+                <td>尽量安全地推进最后一步；已有人敲则权衡</td>
+              </tr>
+              <tr>
+                <td><strong>听牌（0向听）</strong></td>
+                <td>可以敲了</td>
+                <td>准备敲</td>
+                <td>评估听牌面宽窄和场面，决定是否敲</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="tip-box" style="margin-top: 1rem;">
+            <strong>关键节奏：</strong>正常情况下，第 6~8 轮应该到达 1~2 向听。如果到第 10 轮还在 3 向听以上，且有人已敲，建议放弃进攻转防守。
           </div>
         </div>
       </section>
@@ -795,7 +1275,7 @@
     </main>
 
     <footer>
-      <p>🀄 上海敲麻防炮宝典 · 新手入门教学 · 祝你少点炮，多自摸！</p>
+      <p>🀄 上海敲麻新手宝典 · 入门到进阶 · 祝你少点炮，多自摸！</p>
     </footer>
   </div>
 

@@ -276,6 +276,110 @@ document.addEventListener("DOMContentLoaded", () => {
         "• 四条是敲家敲后<strong>摸切出来的</strong> → 敲后手牌锁定摸啥打啥，他摸到四条打出去了说明四条不是他胡的牌<br>" +
         "• 跟打敲家摸切的牌，对该敲家来说是安全的<br>" +
         "• <strong>核心技巧</strong>：善用敲家摸切的牌作为安全牌来源。敲家打出什么，你跟什么，这是上海敲麻防守的重要手段"
+    },
+    {
+      title: "场景十一：做牌方向选择",
+      scenario:
+        "第2轮（前期），你的起手牌花色分布：<br>" +
+        "• 万子：<span class='tile wan'>二万</span> <span class='tile wan'>三万</span> <span class='tile wan'>五万</span> <span class='tile wan'>六万</span> <span class='tile wan'>七万</span> <span class='tile wan'>八万</span><br>" +
+        "• 条子：<span class='tile tiao'>四条</span> <span class='tile tiao'>九条</span><br>" +
+        "• 筒子：<span class='tile tong'>一筒</span> <span class='tile tong'>六筒</span><br>" +
+        "• 字牌：<span class='tile feng'>东风</span> <span class='tile feng'>发</span> <span class='tile feng'>发</span><br>" +
+        "你该朝什么方向做牌？",
+      options: [
+        "A. 做门清 — 手牌搭子多，不吃不碰",
+        "B. 做混一色 — 万子6张 + 发一对，打掉条子和筒子",
+        "C. 做碰碰胡 — 发是对子可以碰",
+        "D. 随便打，先打字牌"
+      ],
+      correct: 1,
+      explanation:
+        "<strong>正确答案：B. 做万子混一色</strong><br><br>" +
+        "分析：<br>" +
+        "• 万子有 6 张（二三五六七八），搭子非常丰富：23、56、78 都是两面搭子<br>" +
+        "• 发有一对，可以碰成刻子做番<br>" +
+        "• 条子和筒子只有零散的牌，不成体系，应该打掉<br>" +
+        "• 做混一色的路线：打掉条子和筒子 → 保留万子 + 发 → 碰发 → 组成万子混一色<br>" +
+        "• 门清虽然也可以，但混一色番数更高，且6张万子的基础很好<br>" +
+        "• 碰碰胡不合适：只有一对发，其他都是顺子搭子<br>" +
+        "• <strong>做牌规则</strong>：单色 5~7 张 + 字牌对子 → 优先考虑混一色"
+    },
+    {
+      title: "场景十二：搭子取舍",
+      scenario:
+        "第5轮（前期），你的手牌搭子太多需要拆一个。<br>" +
+        "手里的搭子有：<br>" +
+        "A) <span class='tile wan'>一万</span> <span class='tile wan'>二万</span>（边张搭子，听三万）<br>" +
+        "B) <span class='tile tiao'>五条</span> <span class='tile tiao'>六条</span>（两面搭子，听四条和七条）<br>" +
+        "C) <span class='tile tong'>三筒</span> <span class='tile tong'>五筒</span>（嵌张搭子，听四筒）<br>" +
+        "D) <span class='tile wan'>四万</span> <span class='tile wan'>四万</span>（对子）<br>" +
+        "你该拆哪个搭子？",
+      options: [
+        "A. 拆一二万 — 边张搭子效率低",
+        "B. 拆五六条 — 随便拆一个",
+        "C. 拆三五筒 — 嵌张搭子效率低",
+        "D. 拆四万对子 — 对子不重要"
+      ],
+      correct: 2,
+      explanation:
+        "<strong>正确答案：C. 拆三五筒（嵌张搭子）</strong><br><br>" +
+        "分析：<br>" +
+        "• 搭子效率排序：<strong>两面搭子 > 对子 > 边张搭子 ≥ 嵌张搭子</strong><br>" +
+        "• B选项五六条是<strong>两面搭子</strong>，听四条和七条两张牌（最多8张），效率最高，绝不能拆！<br>" +
+        "• D选项四万对子可以碰成刻子或做将头，保留价值较高<br>" +
+        "• A选项一二万是边张，只听三万（最多4张），效率一般<br>" +
+        "• C选项三五筒是嵌张，只听四筒（最多4张），而且嵌张比边张更难摸到（中间张被别人用的概率更大）<br>" +
+        "• A和C都效率低，但嵌张通常比边张更差一点，优先拆嵌张<br>" +
+        "• <strong>口诀</strong>：两面搭子是宝贝，嵌张边张可以废"
+    },
+    {
+      title: "场景十三：听牌形状选择",
+      scenario:
+        "第10轮（中期），你只差一张就听牌了。摸到 <span class='tile tiao'>六条</span>，进张了！<br>" +
+        "现在你可以选择不同的打法形成不同的听牌形状：<br>" +
+        "A) 打 <span class='tile wan'>一万</span> → 听 <span class='tile tiao'>四条</span> 和 <span class='tile tiao'>七条</span>（两面听）<br>" +
+        "B) 打 <span class='tile tong'>五筒</span> → 听 <span class='tile wan'>一万</span>（单骑听）<br>" +
+        "你该怎么选？",
+      options: [
+        "A. 打一万，两面听 — 听两张牌",
+        "B. 打五筒，单骑听 — 一万没出过可能好胡",
+        "C. 无所谓，都是听牌",
+        "D. 先不听，再调整一下"
+      ],
+      correct: 0,
+      explanation:
+        "<strong>正确答案：A. 两面听</strong><br><br>" +
+        "分析：<br>" +
+        "• 两面听可以胡<strong>两种牌</strong>（四条和七条），最多可以胡 8 张牌<br>" +
+        "• 单骑听只能胡<strong>一种牌</strong>（一万），最多可以胡 3 张牌<br>" +
+        "• 两面听的每轮胡牌概率大约是单骑的 <strong>2~3 倍</strong><br>" +
+        "• 虽然一万没出过「看起来」好胡，但没出过只是说明还在牌墙或别人手里，不代表你更容易摸到<br>" +
+        "• 而且敲了之后摸啥打啥，你已经无法操作了——这时候听牌面宽就是最大的优势<br>" +
+        "• <strong>原则</strong>：敲牌时永远优先选择听牌面最宽的形状"
+    },
+    {
+      title: "场景十四：中途是否换方向",
+      scenario:
+        "第8轮（中期）。你一开始打算做条子混一色，已经打掉了一些万子和筒子。<br>" +
+        "但到现在，条子搭子一直摸不到好的，手里条子只有 4 张还不太连贯。<br>" +
+        "反而摸到了好几张筒子，现在筒子有 5 张且搭子不错。<br>" +
+        "场上还没有人敲。你该怎么办？",
+      options: [
+        "A. 坚持做条子混一色 — 已经打了那么多万子筒子了",
+        "B. 转做筒子方向 — 筒子现在更好，果断换",
+        "C. 随便做 — 先听了再说",
+        "D. 放弃进攻转防守"
+      ],
+      correct: 1,
+      explanation:
+        "<strong>正确答案：B. 转做筒子方向</strong><br><br>" +
+        "分析：<br>" +
+        "• 条子只有 4 张且不连贯 → 继续做条子混一色的效率很低，可能到后期都听不了牌<br>" +
+        "• 筒子有 5 张且搭子不错 → 自然成型的方向，摸牌在帮你做筒子<br>" +
+        "• 虽然之前打过一些筒子，但才第 8 轮还有调整空间<br>" +
+        "• 场上没人敲 → 进攻窗口仍然开放，不需要放弃<br>" +
+        "• A选项「沉没成本」心理是最大的陷阱！已经打出去的牌收不回来，不要因为之前的投入而坚持错误方向<br>" +
+        "• <strong>做牌原则</strong>：摸牌不配合原方向，果断换跑道。看手里现在有什么，而不是之前打了什么"
     }
   ];
 
