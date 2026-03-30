@@ -381,8 +381,203 @@ document.addEventListener("DOMContentLoaded", () => {
         "• 场上没人敲 → 进攻窗口仍然开放，不需要放弃<br>" +
         "• A选项「沉没成本」心理是最大的陷阱！已经打出去的牌收不回来，不要因为之前的投入而坚持错误方向<br>" +
         "• <strong>做牌原则</strong>：摸牌不配合原方向，果断换跑道。看手里现在有什么，而不是之前打了什么"
+    },
+    {
+      title: "场景十五：多家敲的安全出牌",
+      scenario:
+        "第14轮。下家已敲（碰了 <span class='tile wan'>二万</span> <span class='tile wan'>八万</span>，牌河全是条子筒子 → 万子清一色）。<br>" +
+        "对面也已敲（碰了 <span class='tile feng'>中</span> <span class='tile tong'>三筒</span>，牌河全是万子条子 → 筒子混一色）。<br>" +
+        "你手里需要出一张：<br>" +
+        "A) <span class='tile wan'>五万</span>（场上 0 张）<br>" +
+        "B) <span class='tile tong'>六筒</span>（场上 0 张）<br>" +
+        "C) <span class='tile tiao'>四条</span>（场上出过 1 张）<br>" +
+        "D) <span class='tile feng'>西风</span>（场上出过 2 张）",
+      options: [
+        "A. 打五万 — 不是对面的花色",
+        "B. 打六筒 — 不是下家的花色",
+        "C. 打四条 — 两家都不做条子",
+        "D. 打西风 — 字牌比较安全"
+      ],
+      correct: 2,
+      explanation:
+        "<strong>正确答案：C. 打四条</strong><br><br>" +
+        "分析：<br>" +
+        "• 下家做万子清一色 → 万子极危险，A 排除<br>" +
+        "• 对面做筒子混一色 → 筒子极危险，B 排除<br>" +
+        "• 对面做混一色可能包含字牌 → D 西风有风险<br>" +
+        "• C 四条：下家不做条子，对面不做条子 → <strong>条子对两家都安全</strong><br>" +
+        "• <strong>多家敲核心</strong>：找两家都不做的花色，这是「双重安全」的唯一选择"
+    },
+    {
+      title: "场景十六：从牌河反推做牌方向",
+      scenario:
+        "第12轮。上家碰了 <span class='tile tiao'>六条</span> 和 <span class='tile feng'>发</span>，刚宣布敲了。<br>" +
+        "他的牌河：<span class='tile wan'>一万</span> <span class='tile wan'>五万</span> <span class='tile wan'>九万</span> <span class='tile tong'>二筒</span> <span class='tile tong'>七筒</span> <span class='tile feng'>北</span> <span class='tile tong'>九筒</span><br>" +
+        "他最可能在做什么？",
+      options: [
+        "A. 条子清一色 — 碰了六条在做条子",
+        "B. 条子混一色 — 碰了条子+发，牌河无条子",
+        "C. 碰碰胡 — 碰了两副所以是碰碰胡",
+        "D. 不好判断"
+      ],
+      correct: 1,
+      explanation:
+        "<strong>正确答案：B. 条子混一色</strong><br><br>" +
+        "分析：<br>" +
+        "• 碰了六条（条子）+ 发（字牌）→ 副露涉及条子和字牌<br>" +
+        "• 牌河大量万子和筒子，<strong>条子一张没打</strong> → 条子是目标花色<br>" +
+        "• 碰了字牌「发」→ 不是清一色（清一色不留字牌），是<strong>混一色</strong><br>" +
+        "• 你的<strong>条子中间张</strong>是极高危牌。万子和筒子他都在甩，相对安全"
+    },
+    {
+      title: "场景十七：宽听 vs 高番",
+      scenario:
+        "第11轮，没人敲。你可以选择两种听法：<br>" +
+        "A) 打 <span class='tile feng'>发</span>（拆发对子）→ 听 <span class='tile tiao'>三条</span> 和 <span class='tile tiao'>六条</span>（两面听，0 番）<br>" +
+        "B) 打 <span class='tile tiao'>八条</span>（拆搭子）→ 听 <span class='tile feng'>发</span>（单骑，门清 1 番 = ×2）<br>" +
+        "三条出了 1 张，六条出了 0 张，发出了 1 张。",
+      options: [
+        "A. 选 A — 两面听面宽，胡牌快",
+        "B. 选 B — 门清加番收入翻倍",
+        "C. 先不听，再调整",
+        "D. 差不多随便选"
+      ],
+      correct: 0,
+      explanation:
+        "<strong>正确答案：A. 选宽听</strong><br><br>" +
+        "分析：<br>" +
+        "• A 听三条+六条：可胡约 7 张，每轮胡牌概率高<br>" +
+        "• B 听发：可胡约 3 张，概率不到 A 的一半<br>" +
+        "• 虽然 B 有门清 1 番（×2），但胡不了就是 0<br>" +
+        "• 敲后手牌锁定无法调整 → 听口宽窄直接决定能否胡<br>" +
+        "• <strong>原则</strong>：除非窄听番数翻 3 倍以上且待牌充足，否则永远选宽听"
+    },
+    {
+      title: "场景十八：计分快算",
+      scenario:
+        "你自摸了！手牌情况：<br>" +
+        "• 番型：混一色（1 番）<br>" +
+        "• 花牌：3 朵花<br>" +
+        "• 明杠 1 个（1 花）<br>" +
+        "• 底花 1 花<br>" +
+        "• 自摸（三家各付一份）<br>" +
+        "问：花数多少？基础分多少？你总共赢多少？",
+      options: [
+        "A. 5 花，基础分 10，赢 30",
+        "B. 5 花，基础分 5，赢 15",
+        "C. 4 花，基础分 8，赢 24",
+        "D. 6 花，基础分 12，赢 36"
+      ],
+      correct: 0,
+      explanation:
+        "<strong>正确答案：A</strong><br><br>" +
+        "计算过程：<br>" +
+        "• 花数 = 花牌 3 + 明杠 1 + 底花 1 = <strong>5 花</strong><br>" +
+        "• 番数 = 混一色 1 番<br>" +
+        "• 基础分 = 花数 × 2^番数 = 5 × 2¹ = <strong>10</strong><br>" +
+        "• 自摸 = 三家各付基础分 → 10 × 3 = <strong>30</strong><br>" +
+        "• 公式：基础分 = 花数 × 2^番数。自摸赢 3 份，点炮赢 1 份"
+    },
+    {
+      title: "场景十九：碰不碰的取舍",
+      scenario:
+        "第6轮（前期）。你在做万子混一色，手里万子 6 张 + <span class='tile feng'>中</span><span class='tile feng'>中</span>（一对）。目前没有副露（门清状态）。<br>" +
+        "有人打了 <span class='tile feng'>中</span>，你碰不碰？<br>" +
+        "碰了失去门清，但中碰成刻子可以加花。",
+      options: [
+        "A. 碰 — 碰了加花加速",
+        "B. 不碰 — 保持门清不暴露方向",
+        "C. 碰 — 字牌有就碰",
+        "D. 看情况"
+      ],
+      correct: 0,
+      explanation:
+        "<strong>正确答案：A. 碰中</strong><br><br>" +
+        "分析：<br>" +
+        "• 碰中 → 中刻子加花（风向碰 1 花），混一色保留字牌刻子价值大<br>" +
+        "• 失去门清 1 番，但混一色已有 1 番，加上碰中的花数优势，总收益更高<br>" +
+        "• 不碰的风险：中只剩 1 张，后面可能没人再打<br>" +
+        "• 前期碰 1 副字牌信息泄露有限<br>" +
+        "• <strong>做混一色时字牌刻子是核心资产</strong>，碰字牌的收益通常大于保持门清"
+    },
+    {
+      title: "场景二十：差一步听牌 vs 防守",
+      scenario:
+        "第13轮。你差 1 张就能听牌（预计两面听）。<br>" +
+        "这轮下家宣布<strong>敲了</strong>（碰了两副条子，做条子清一色）。<br>" +
+        "你手里有 <span class='tile tiao'>五条</span>（条子中间张生张）和 <span class='tile tong'>二筒</span>（出过 2 张）。<br>" +
+        "打五条可以听牌，打二筒则继续等。怎么办？",
+      options: [
+        "A. 打五条听牌 — 我也快胡了不能怂",
+        "B. 打二筒安全牌 — 条子中间张太危险",
+        "C. 打五条问题不大",
+        "D. 都不打，看下轮"
+      ],
+      correct: 1,
+      explanation:
+        "<strong>正确答案：B. 打二筒安全牌</strong><br><br>" +
+        "分析：<br>" +
+        "• 下家做条子清一色已敲 → 五条放炮概率约 <strong>30~50%</strong><br>" +
+        "• 清一色 2 番 = ×4，放炮代价极大<br>" +
+        "• 打二筒只是延迟一轮，下轮可能摸到更好的进张<br>" +
+        "• 你还没敲，下家已在等胡 → 竞争中你处于劣势<br>" +
+        "• <strong>原则</strong>：差 1 张听牌但需打极危险牌时，用安全牌过渡一轮"
+    },
+    {
+      title: "场景二十一：全是危险牌怎么选",
+      scenario:
+        "第16轮。下家做万子已敲，对面做筒子混一色已敲。你手里全是危险牌：<br>" +
+        "A) <span class='tile wan'>三万</span>（万子中间张，0 张出）<br>" +
+        "B) <span class='tile tong'>七筒</span>（筒子中间张，0 张出）<br>" +
+        "C) <span class='tile feng'>白</span>（对面做混一色可能要字牌，1 张出）<br>" +
+        "D) <span class='tile wan'>九万</span>（万子幺九，出了 2 张）",
+      options: [
+        "A. 打三万 — 反正都危险随便打",
+        "B. 打七筒 — 万子比筒子更危险",
+        "C. 打白 — 字牌比数牌安全",
+        "D. 打九万 — 幺九+出了2张，相对最安全"
+      ],
+      correct: 3,
+      explanation:
+        "<strong>正确答案：D. 打九万</strong><br><br>" +
+        "分析：<br>" +
+        "• 全危险时比较「相对危险度」，选最不危险的<br>" +
+        "• A 三万：万子中间张 + 0 张出 → 约 40~50% 放炮<br>" +
+        "• B 七筒：筒子中间张 + 0 张出 → 约 35~45% 放炮<br>" +
+        "• C 白：对面做混一色字牌有风险 → 约 15~25%<br>" +
+        "• D 九万：虽是万子但幺九在清一色中利用率低，且出了 2 张只剩 1 张 → 约 10~20%<br>" +
+        "• <strong>同花色中幺九 < 中间张</strong>。已出张数越多越安全"
+    },
+    {
+      title: "场景二十二：抢杠胡",
+      scenario:
+        "第11轮。你已敲，听 <span class='tile wan'>六万</span>（剩 2 张）。<br>" +
+        "对面有 <span class='tile wan'>六万</span> 明碰（3张），这轮他摸到第 4 张六万要加杠。<br>" +
+        "按上海敲麻规则你可以抢杠胡。该不该胡？",
+      options: [
+        "A. 不胡 — 抢杠不太好",
+        "B. 必须胡 — 抢杠按自摸算，对方一人付三份！",
+        "C. 看番型再决定",
+        "D. 不确定能不能抢杠"
+      ],
+      correct: 1,
+      explanation:
+        "<strong>正确答案：B. 必须胡！</strong><br><br>" +
+        "分析：<br>" +
+        "• 上海敲麻规则：<strong>抢杠胡 = 被抢杠者一人付三份</strong>（等同自摸收入）<br>" +
+        "• 这是最划算的胡法之一：一个人承担全部费用<br>" +
+        "• 你已敲且听六万，对方加杠六万 → 完全符合条件<br>" +
+        "• 抢杠机会极其罕见，没有任何理由放弃<br>" +
+        "• <strong>规则</strong>：抢杠只能在对手「加杠」时胡（把明碰变明杠的动作），不能抢暗杠"
     }
   ];
+
+  const quizDifficulty = [
+    2, 2, 1, 1, 2, 2, 2, 3, 2, 2, 1, 1, 2, 2,
+    3, 3, 3, 2, 3, 3, 3, 2
+  ];
+  const diffLabels = ["\u2b50 入门", "\u2b50\u2b50 进阶", "\u2b50\u2b50\u2b50 高手"];
+  const diffClasses = ["d-easy", "d-medium", "d-hard"];
 
   /* ===================== Quiz Logic ===================== */
   let currentQuiz = 0;
@@ -406,19 +601,23 @@ document.addEventListener("DOMContentLoaded", () => {
           <h2>全部练习完成！</h2>
           <p>你的成绩：${correctCount} / ${answeredCount}</p>
           <p style="color:var(--text-dim);margin-top:1rem;">
-            ${correctCount === answeredCount ? "满分！你已经掌握了防炮精髓！" :
-              correctCount >= answeredCount * 0.7 ? "不错！再多复习几次概率表就更稳了。" :
-              "还需要多练习，建议回顾「阶段策略」和「概率速查表」。"}
+            ${correctCount === answeredCount ? "满分！你已经掌握了从做牌到防守的全面技巧！" :
+              correctCount >= answeredCount * 0.8 ? "很棒！建议再看看读牌技巧和避坑指南。" :
+              correctCount >= answeredCount * 0.6 ? "还不错！多练练高难度题，看看读牌和避坑的内容。" :
+              "还需加油，建议从做牌攻略和防守出牌开始复习。"}
           </p>
         </div>`;
       document.getElementById("next-quiz").style.display = "none";
       return;
     }
 
-    const q = quizzes[shuffled[currentQuiz]];
+    const qIdx = shuffled[currentQuiz];
+    const q = quizzes[qIdx];
+    const diff = quizDifficulty[qIdx] || 2;
+    const diffTag = `<span class="difficulty-tag ${diffClasses[diff-1]}">${diffLabels[diff-1]}</span>`;
     area.innerHTML = `
       <div class="quiz-card">
-        <h3>${q.title}</h3>
+        <h3>${q.title} ${diffTag}</h3>
         <div class="quiz-scenario">${q.scenario}</div>
         <div class="quiz-options">
           ${q.options.map((opt, i) => `<div class="quiz-option" data-index="${i}">${opt}</div>`).join("")}

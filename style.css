@@ -632,6 +632,162 @@ body {
 }
 .score-box span { color: var(--primary); font-weight: 700; }
 
+/* ===== Hand Display (Tile Visualization) ===== */
+.hand-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding: 1rem;
+  background: rgba(0,0,0,0.25);
+  border-radius: 10px;
+  margin: 1rem 0;
+  align-items: flex-end;
+}
+.hand-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #faf3e3 0%, #e8dcc8 100%);
+  color: #333;
+  padding: 0.45rem 0.3rem;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  border: 1px solid #c4b89a;
+  border-bottom: 3px solid #b0a080;
+  min-width: 30px;
+  text-align: center;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  line-height: 1.2;
+}
+.hand-tile.wan { color: #c0392b; }
+.hand-tile.tiao { color: #27ae60; }
+.hand-tile.tong { color: #2980b9; }
+.hand-tile.zi { color: #555; }
+.hand-spacer { width: 10px; }
+.hand-label { width: 100%; font-size: 0.8rem; color: var(--text-dim); margin-top: 0.5rem; }
+
+/* ===== Difficulty Tags ===== */
+.difficulty-tag {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+.difficulty-tag.d-easy { background: rgba(46,204,113,0.15); color: var(--safe); }
+.difficulty-tag.d-medium { background: rgba(243,156,18,0.15); color: var(--medium); }
+.difficulty-tag.d-hard { background: rgba(231,76,60,0.15); color: var(--high); }
+
+/* ===== Reading Steps ===== */
+.reading-step {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(45,63,80,0.5);
+}
+.reading-step:last-child { border-bottom: none; }
+.reading-step-num {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
+}
+.reading-step-content { flex: 1; min-width: 0; font-size: 0.9rem; }
+.reading-step-content strong { color: var(--primary); }
+
+/* ===== River Display (Tile River) ===== */
+.river-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 0.6rem 0.8rem;
+  background: rgba(0,0,0,0.15);
+  border-radius: 6px;
+  margin: 0.5rem 0;
+}
+.river-label { font-size: 0.78rem; color: var(--text-dim); margin-right: 0.5rem; align-self: center; }
+
+/* ===== Mistake Cards ===== */
+.mistake-card {
+  display: flex;
+  gap: 1rem;
+  background: var(--bg-card-alt);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  transition: transform 0.15s;
+}
+.mistake-card:hover { transform: translateX(4px); }
+.mistake-number {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--high);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; font-weight: 800; flex-shrink: 0;
+}
+.mistake-body { flex: 1; min-width: 0; }
+.mistake-title { font-weight: 700; color: var(--text); margin-bottom: 0.4rem; font-size: 1rem; }
+.mistake-wrong {
+  background: rgba(231,76,60,0.08);
+  border-left: 3px solid var(--high);
+  padding: 0.5rem 0.8rem;
+  border-radius: 0 6px 6px 0;
+  margin: 0.5rem 0;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+.mistake-right {
+  background: rgba(46,204,113,0.08);
+  border-left: 3px solid var(--safe);
+  padding: 0.5rem 0.8rem;
+  border-radius: 0 6px 6px 0;
+  margin: 0.5rem 0;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+
+/* ===== Review Checklist ===== */
+.review-step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  background: var(--bg-card-alt);
+  border-radius: var(--radius);
+  margin-bottom: 0.8rem;
+  border: 1px solid var(--border);
+}
+.review-step-num {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; font-weight: 800; flex-shrink: 0;
+}
+.review-step-body { flex: 1; min-width: 0; }
+.review-step-body h4 { color: var(--primary); margin: 0 0 0.3rem; font-size: 1rem; }
+
+.checklist { list-style: none; padding: 0; margin: 0.5rem 0; }
+.checklist li {
+  padding: 0.4rem 0.6rem;
+  margin-bottom: 0.3rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  background: rgba(78,205,196,0.04);
+  border-left: 2px solid var(--border);
+}
+.checklist li::before { content: '□ '; color: var(--primary); font-weight: 700; }
+
 /* ===== Footer ===== */
 footer {
   text-align: center;
@@ -654,6 +810,12 @@ footer {
   .tab-nav-bar { padding: 0.5rem 0.8rem; }
   .tab-btn { padding: .4rem .8rem; font-size: .8rem; }
   .container { padding: 1rem; }
+  .hand-display { padding: 0.6rem; gap: 2px; }
+  .hand-tile { font-size: 0.75rem; padding: 0.35rem 0.2rem; min-width: 26px; }
+  .hand-spacer { width: 6px; }
+  .mistake-card { flex-direction: column; gap: 0.6rem; }
+  .review-step { flex-direction: column; gap: 0.6rem; }
+  .reading-step { flex-direction: column; gap: 0.4rem; }
   .card { padding: 1.2rem; }
   .chart-row { grid-template-columns: 1fr 1fr; gap: .3rem; font-size: .82rem; }
   .prob-table { font-size: .78rem; }

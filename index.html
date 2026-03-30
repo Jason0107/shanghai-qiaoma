@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>上海敲麻 · 新手宝典</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
   <div id="app">
@@ -22,6 +22,8 @@
         <button class="tab-btn" data-tab="building">做牌攻略</button>
         <button class="tab-btn" data-tab="efficiency">听牌效率</button>
         <button class="tab-btn" data-tab="defense">防守出牌</button>
+        <button class="tab-btn" data-tab="reading">读牌技巧</button>
+        <button class="tab-btn" data-tab="mistakes">避坑指南</button>
         <button class="tab-btn" data-tab="probability">概率速查表</button>
         <button class="tab-btn" data-tab="practice">实战练习</button>
       </nav>
@@ -578,6 +580,244 @@
             </div>
           </div>
           <div class="mnemonic">"做牌定方向，中途看牌况；摸牌不配合，果断换跑道"</div>
+        </div>
+
+        <div class="card callout">
+          <h2>实战起手牌分析</h2>
+          <p>理论看再多不如看真实牌面。以下 7 个起手牌场景，手把手教你判断做牌方向和出牌顺序。每手 13 张，从拿到牌的那一刻开始分析。</p>
+        </div>
+
+        <div class="card">
+          <h2>实例 1：标准清一色起手</h2>
+          <div class="hand-display">
+            <span class="hand-tile wan">一万</span>
+            <span class="hand-tile wan">三万</span>
+            <span class="hand-tile wan">四万</span>
+            <span class="hand-tile wan">五万</span>
+            <span class="hand-tile wan">六万</span>
+            <span class="hand-tile wan">七万</span>
+            <span class="hand-tile wan">八万</span>
+            <span class="hand-tile wan">九万</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile tiao">三条</span>
+            <span class="hand-tile tiao">七条</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile tong">六筒</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile zi">东</span>
+            <span class="hand-tile zi">发</span>
+          </div>
+          <p><strong>花色分布：</strong>万子 8 张 · 条子 2 张 · 筒子 1 张 · 字牌 2 张</p>
+          <h4>🎯 方向：清一色万子（2番 = ×4）</h4>
+          <p>万子 8 张搭子极丰富（345、678 两面搭，89 边搭，1 万可组 123）。只需打掉 5 张非万子牌。</p>
+          <h4>📋 出牌顺序</h4>
+          <ol>
+            <li>打 <span class="tile feng">东</span> → <span class="tile feng">发</span>（字牌先走）</li>
+            <li>打 <span class="tile tong">六筒</span>（孤张筒子）</li>
+            <li>打 <span class="tile tiao">三条</span> → <span class="tile tiao">七条</span>（清条子）</li>
+          </ol>
+          <div class="tip-box">
+            <strong>提醒：</strong>清一色方向暴露明显，但对手知道你做万子却不知道你听哪张，同花色每张牌都给他们压力。如果中途关键搭子被碰走，可降级为混一色（保留字牌对子）。
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>实例 2：典型混一色起手</h2>
+          <div class="hand-display">
+            <span class="hand-tile tiao">二条</span>
+            <span class="hand-tile tiao">三条</span>
+            <span class="hand-tile tiao">五条</span>
+            <span class="hand-tile tiao">六条</span>
+            <span class="hand-tile tiao">七条</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile zi">发</span>
+            <span class="hand-tile zi">发</span>
+            <span class="hand-tile zi">中</span>
+            <span class="hand-tile zi">中</span>
+            <span class="hand-tile zi">北</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile wan">四万</span>
+            <span class="hand-tile wan">八万</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile tong">二筒</span>
+          </div>
+          <p><strong>花色分布：</strong>条子 5 张 · 字牌 5 张（发×2、中×2、北）· 万子 2 张 · 筒子 1 张</p>
+          <h4>🎯 方向：条子混一色（1番 = ×2）</h4>
+          <p>条子 5 张有好搭子（23 两面、567 成顺），字牌两对（发、中可碰）。只需打 3 张杂牌。碰了发和中后还可能变<strong>混碰（2番）</strong>！</p>
+          <h4>📋 出牌顺序</h4>
+          <ol>
+            <li>打 <span class="tile wan">四万</span> → <span class="tile wan">八万</span>（非目标花色）</li>
+            <li>打 <span class="tile tong">二筒</span>（清筒子）</li>
+            <li>之后看碰牌机会，有人打发或中赶紧碰</li>
+          </ol>
+          <div class="tip-box">
+            <strong>进阶：</strong>北是孤张字牌——如果碰了发和中后空间紧张可以打北；手牌宽裕就留着当后期防守的安全储备。字牌对子是混一色的核心资产。
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>实例 3：碰碰胡起手</h2>
+          <div class="hand-display">
+            <span class="hand-tile wan">三万</span>
+            <span class="hand-tile wan">三万</span>
+            <span class="hand-tile wan">七万</span>
+            <span class="hand-tile wan">七万</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile tiao">五条</span>
+            <span class="hand-tile tiao">五条</span>
+            <span class="hand-tile tiao">五条</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile tong">一筒</span>
+            <span class="hand-tile tong">一筒</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile zi">西</span>
+            <span class="hand-tile zi">西</span>
+            <span class="hand-tile zi">发</span>
+            <span class="hand-tile zi">发</span>
+          </div>
+          <p><strong>特征：</strong>五条已成刻子，另有 4 组对子（三万、七万、一筒、西、发）</p>
+          <h4>🎯 方向：碰碰胡（1番 = ×2）</h4>
+          <p>全是对子/刻子没有顺子搭子，天然碰碰胡。目标：把对子碰成刻子，留一对做将。</p>
+          <h4>📋 做牌策略</h4>
+          <ul>
+            <li><strong>积极碰牌</strong>：西、发、三万、七万、一筒有人打都碰！字牌碰了还加花</li>
+            <li><strong>绝对不吃</strong>：碰碰胡不允许顺子</li>
+            <li><strong>将头</strong>：最终留碰不到的那对做将</li>
+          </ul>
+          <div class="tip-box">
+            <strong>缺点：</strong>碰牌多 → 副露多 → 对手一眼看出碰碰胡，会控制不给你碰。如果碰了 2 副后剩余对子碰不到，可以降级为普通胡。
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>实例 4：门清好牌</h2>
+          <div class="hand-display">
+            <span class="hand-tile wan">三万</span>
+            <span class="hand-tile wan">四万</span>
+            <span class="hand-tile wan">八万</span>
+            <span class="hand-tile wan">九万</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile tiao">二条</span>
+            <span class="hand-tile tiao">三条</span>
+            <span class="hand-tile tiao">六条</span>
+            <span class="hand-tile tiao">七条</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile tong">四筒</span>
+            <span class="hand-tile tong">五筒</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile zi">南</span>
+            <span class="hand-tile zi">北</span>
+            <span class="hand-tile zi">白</span>
+          </div>
+          <p><strong>特征：</strong>5 组两面搭子（34万、89万、23条、67条、45筒），花色均匀</p>
+          <h4>🎯 方向：门清（1番 = ×2）</h4>
+          <p>搭子丰富且连接性极好，但花色分散做不了清/混一色。全程不吃不碰，靠自摸组牌。</p>
+          <h4>📋 出牌顺序</h4>
+          <ol>
+            <li>打 <span class="tile feng">南</span> → <span class="tile feng">北</span> → <span class="tile feng">白</span>（清字牌）</li>
+            <li>之后手里全是好搭子，看摸牌进张确定听牌形状</li>
+          </ol>
+          <div class="tip-box">
+            <strong>门清最大优势：</strong>对手完全读不到你的牌（零副露）。敲牌时防守压力给满。门清 + 自摸 = 1番 × 3 倍，收益可观。
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>实例 5：烂牌怎么打</h2>
+          <div class="hand-display">
+            <span class="hand-tile wan">一万</span>
+            <span class="hand-tile wan">六万</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile tiao">四条</span>
+            <span class="hand-tile tiao">八条</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile tong">二筒</span>
+            <span class="hand-tile tong">五筒</span>
+            <span class="hand-tile tong">九筒</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile zi">东</span>
+            <span class="hand-tile zi">南</span>
+            <span class="hand-tile zi">西</span>
+            <span class="hand-tile zi">中</span>
+            <span class="hand-tile zi">发</span>
+            <span class="hand-tile zi">白</span>
+          </div>
+          <p><strong>特征：</strong>6 张孤张字牌！数牌全是散的，没有任何搭子</p>
+          <h4>🎯 方向：普通胡（0番），不贪</h4>
+          <p>做什么番型都不现实。目标：<strong>快速整理、灵活应对、先胡为赢。</strong></p>
+          <h4>📋 出牌顺序</h4>
+          <ol>
+            <li>第 1~6 轮：<strong>把 6 张字牌全部打出</strong></li>
+            <li>之后根据摸到的牌决定方向——摸到哪个花色多就朝哪个花色发展</li>
+          </ol>
+          <div class="tip-box danger">
+            <strong>烂牌心态：</strong>别贪番！0番也是赢。更重要的是<strong>不点炮</strong>。前期清字牌安全，但中后期有人敲了，散的数牌可能变成危险牌。烂牌打成不输就是赢。
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>实例 6：中途换方向</h2>
+          <p>起手选的方向到中途行不通了，该换就换：</p>
+          <h4>起手牌（计划做条子混一色）</h4>
+          <div class="hand-display">
+            <span class="hand-tile tiao">二条</span>
+            <span class="hand-tile tiao">四条</span>
+            <span class="hand-tile tiao">五条</span>
+            <span class="hand-tile tiao">六条</span>
+            <span class="hand-tile tiao">八条</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile zi">发</span>
+            <span class="hand-tile zi">发</span>
+            <span class="hand-tile zi">北</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile wan">三万</span>
+            <span class="hand-tile wan">七万</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile tong">一筒</span>
+            <span class="hand-tile tong">六筒</span>
+            <span class="hand-tile tong">九筒</span>
+          </div>
+          <p>条子 5 张 + 发对子 → 初始计划做条子混一色。</p>
+          <h4>到第 6 轮情况变了：</h4>
+          <ul>
+            <li>已打出：三万、七万、一筒、九筒</li>
+            <li>摸到了 <span class="tile tong">三筒</span> <span class="tile tong">四筒</span> <span class="tile tong">五筒</span></li>
+            <li>条子搭子还是断断续续（2·4·5·6·8），一直不来好牌</li>
+          </ul>
+          <p>现在<strong>筒子</strong>反而有 3·4·5·6 连续搭子，结构更好！</p>
+          <h4>✅ 正确决策：转做筒子方向</h4>
+          <div class="tip-box danger">
+            <strong>最大的坑 — 沉没成本！</strong>「已经打了那么多筒子了，现在换不是白费了吗？」这是初级玩家最常犯的思维错误。已经打出去的牌收不回来，看<strong>手里现在有什么</strong>，不看之前打了什么。
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>实例 7：混一色 vs 清一色？</h2>
+          <div class="hand-display">
+            <span class="hand-tile tong">二筒</span>
+            <span class="hand-tile tong">三筒</span>
+            <span class="hand-tile tong">五筒</span>
+            <span class="hand-tile tong">六筒</span>
+            <span class="hand-tile tong">七筒</span>
+            <span class="hand-tile tong">八筒</span>
+            <span class="hand-tile tong">九筒</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile zi">中</span>
+            <span class="hand-tile zi">中</span>
+            <span class="hand-tile zi">中</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile wan">四万</span>
+            <span class="hand-tile wan">五万</span>
+            <span class="hand-tile wan">六万</span>
+          </div>
+          <p><strong>花色分布：</strong>筒子 7 张 · 中×3（已成刻子！）· 万子 3 张（456 顺子）</p>
+          <h4>🤔 常见错误：贪心做清一色</h4>
+          <p>筒子 7 张看似可冲清一色（2番），但需打掉中×3 + 万子×3 共 6 张牌，手里只剩 7 张筒子再凑 6 张才能听牌，效率极低。</p>
+          <h4>✅ 正确做法：做混一色</h4>
+          <p>只打万子 3 张，保留筒子 7 张 + 中刻子 = 10 张有效牌。效率高得多！中的刻子还加花。</p>
+          <div class="tip-box">
+            <strong>决策原则：</strong>有现成字牌刻子时，混一色效率往往远高于清一色。除非某花色已有 9~10 张，否则「混一色 + 快速听牌」通常优于「清一色 + 漫长等待」。
+          </div>
         </div>
       </section>
 
@@ -1618,6 +1858,440 @@
         </div>
       </section>
 
+      <!-- ==================== 读牌技巧 ==================== -->
+      <section id="tab-reading" class="tab-content">
+        <div class="card callout">
+          <h2>读牌：从「瞎猜」到「有据可依」</h2>
+          <p>上海敲麻最大的特点：<strong>谁敲了是公开信息</strong>。但光知道谁敲了还不够，你需要读懂他在做什么、可能听什么。读牌不是天赋，是可以训练的系统技能。核心目标：<strong>用可见信息压缩对手的听口范围</strong>，从而判断该攻还是该守。</p>
+        </div>
+
+        <div class="card">
+          <h2>四步读牌法</h2>
+          <p>把读牌拆成固定流程，避免凭感觉乱猜。四步走完再下结论：</p>
+          <div class="reading-step">
+            <div class="reading-step-num">1</div>
+            <div class="reading-step-content">
+              <strong>看副露：碰了什么？吃了什么？</strong>
+              <p>副露是最直接的信息。碰了两副同花色 → 大概率清一色/混一色。碰了字牌 + 某花色 → 混一色/混碰。碰了多副不同花色 → 碰碰胡。吃牌多 → 顺子型速听。</p>
+            </div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">2</div>
+            <div class="reading-step-content">
+              <strong>看牌河缺色：什么花色从来没打过？</strong>
+              <p>如果某家一直在打条子和筒子，但<strong>万子一张没打</strong> → 他在收集万子！敲家敲后的摸切（摸到打出的牌）是重要的安全线索。</p>
+            </div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">3</div>
+            <div class="reading-step-content">
+              <strong>数关键牌：场上出了几张？</strong>
+              <p>确定了做牌花色后，看这个花色的关键牌在场上出了多少。已出多的牌他不太可能在等。重点关注场上<strong>没出现过的中间张</strong>——这些最危险。</p>
+            </div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">4</div>
+            <div class="reading-step-content">
+              <strong>推听口范围：最可能等哪些牌？</strong>
+              <p>结合以上信息缩小范围。结论写成「范围」而不是单张：两面/嵌张/边张/双碰/多门。给每张待出的牌评级：<strong>极危险 / 危险 / 中等 / 安全</strong>。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>副露信号速查表</h2>
+          <p>看到对手的副露组合，快速推断做牌方向：</p>
+          <table class="prob-table">
+            <thead>
+              <tr>
+                <th>副露情况</th>
+                <th>最可能的番型</th>
+                <th>你的危险牌</th>
+                <th>危险等级</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>碰了 2~3 副<strong>同花色</strong></td>
+                <td>清一色 / 混一色</td>
+                <td>该花色所有牌，尤其中间张</td>
+                <td><span class="danger-badge critical">极高</span></td>
+              </tr>
+              <tr>
+                <td>碰字牌 + 碰某花色</td>
+                <td>混一色 / 混碰</td>
+                <td>该花色 + 未出的字牌</td>
+                <td><span class="danger-badge high">高</span></td>
+              </tr>
+              <tr>
+                <td>碰了 2~3 副<strong>不同花色</strong></td>
+                <td>碰碰胡</td>
+                <td>对手未打过的对子相关牌</td>
+                <td><span class="danger-badge medium">中</span></td>
+              </tr>
+              <tr>
+                <td>吃了 2~3 副同花色</td>
+                <td>清一色（顺子型）</td>
+                <td>该花色所有牌</td>
+                <td><span class="danger-badge high">高</span></td>
+              </tr>
+              <tr>
+                <td>副露 3~4 组，手牌仅剩 1~4 张</td>
+                <td>可能大吊车</td>
+                <td>范围广但手牌少 = 听口窄</td>
+                <td><span class="danger-badge medium">中</span></td>
+              </tr>
+              <tr>
+                <td><strong>没有副露</strong>（门清）</td>
+                <td>门清 / 无法判断</td>
+                <td>只能靠牌河推断</td>
+                <td><span class="danger-badge low">信息少</span></td>
+              </tr>
+              <tr>
+                <td>已敲 + 连续摸切</td>
+                <td>听牌已锁定</td>
+                <td>跟打摸切牌相对安全</td>
+                <td><span class="danger-badge safe">跟切安全</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h2>案例 1：对手做清一色万子</h2>
+          <h4>对手信息（第 8 轮）</h4>
+          <p><strong>副露：</strong>碰了 <span class="tile wan">三万</span>、碰了 <span class="tile wan">七万</span></p>
+          <div class="river-display">
+            <span class="river-label">牌河：</span>
+            <span class="tile feng">东</span>
+            <span class="tile feng">北</span>
+            <span class="tile tiao">一条</span>
+            <span class="tile tiao">九条</span>
+            <span class="tile tong">二筒</span>
+            <span class="tile tong">八筒</span>
+            <span class="tile feng">白</span>
+            <span class="tile tiao">四条</span>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">1</div>
+            <div class="reading-step-content"><strong>看副露</strong>：碰了两副万子（三万、七万）→ 万子方向确定</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">2</div>
+            <div class="reading-step-content"><strong>看缺色</strong>：牌河里条子、筒子、字牌都打了，但<strong>万子一张没打</strong> → 100% 在收集万子</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">3</div>
+            <div class="reading-step-content"><strong>数关键牌</strong>：万子碰了三万和七万各 3 张。牌河没有字牌混入 → 大概率<strong>清一色</strong>（不是混一色）</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">4</div>
+            <div class="reading-step-content"><strong>推听口</strong>：手里万子搭子可能在 1/2/4/5/6/8/9 中组合。<strong>四万、五万、六万</strong>（中间张）最危险，二万、八万次之</div>
+          </div>
+          <div class="tip-box danger">
+            <strong>结论：</strong>几乎确定做清一色万子（2番 = ×4）。如果已敲，你手里<strong>任何万子</strong>都是高危牌。四五六万放炮概率 35~50%！
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>案例 2：对手做混碰</h2>
+          <h4>对手信息（第 9 轮）</h4>
+          <p><strong>副露：</strong>碰了 <span class="tile feng">发</span>、碰了 <span class="tile tong">五筒</span></p>
+          <div class="river-display">
+            <span class="river-label">牌河：</span>
+            <span class="tile wan">二万</span>
+            <span class="tile wan">六万</span>
+            <span class="tile tiao">三条</span>
+            <span class="tile tiao">七条</span>
+            <span class="tile wan">九万</span>
+            <span class="tile tiao">一条</span>
+            <span class="tile tiao">五条</span>
+            <span class="tile wan">四万</span>
+            <span class="tile tiao">八条</span>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">1</div>
+            <div class="reading-step-content"><strong>看副露</strong>：碰了发（字牌）+ 五筒（筒子），两个刻子 → 碰碰胡方向</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">2</div>
+            <div class="reading-step-content"><strong>看缺色</strong>：大量万子（4张）和条子（5张）被打出，<strong>筒子和字牌一张没打</strong> → 筒子 + 字牌 = 混一色方向</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">3</div>
+            <div class="reading-step-content"><strong>综合判断</strong>：碰字牌 + 碰筒子 = 碰碰胡特征。筒子 + 字牌 = 混一色。叠加 → <strong>混碰（2番 = ×4）</strong>！</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">4</div>
+            <div class="reading-step-content"><strong>推听口</strong>：等筒子某个对子碰成刻子，或字牌某张。<strong>未出过的筒子</strong>和<strong>未出过的字牌</strong>最危险</div>
+          </div>
+          <div class="tip-box danger">
+            <strong>结论：</strong>混碰 2番 = ×4！点炮代价极大。筒子和字牌都是高危。注意：碰碰胡只需对子/刻子，<strong>筒子幺九（一筒、九筒）也很危险</strong>。
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>案例 3：门清对手刚敲了</h2>
+          <h4>对手信息（第 10 轮）</h4>
+          <p><strong>副露：</strong>无（完全门清）。<strong>刚宣布敲！</strong></p>
+          <div class="river-display">
+            <span class="river-label">牌河：</span>
+            <span class="tile feng">东</span>
+            <span class="tile feng">南</span>
+            <span class="tile feng">白</span>
+            <span class="tile tiao">一条</span>
+            <span class="tile wan">九万</span>
+            <span class="tile tong">一筒</span>
+            <span class="tile tiao">九条</span>
+            <span class="tile wan">一万</span>
+            <span class="tile tong">九筒</span>
+            <span class="tile feng">西</span>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">1</div>
+            <div class="reading-step-content"><strong>看副露</strong>：没有副露 → 门清。信息最少的情况。</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">2</div>
+            <div class="reading-step-content"><strong>看牌河</strong>：大量字牌 + 大量幺九（三色的 1 和 9 都打了）→ 不像清/混一色（做清/混一色会保留目标花色的幺九）</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">3</div>
+            <div class="reading-step-content"><strong>推断</strong>：门清 + 三色幺九都打 → 手里留的是三色<strong>中间张搭子</strong>，可能多组两面搭子。听牌面可能很宽。</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">4</div>
+            <div class="reading-step-content"><strong>防守策略</strong>：打他已打过的牌（字牌、幺九），避开三色中间张。<strong>敲后摸切的牌是安全线索</strong>。</div>
+          </div>
+          <div class="tip-box">
+            <strong>门清是最难读的牌型：</strong>(1) 跟打他打过的牌；(2) 跟打他敲后摸切的牌；(3) 打绝张；(4) 避开所有花色的生张中间张。承认「读不准」，用防守赔率对抗。
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>案例 4：两家方向不同</h2>
+          <h4>场上情况（第 11 轮）</h4>
+          <p><strong>下家：</strong>碰了 <span class="tile wan">二万</span>、碰了 <span class="tile wan">八万</span>，牌河全是条子和筒子。<strong>已敲。</strong></p>
+          <p><strong>对面：</strong>碰了 <span class="tile feng">中</span>、碰了 <span class="tile tong">三筒</span>，牌河大量万子和条子。<strong>快敲了。</strong></p>
+          <h4>分析</h4>
+          <ul>
+            <li><strong>下家</strong>：万子两副碰 + 牌河无万子 → <strong>万子清一色</strong>。已敲。万子高危。</li>
+            <li><strong>对面</strong>：碰中 + 碰筒子，牌河无筒子字牌 → <strong>筒子混一色</strong>或混碰。筒子和字牌高危。</li>
+          </ul>
+          <h4>💀 你的安全出牌范围</h4>
+          <table class="prob-table">
+            <thead>
+              <tr><th>花色</th><th>对下家</th><th>对对面</th><th>综合</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>万子</strong></td>
+                <td><span class="danger-badge critical">极危险</span></td>
+                <td><span class="danger-badge safe">安全</span></td>
+                <td><span class="danger-badge critical">不能打</span></td>
+              </tr>
+              <tr>
+                <td><strong>筒子</strong></td>
+                <td><span class="danger-badge safe">安全</span></td>
+                <td><span class="danger-badge critical">极危险</span></td>
+                <td><span class="danger-badge critical">不能打</span></td>
+              </tr>
+              <tr>
+                <td><strong>条子</strong></td>
+                <td><span class="danger-badge safe">安全</span></td>
+                <td><span class="danger-badge safe">安全</span></td>
+                <td><span class="danger-badge safe">✅ 最安全</span></td>
+              </tr>
+              <tr>
+                <td><strong>字牌</strong></td>
+                <td><span class="danger-badge safe">安全</span></td>
+                <td><span class="danger-badge high">危险</span></td>
+                <td><span class="danger-badge medium">谨慎</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tip-box">
+            <strong>多人读牌核心：</strong>找<strong>对所有敲家都安全</strong>的花色。两家做的花色不同时，第三种花色就是避风港。多家敲时，<strong>绝张</strong>是唯一对所有敲家都安全的牌。
+          </div>
+        </div>
+
+        <div class="card callout">
+          <h2>读牌口诀</h2>
+          <div class="mnemonic">"副露看方向，牌河看缺色；关键牌要数，听口靠排除"</div>
+          <div class="mnemonic" style="margin-top:.5rem">"碰了啥就做啥，没打啥就要啥；敲后打的是废牌，跟着打就最安全"</div>
+        </div>
+      </section>
+
+      <!-- ==================== 避坑指南 ==================== -->
+      <section id="tab-mistakes" class="tab-content">
+        <div class="card callout">
+          <h2>初级玩家十大常见错误</h2>
+          <p>这些错误几乎每个新手都会犯。认识到自己在犯哪些错，是进步最快的方式。对照自己的对局习惯，重点看「错误做法 → 正确做法」。</p>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">1</div>
+          <div class="mistake-body">
+            <div class="mistake-title">前期不清字牌幺九</div>
+            <p>开局觉得字牌、幺九「说不定有用」一直扣着。到中盘牌墙变薄，被迫在危险期打出，容易点炮。</p>
+            <div class="mistake-wrong">❌ 错误做法：字牌幺九全留，想着「以后再说」，结果后期集中处理全变危险牌</div>
+            <div class="mistake-right">✅ 正确做法：开局就确认做牌方向，不需要的字牌幺九前 3~4 轮尽早出掉，这时出牌最安全</div>
+          </div>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">2</div>
+          <div class="mistake-body">
+            <div class="mistake-title">有人敲了还在猛攻</div>
+            <p>敲是公开信息——你明确知道对方已具备胡牌资格。此时继续猛打生张 = 送分。</p>
+            <div class="mistake-wrong">❌ 错误做法：无视敲家，继续冲大牌或随手打生张</div>
+            <div class="mistake-right">✅ 正确做法：有人敲后默认进入防守模式。优先打已出现过的牌（现物）、敲家摸切的牌、绝张。非必要不出生张</div>
+          </div>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">3</div>
+          <div class="mistake-body">
+            <div class="mistake-title">盲目碰牌暴露方向</div>
+            <p>见碰就碰，副露越多对手越容易推断你的方向，你也失去门清番的可能。</p>
+            <div class="mistake-wrong">❌ 错误做法：为了「快一点」乱碰，把自己做成明牌打法</div>
+            <div class="mistake-right">✅ 正确做法：碰之前想三个问题：(1) 碰完进张效率是否变好？(2) 值得放弃门清番吗？(3) 暴露方向后对手会不会卡我？</div>
+          </div>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">4</div>
+          <div class="mistake-body">
+            <div class="mistake-title">做牌方向不明确</div>
+            <p>又想门清又想混一色又想碰碰胡，什么都不舍得拆，手牌越来越散。</p>
+            <div class="mistake-wrong">❌ 错误做法：同时保留多条互斥路线，舍不得拆搭子</div>
+            <div class="mistake-right">✅ 正确做法：起手分析花色分布，前 3 轮内确定 1~2 条主路线（参考做牌攻略的实例分析），该断则断</div>
+          </div>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">5</div>
+          <div class="mistake-body">
+            <div class="mistake-title">敲得太早（听口窄）</div>
+            <p>敲后锁定摸啥打啥，听口太窄时可能十几轮都胡不了，还让对手知道你敲了开始防守。</p>
+            <div class="mistake-wrong">❌ 错误做法：刚听牌、只听 1~2 张就急着敲</div>
+            <div class="mistake-right">✅ 正确做法：评估待牌张数——如果待牌 4 张以上再敲，或听口虽窄但待牌是生张也可以敲。核心是权衡「锁定的代价」和「能胡的概率」</div>
+          </div>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">6</div>
+          <div class="mistake-body">
+            <div class="mistake-title">该敲不敲错失良机</div>
+            <p><strong>不敲 = 永远不能胡</strong>。该敲的时候犹豫，摸进能胡的牌也只能打出去，白白浪费自摸×3 的收益。</p>
+            <div class="mistake-wrong">❌ 错误做法：听牌了还想「再改一改听口」，结果摸到能胡的牌也不能胡</div>
+            <div class="mistake-right">✅ 正确做法：听牌且听口合理时及时敲。如果明确要改听就先不敲，但要有时间窗意识——别拖到牌墙末期</div>
+          </div>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">7</div>
+          <div class="mistake-body">
+            <div class="mistake-title">沉没成本不换方向</div>
+            <p>「都走到这了不能白费」—— 这是初级玩家最常见的思维陷阱。</p>
+            <div class="mistake-wrong">❌ 错误做法：已经碰了几组或走了很久某方向，明知进张枯竭仍硬撑</div>
+            <div class="mistake-right">✅ 正确做法：定期自问「这条线还剩几张有效进张？」如果答案很差就果断降级为速听小番甚至转守。已打出的牌收不回来，只看手里现在有什么</div>
+          </div>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">8</div>
+          <div class="mistake-body">
+            <div class="mistake-title">忽略副露信号</div>
+            <p>对手的碰吃杠都是公开信息，不看 = 闭着眼打牌。</p>
+            <div class="mistake-wrong">❌ 错误做法：只看自己手牌，不看各家副露和牌河</div>
+            <div class="mistake-right">✅ 正确做法：把副露当「公开情报」——对方做的是清一色、混碰还是速听？据此调整扣牌和出牌顺序（参考读牌技巧 Tab）</div>
+          </div>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">9</div>
+          <div class="mistake-body">
+            <div class="mistake-title">不数关键牌</div>
+            <p>某张牌出了几张、是否已绝，直接决定这张牌安全还是高危。不数就只能凭感觉。</p>
+            <div class="mistake-wrong">❌ 错误做法：不记得关键牌出了几张，把生张当安全牌打</div>
+            <div class="mistake-right">✅ 正确做法：养成扫视牌河习惯。重点跟踪：(1) 敲家做的花色出了几张；(2) 字牌各出了几张；(3) 自己听口相关的牌还剩几张</div>
+          </div>
+        </div>
+
+        <div class="mistake-card">
+          <div class="mistake-number">10</div>
+          <div class="mistake-body">
+            <div class="mistake-title">安全牌管理差</div>
+            <p>前期把安全牌一口气打光，后期无牌可垫，有人敲了发现手里全是危险牌。</p>
+            <div class="mistake-wrong">❌ 错误做法：有安全牌就顺手打掉，不留「应急库存」</div>
+            <div class="mistake-right">✅ 正确做法：按局况留存安全牌。敲家越多越要计划性使用安全资源。必要时接受少番换安全——少赢好过放炮</div>
+          </div>
+        </div>
+
+        <div class="card callout">
+          <h2>避坑总结</h2>
+          <div class="mnemonic">"先想能不能敲、该不该敲，再谈番型；有人敲了先保命，牌河副露比手感可靠"</div>
+        </div>
+
+        <div class="card">
+          <h2>每局复盘五步法</h2>
+          <p>每局结束后花 3~5 分钟走一遍，比多打三局盲目摸索更有效：</p>
+        </div>
+
+        <div class="review-step">
+          <div class="review-step-num">1</div>
+          <div class="review-step-body">
+            <h4>还原关键节点</h4>
+            <p>三句话记录：本局主路线（如混一色/门清）、第一次重大取舍在第几轮、最终听型与是否敲了。</p>
+          </div>
+        </div>
+
+        <div class="review-step">
+          <div class="review-step-num">2</div>
+          <div class="review-step-body">
+            <h4>定位最大一手</h4>
+            <p>只抓「盈亏最大」的一次决策：是某张生张放炮了？该敲没敲？还是该转守仍在进攻？避免泛泛而谈「我牌不好」。</p>
+          </div>
+        </div>
+
+        <div class="review-step">
+          <div class="review-step-num">3</div>
+          <div class="review-step-body">
+            <h4>对照计分复盘</h4>
+            <p>回忆本局的花数和番数，用<strong>花数 × 2^番数</strong>算一下输赢的实际金额。自摸是 ×3，放炮是 ×1。有时候一次放炮的代价 = 三次普通胡牌的收入。</p>
+          </div>
+        </div>
+
+        <div class="review-step">
+          <div class="review-step-num">4</div>
+          <div class="review-step-body">
+            <h4>写出替代方案</h4>
+            <p>针对最大一手，写「当时如果……会更合理」。每条替代必须可执行（如「有人敲后改打现物」），不写空话。</p>
+          </div>
+        </div>
+
+        <div class="review-step">
+          <div class="review-step-num">5</div>
+          <div class="review-step-body">
+            <h4>设定下一局唯一重点</h4>
+            <p>从复盘只带走<strong>一个</strong>改进目标（如「听口少于 3 张不敲」或「有人敲后先找现物」），下一局专注执行。一次改一个习惯。</p>
+          </div>
+        </div>
+
+        <div class="card callout">
+          <h2>自查清单</h2>
+          <p>打完一局勾一遍。连续三局同一项勾不上 → 优先练那一项：</p>
+          <ul class="checklist">
+            <li><strong>做牌</strong>：我是否在前 6 轮内明确了主路线，并果断拆掉弱搭？</li>
+            <li><strong>防守</strong>：有人敲后，我是否降低进攻强度，优先找安全出牌？</li>
+            <li><strong>敲牌</strong>：听牌时我是否评估了待牌张数——该敲就敲、不该敲不强敲？</li>
+            <li><strong>读牌</strong>：我是否通过副露和牌河推断过至少一家的做牌方向？</li>
+            <li><strong>安全</strong>：我是否为后期预留了安全牌，避免无牌可垫？</li>
+          </ul>
+        </div>
+      </section>
+
       <!-- ==================== 概率速查表 ==================== -->
       <section id="tab-probability" class="tab-content">
         <div class="card">
@@ -1831,7 +2505,7 @@
       <section id="tab-practice" class="tab-content">
         <div class="card">
           <h2>实战场景练习</h2>
-          <p>在以下场景中，选择你认为最安全的出牌方案。点击选项查看分析。</p>
+          <p>共 22 道题，涵盖防守、读牌、做牌、敲牌时机、计分等多个维度。每题标有难度（⭐入门 / ⭐⭐进阶 / ⭐⭐⭐高手）。随机出题，选择你认为最佳的方案，点击选项查看详细分析。</p>
         </div>
 
         <div id="practice-area"></div>
@@ -1852,6 +2526,6 @@
     </footer>
   </div>
 
-  <script src="app.js?v=3"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>
