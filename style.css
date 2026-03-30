@@ -761,16 +761,16 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0;
-  padding: 2px 1px;
-  margin: 0 1px;
+  padding: 3px 2px;
+  margin: 0 2px;
   vertical-align: middle;
 }
 .tile[data-t] img {
-  height: 1.5em;
+  height: 28px;
   width: auto;
 }
 .tile[data-t] img + img {
-  margin-left: -1px;
+  margin-left: 0;
 }
 
 /* ===== Difficulty Tags ===== */
@@ -966,7 +966,7 @@ footer {
   .hand-tile { font-size: 0.78rem; width: 28px; min-height: 40px; padding: 3px 1px; letter-spacing: 1px; }
   .hand-tile[data-t] { width: 30px; padding: 3px 2px; }
   .hand-tile[data-t] img { height: 36px; width: 24px; }
-  .tile[data-t] img { height: 1.3em; }
+  .tile[data-t] img { height: 22px; }
   .hand-spacer { width: 6px; }
   .mistake-card { flex-direction: column; gap: 0.6rem; }
   .review-step { flex-direction: column; gap: 0.6rem; }
