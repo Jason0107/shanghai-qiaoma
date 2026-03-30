@@ -239,7 +239,19 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "场景十一：做牌方向选择",
       difficulty: 1,
       scenario:
-        "第2轮，你手牌：万子6张(23/5678)、条子2张(4/9)、筒子2张(1/6)、风牌3张(东/东/北)。做什么方向？",
+        "第2轮，你手牌：" +
+        "<div class='hand-display' style='margin:.8rem 0'>" +
+        "<span class='hand-tile wan'>二万</span><span class='hand-tile wan'>三万</span>" +
+        "<div class='hand-spacer'></div>" +
+        "<span class='hand-tile wan'>五万</span><span class='hand-tile wan'>六万</span><span class='hand-tile wan'>七万</span><span class='hand-tile wan'>八万</span>" +
+        "<div class='hand-spacer'></div>" +
+        "<span class='hand-tile tiao'>四条</span><span class='hand-tile tiao'>九条</span>" +
+        "<div class='hand-spacer'></div>" +
+        "<span class='hand-tile tong'>一筒</span><span class='hand-tile tong'>六筒</span>" +
+        "<div class='hand-spacer'></div>" +
+        "<span class='hand-tile zi'>东</span><span class='hand-tile zi'>东</span><span class='hand-tile zi'>北</span>" +
+        "</div>" +
+        "做什么方向？",
       options: ["A. 做门清", "B. 做混一色", "C. 做碰碰胡", "D. 随便打"],
       correct: 1,
       explanation:
@@ -265,7 +277,9 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "场景十三：听牌形状选择",
       difficulty: 2,
       scenario:
-        "第10轮，你可以选：<br>A) 打一万 → 听四条和七条（两面听）<br>B) 打五筒 → 听一万（单骑）",
+        "第10轮，你可以选：<br>" +
+        "A) 打<span class='tile wan'>一万</span> → 听<span class='tile tiao'>四条</span>和<span class='tile tiao'>七条</span>（两面听）<br>" +
+        "B) 打<span class='tile tong'>五筒</span> → 听<span class='tile wan'>一万</span>（单骑）",
       options: ["A. 两面听", "B. 单骑听", "C. 无所谓", "D. 先不听"],
       correct: 0,
       explanation:
@@ -319,7 +333,10 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "场景十七：宽听 vs 高番",
       difficulty: 3,
       scenario:
-        "第11轮没人敲。两种听法：<br>A) 拆北对 → 听三条/六条（两面，0番）<br>B) 拆搭子 → 听北（单骑，门清1番=×2）<br>三条出1张，六条0张，北出1张。",
+        "第11轮没人敲。两种听法：<br>" +
+        "A) 拆<span class='tile feng'>北</span>对 → 听<span class='tile tiao'>三条</span>/<span class='tile tiao'>六条</span>（两面，0番）<br>" +
+        "B) 拆搭子 → 听<span class='tile feng'>北</span>（单骑，门清1番=×2）<br>" +
+        "<span class='tile tiao'>三条</span>出1张，<span class='tile tiao'>六条</span>0张，<span class='tile feng'>北</span>出1张。",
       options: ["A. 选宽听", "B. 选高番", "C. 先不听", "D. 随便选"],
       correct: 0,
       explanation:
