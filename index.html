@@ -3,209 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>上海敲麻 · 新手宝典</title>
-  <link rel="stylesheet" href="style.css?v=2">
+  <title>上海敲麻 · 全阶宝典</title>
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <div id="app">
     <header class="hero">
-      <div class="hero-inner">
-        <h1>🀄 上海敲麻 · 新手宝典</h1>
-        <p class="subtitle">从做牌到防守的全面攻略 — 会打更会赢</p>
-      </div>
+      <h1>🀄 上海敲麻 · 全阶宝典</h1>
+      <p class="subtitle">从入门到大师的完整进阶指南</p>
     </header>
 
-    <div class="tab-nav-bar">
-      <nav class="tab-nav">
-        <button class="tab-btn active" data-tab="basics">基础概念</button>
-        <button class="tab-btn" data-tab="strategy">敲牌与攻防</button>
-        <button class="tab-btn" data-tab="building">做牌攻略</button>
-        <button class="tab-btn" data-tab="efficiency">听牌效率</button>
-        <button class="tab-btn" data-tab="defense">防守出牌</button>
-        <button class="tab-btn" data-tab="reading">读牌技巧</button>
-        <button class="tab-btn" data-tab="mistakes">避坑指南</button>
-        <button class="tab-btn" data-tab="probability">概率速查表</button>
-        <button class="tab-btn" data-tab="practice">实战练习</button>
-      </nav>
-    </div>
-
-    <div class="layout-wrapper">
-      <aside class="sidebar" id="sidebar"></aside>
-      <main class="container">
-
-      <!-- ==================== 基础概念 ==================== -->
-      <section id="tab-basics" class="tab-content active">
+    <nav class="tier-nav">
+      <button type="button" class="tier-btn active" data-tier="beginner">入门篇</button>
+      <button type="button" class="tier-btn" data-tier="intermediate">进阶篇</button>
+      <button type="button" class="tier-btn" data-tier="master">大师篇</button>
+    </nav>
+    <div id="tier-beginner" class="tier-content active">
+      <div class="tab-nav-bar">
+        <nav class="tab-nav">
+          <button type="button" class="tab-btn active" data-tab="b-tiles">牌面组成</button>
+          <button type="button" class="tab-btn" data-tab="b-winning">胡牌条件</button>
+          <button type="button" class="tab-btn" data-tab="b-actions">吃碰杠</button>
+          <button type="button" class="tab-btn" data-tab="b-flow">一局流程</button>
+          <button type="button" class="tab-btn" data-tab="b-rules">敲牌规则</button>
+          <button type="button" class="tab-btn" data-tab="b-scoring">番型计分</button>
+          <button type="button" class="tab-btn" data-tab="b-discard">基础出牌</button>
+          <button type="button" class="tab-btn" data-tab="b-quiz">入门测验</button>
+        </nav>
+      </div>
+      <div class="layout-wrapper">
+        <aside class="sidebar"></aside>
+        <main class="container">
+      <section id="tab-b-tiles" class="tab-content active">
         <div class="card">
-          <h2>什么是「点炮」？</h2>
-          <p>点炮（放炮）指你打出的牌正好是别人胡牌所需的那张牌，导致你需要<strong>全额支付</strong>该玩家的胡牌分数。在上海敲麻中，点炮的代价尤其大，因为：</p>
-          <ul>
-            <li><strong>单人赔付</strong>：放炮者独自承担全部赔付，不像自摸是三家均摊</li>
-            <li><strong>翻数叠加</strong>：上海敲麻的翻数计算可以非常高，一次点炮可能输掉整场的筹码</li>
-            <li><strong>心态影响</strong>：连续点炮容易打乱节奏，陷入恶性循环</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2>什么是「敲」？—— 上海敲麻的核心规则</h2>
-          <p>「敲」是上海敲麻最独特的规则，也是它名字的由来：</p>
-          <ul>
-            <li><strong>必须敲了才能胡</strong>：当你的手牌达到听牌状态时，必须在自己的轮次宣布「敲」（相当于宣告听牌），之后才有资格胡牌</li>
-            <li><strong>敲不亮牌</strong>：敲的时候只宣布"我听了"，<strong>不需要</strong>告诉其他人你具体听什么牌</li>
-            <li><strong>敲后锁定</strong>：敲了之后手牌锁定，每轮只能"摸啥打啥"（摸到胡的牌就胡，否则原牌打出）</li>
-            <li><strong>敲后可杠</strong>：敲了之后如果摸到的牌可以杠且不改变听牌牌型，允许杠</li>
-            <li><strong>没敲不能胡</strong>：即使摸到了能胡的牌，没有敲过就<strong>绝对不能胡</strong>，必须继续打牌</li>
-          </ul>
-          <div class="tip-box">
-            <strong>这意味着什么？</strong>谁听牌了是<strong>公开信息</strong>！一旦有人宣布敲了，所有人都知道他在等牌。虽然不知道他具体听什么，但你可以通过观察他的副露和牌河来推断。这就是上海敲麻防守的核心——<strong>读懂敲家的听牌范围</strong>。
+          <h2>一副牌的组成</h2>
+          <p>上海敲麻使用标准<strong>144 张</strong>麻将牌，<strong>没有百搭牌（财神）</strong>。</p>
+          <table class="prob-table">
+            <thead><tr><th>类别</th><th>内容</th><th>张数</th><th>小计</th></tr></thead>
+            <tbody>
+              <tr><td rowspan="3">数牌</td><td>万子 <span class="tile wan">一万</span>～<span class="tile wan">九万</span>，每种4张</td><td>9×4</td><td>36</td></tr>
+              <tr><td>条子 <span class="tile tiao">一条</span>～<span class="tile tiao">九条</span>，每种4张</td><td>9×4</td><td>36</td></tr>
+              <tr><td>筒子 <span class="tile tong">一筒</span>～<span class="tile tong">九筒</span>，每种4张</td><td>9×4</td><td>36</td></tr>
+              <tr><td colspan="3"><strong>数牌合计</strong></td><td><strong>108</strong></td></tr>
+              <tr><td rowspan="2">字牌</td><td>风牌 <span class="tile feng">东</span><span class="tile feng">南</span><span class="tile feng">西</span><span class="tile feng">北</span>，各4张</td><td>4×4</td><td>16</td></tr>
+              <tr><td>箭牌 <span class="tile feng">中</span><span class="tile feng">发</span><span class="tile feng">白</span>，各4张</td><td>3×4</td><td>12</td></tr>
+              <tr><td colspan="3"><strong>字牌合计</strong></td><td><strong>28</strong></td></tr>
+              <tr><td>花牌</td><td>春夏秋冬梅兰竹菊，各1张</td><td>8×1</td><td>8</td></tr>
+              <tr><td colspan="3"><strong>总计</strong></td><td><strong>144</strong></td></tr>
+            </tbody>
+          </table>
+          <div class="feature-grid">
+            <div class="feature-item"><div class="feature-icon">🔢</div><h3>数牌</h3><p>万、条、筒三种花色。可组<strong>顺子</strong>（如<span class="tile wan">四万</span><span class="tile wan">五万</span><span class="tile wan">六万</span>），也可组刻子、杠子。</p></div>
+            <div class="feature-item"><div class="feature-icon">字</div><h3>字牌</h3><p>风牌与箭牌。<strong>不能组顺子</strong>，只能做对子、刻子或杠子。</p></div>
           </div>
         </div>
-
+      </section>
+      <section id="tab-b-winning" class="tab-content">
         <div class="card">
-          <h2>上海敲麻的核心特点</h2>
+          <h2>胡牌的基本条件</h2>
+          <p>标准胡牌型：<strong>4组面子 + 1对将头 = 14张</strong></p>
+          <ul>
+            <li><strong>顺子</strong>：三张同花色连续数牌，如 <span class="tile tiao">二条</span><span class="tile tiao">三条</span><span class="tile tiao">四条</span></li>
+            <li><strong>刻子</strong>：三张完全相同的牌</li>
+            <li><strong>杠子</strong>：四张相同（算一组面子）</li>
+            <li><strong>将头</strong>：一对相同的牌（2张）</li>
+          </ul>
+          <h3>胡牌示例</h3>
+          <div class="hand-display">
+            <span class="hand-tile wan">二万</span><span class="hand-tile wan">三万</span><span class="hand-tile wan">四万</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile tiao">六条</span><span class="hand-tile tiao">七条</span><span class="hand-tile tiao">八条</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile tong">三筒</span><span class="hand-tile tong">四筒</span><span class="hand-tile tong">五筒</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile zi">南</span><span class="hand-tile zi">南</span><span class="hand-tile zi">南</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile zi">中</span><span class="hand-tile zi">中</span>
+          </div>
+          <p>3组顺子 + 1组刻子 + 1对将头 = 胡牌！</p>
+          <div class="tip-box danger"><strong>上海敲麻特别提醒：</strong>听牌后必须宣布<strong>「敲」</strong>才能胡牌。没敲过即使摸到能胡的牌也不能胡！</div>
+        </div>
+      </section>
+      <section id="tab-b-actions" class="tab-content">
+        <div class="card">
+          <h2>吃碰杠操作说明</h2>
+          <p>上海敲麻的吃碰杠与大众麻将一致。</p>
+          <h3>吃</h3>
+          <p>只能用<strong>上家</strong>打出的牌组成顺子。如：上家打 <span class="tile wan">五万</span>，你有<span class="tile wan">四万</span><span class="tile wan">六万</span>，可吃。</p>
+          <h3>碰</h3>
+          <p><strong>任一家</strong>打出的牌，你有两张相同即可碰成刻子。</p>
+          <h3>杠</h3>
+          <ul>
+            <li><strong>明杠</strong>：别人打出，你有三张相同</li>
+            <li><strong>暗杠</strong>：自己摸齐四张相同</li>
+            <li><strong>加杠</strong>：已碰的刻子，摸到第四张</li>
+          </ul>
+          <p>杠后从牌墙补一张牌。</p>
+          <table class="prob-table">
+            <thead><tr><th>操作</th><th>条件</th><th>注意</th></tr></thead>
+            <tbody>
+              <tr><td>吃</td><td>仅上家；组成数牌顺子</td><td>字牌不能吃；副露暴露方向</td></tr>
+              <tr><td>碰</td><td>任一家；手中有两张同牌</td><td>碰优先于吃</td></tr>
+              <tr><td>杠</td><td>明杠/暗杠/加杠</td><td>杠后补牌；敲后能杠需不改变听牌</td></tr>
+            </tbody>
+          </table>
+          <div class="tip-box">吃碰杠亮出的牌叫<strong>副露</strong>，是公开信息，会暴露你的做牌方向。</div>
+        </div>
+      </section>
+      <section id="tab-b-flow" class="tab-content">
+        <div class="card">
+          <h2>一局完整流程</h2>
+          <div class="timeline">
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>摸牌配牌</h3><p>每人起手<strong>13张</strong>，庄家多摸一张先打。</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>看花补花</h3><p>摸到花牌（春夏秋冬梅兰竹菊）<strong>亮出并补张</strong>。</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>整理手牌</h3><p>判断做什么方向（混一色？碰碰胡？门清？），计划出牌顺序。</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>出牌</h3><p>先打字牌、幺九等用处不大的牌，保留好搭子。</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>吃碰杠</h3><p>有机会就吃碰杠加速，但注意副露会暴露方向。</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>向听牌推进</h3><p>不断调整搭子，接近听牌状态。</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>宣布「敲」</h3><p>听牌后在自己回合宣布<strong>敲</strong>（只说听了不亮牌）。</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>摸啥打啥</h3><p>敲后手牌锁定，摸到胡牌就胡，否则打出摸到的牌。</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>胡牌或流局</h3><p>自摸、点炮或抢杠胡牌；牌墙摸完无人胡则流局。</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>算分</h3><p>基础分 = 花数 × 2^番数。点炮付1份，自摸三家各付1份。</p></div></div>
+          </div>
+          <div class="tip-box">看完这个流程就可以上桌了！记住核心：<strong>先敲后胡</strong>。</div>
+        </div>
+      </section>
+      <section id="tab-b-rules" class="tab-content">
+        <div class="card">
+          <h2>什么是「敲」？</h2>
+          <p>「敲」是上海敲麻的名字由来，也是和大众麻将最大的区别之一：</p>
+          <ul>
+            <li><strong>必须敲了才能胡</strong>：听牌后须在自己回合宣布「敲」，之后才有资格胡牌。</li>
+            <li><strong>敲不亮牌</strong>：只表示「我听了」，不必告诉别人听哪几张。</li>
+            <li><strong>敲后锁定</strong>：敲后只能「摸啥打啥」——摸到能胡就胡，否则打出摸到的那张。</li>
+            <li><strong>敲是公开信息</strong>：所有人都知道谁敲了，可据此防守；但具体听口仍隐藏。</li>
+          </ul>
+          <div class="tip-box"><strong>代价：</strong>敲后失去主动调整手牌与防守的能力，因此「该不该敲」是进阶核心课题。</div>
+        </div>
+        <div class="card">
+          <h2>上海敲麻核心特点</h2>
           <div class="feature-grid">
             <div class="feature-item">
               <div class="feature-icon">🔔</div>
               <h3>敲牌机制</h3>
-              <p>听牌后必须「敲」（公开宣布听牌）才能胡牌，敲后手牌锁定。谁听牌是公开信息，防守有据可依</p>
+              <p>先敲后胡；敲后锁定摸切；谁敲了全场皆知，防守有据可依。</p>
             </div>
             <div class="feature-item">
               <div class="feature-icon">💰</div>
               <h3>翻数计算</h3>
-              <p>花数 × 2^番数（自摸×3）。清碰3番=8倍、清一色2番=4倍，点炮代价极大</p>
+              <p>基础分 = 花数 × 2^番数；自摸时三家各付，总收入为单家点炮的 3 倍量级。</p>
             </div>
             <div class="feature-item">
               <div class="feature-icon">🔄</div>
               <h3>吃碰杠</h3>
-              <p>吃、碰、杠规则和大众麻将一致。副露越多暴露越多信息，读牌就靠这些线索</p>
+              <p>与大众麻将一致；副露越多，对手越容易读出你的方向。</p>
             </div>
             <div class="feature-item">
               <div class="feature-icon">🛡️</div>
               <h3>防守优先</h3>
-              <p>在上海敲麻中，有人敲了你就知道危险来了。会守比会攻更重要，减少点炮是提高胜率的第一步</p>
+              <p>有人敲 = 明确威胁。会守、少点炮，比一味贪番更能稳定战绩。</p>
             </div>
           </div>
         </div>
-
+      </section>
+      <section id="tab-b-scoring" class="tab-content">
         <div class="card">
-          <h2>读牌的基本思路</h2>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>留意谁敲了</h3>
-                <p>有人敲了就意味着危险开始。敲是公开的，一旦有人宣布敲，你要立即提高警惕，开始判断他可能听什么</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>观察牌河</h3>
-                <p>牌河是最重要的信息来源。特别是敲家在敲之前打了什么牌——他打过的花色和牌往往是他不需要的，反过来推断他在做什么</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>注意吃碰杠</h3>
-                <p>副露（吃/碰/杠）会暴露花色倾向。如果某家碰了两副万子然后敲了，他极可能做万子清一色或混一色</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>数关键牌</h3>
-                <p>关注已经出现的牌数量。4张都出完的牌是绝对安全的，3张已出的牌相对安全</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>推断听牌范围</h3>
-                <p>结合敲家的副露和牌河，推断他可能听哪些牌。虽然他不亮听什么，但线索足够你缩小危险范围</p>
-              </div>
-            </div>
+          <h2>番型一览（入门速记）</h2>
+          <div class="feature-grid">
+            <div class="feature-item"><div class="feature-icon">🟢</div><h3>门清 · 1番</h3><p>不吃不碰不明杠。</p></div>
+            <div class="feature-item"><div class="feature-icon">🔵</div><h3>混一色 · 1番</h3><p>一种数牌花色 + 字牌。</p></div>
+            <div class="feature-item"><div class="feature-icon">🟡</div><h3>碰碰胡 · 1番</h3><p>面子全是刻/杠。</p></div>
+            <div class="feature-item"><div class="feature-icon">🟠</div><h3>大吊车 · 1番</h3><p>四组副露，手剩单骑。</p></div>
+            <div class="feature-item"><div class="feature-icon">⭐</div><h3>杠上开花 · 1番</h3><p>杠后补张即胡。</p></div>
+            <div class="feature-item"><div class="feature-icon">🔴</div><h3>清一色 · 2番</h3><p>仅一种数牌花色，无字。</p></div>
+            <div class="feature-item"><div class="feature-icon">🟣</div><h3>混碰 · 2番</h3><p>混一色 + 碰碰胡。</p></div>
+            <div class="feature-item"><div class="feature-icon">💎</div><h3>清碰 · 3番</h3><p>清一色 + 碰碰胡。</p></div>
           </div>
+          <p style="margin-top:1rem;"><strong>特殊计收：</strong>自摸与抢杠均为「一家付三份」量级；<strong>风一色</strong>、<strong>天胡</strong>、<strong>八花齐</strong>按封顶处理。</p>
         </div>
         <div class="card">
-          <h2>上海敲麻番型总览</h2>
-          <p>番型决定你胡牌的价值。番数越高，赢的分越多、点炮的人赔得越惨。总分 = 花数 × 2^番数（自摸再×3）。</p>
-
-          <h3>基础番型（各+1番）</h3>
-          <div class="feature-grid">
-            <div class="feature-item">
-              <div class="feature-icon">🟢</div>
-              <h3>门清 · 1番</h3>
-              <p>全程不吃不碰不明杠，全靠自己摸牌组成胡牌。没有副露，对手很难读你的牌</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">🔵</div>
-              <h3>混一色 · 1番</h3>
-              <p>手牌只包含一种花色（万/条/筒）加上字牌。副露中花色集中是重要的识别信号</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">🟡</div>
-              <h3>碰碰胡 · 1番</h3>
-              <p>全部由刻子（三张相同）或杠子组成，没有顺子。看到对手多次碰牌要警惕</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">🟠</div>
-              <h3>大吊车 · 1番</h3>
-              <p>其余牌全部副露（吃/碰/杠共4组），手里只剩一张牌单骑等胡。手牌极少时要特别小心</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">⭐</div>
-              <h3>杠上开花 · 1番</h3>
-              <p>杠牌后从牌墙补的那张牌正好胡牌。属于运气成分，但杠牌后的补牌仍需注意</p>
-            </div>
-          </div>
-
-          <h3>高番番型（2~3番）</h3>
-          <div class="feature-grid">
-            <div class="feature-item">
-              <div class="feature-icon">🔴</div>
-              <h3>清一色 · 2番</h3>
-              <p>手牌全部是同一种花色，不含字牌。翻数高，一旦点炮代价极大</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">🟣</div>
-              <h3>混碰 · 2番</h3>
-              <p>混一色 + 碰碰胡的复合番型。一色花 + 字牌，全是刻子/杠子没有顺子，很难做成但翻数可观</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">💎</div>
-              <h3>清碰 · 3番</h3>
-              <p>清一色 + 碰碰胡的复合番型。纯一色花全是刻子，上海敲麻中翻数最高的常规番型（3番=8倍！）</p>
-            </div>
-          </div>
-
-          <h3>特殊胡牌方式</h3>
-          <div class="feature-grid">
-            <div class="feature-item">
-              <div class="feature-icon">🎯</div>
-              <h3>自摸 · ×3</h3>
-              <p>自己从牌墙摸到胡牌（而非吃别人打出的牌）。总分乘以3倍，三家均摊赔付</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">⚡</div>
-              <h3>抢杠 · ×3</h3>
-              <p>别人碰牌后摸到第4张要加杠时，这张牌正好是你胡的牌，可以抢杠胡。总分×3，杠的人全赔</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">🌸</div>
-              <h3>无花果 · 10花</h3>
-              <p>胡牌时手上一朵花牌都没有。直接按10花计底分，比有几朵花还值钱</p>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon">🌀</div>
-              <h3>风一色 · 封顶</h3>
-              <p>手牌全部是字牌（东南西北中发白），极其稀有。直接算封顶分</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>番数计分速查表</h2>
-          <p class="card-desc">番数决定倍数，花数决定底分。总分 = 花数 × 2^番数 × 倍数</p>
+          <h2>计分速查表</h2>
+          <p class="card-desc">番数决定倍数，花数决定底分。点炮：赢家收 1 份基础分；自摸：三家各付 1 份。</p>
           <table class="prob-table">
             <thead>
               <tr>
@@ -249,10 +227,9 @@
             </tbody>
           </table>
           <div class="tip-box" style="margin-top: 1rem;">
-            <strong>叠加规则：</strong>番型可叠加！比如门清 + 混一色 = 2番（×4）；自摸的话再×3 = ×12。清碰自摸就是 ×8×3 = ×24！所以高番型点炮的代价极其恐怖。
+            <strong>叠加：</strong>番型可叠加（如门清+混一色=2番）。自摸再按规则×3 计收。具体以同桌约定为准。
           </div>
         </div>
-
         <div class="card">
           <h2>花牌与花数</h2>
           <p>上海敲麻有 8 张花牌（春夏秋冬梅兰竹菊）。摸到花牌自动亮出并从牌墙补一张。花数是计分的底分基础。</p>
@@ -314,9 +291,59 @@
           </table>
         </div>
       </section>
-
-      <!-- ==================== 做牌攻略 ==================== -->
-      <section id="tab-building" class="tab-content">
+      <section id="tab-b-discard" class="tab-content">
+        <div class="card">
+          <h2>出牌基本原则</h2>
+          <p>还没听牌、场上压力不大时，可按下面顺序清理手牌：</p>
+          <ol>
+            <li>先打<strong>孤张字牌</strong>（难以组成顺子）</li>
+            <li>再打<strong>孤张幺九</strong>（1、9，仅一种顺子连接）</li>
+            <li>然后<strong>孤张 2、8</strong>（比幺九略灵活，仍弱于中间张）</li>
+            <li><strong>中间张 4/5/6</strong>与<strong>对子</strong>尽量保留，便于组两面搭</li>
+          </ol>
+          <div class="mnemonic">「字幺九，大胆甩；中间张，留下来」</div>
+        </div>
+        <div class="card">
+          <h2>入门防守</h2>
+          <p>当<strong>有人敲了</strong>，记住三件事：</p>
+          <ol>
+            <li><strong>不要慌</strong>：敲只说明他在等牌，你仍有安全出牌手段。</li>
+            <li><strong>少打他家「主攻花色」的生张</strong>：尤其中间张，放炮概率陡增。</li>
+            <li><strong>安全牌优先级</strong>：<strong>绝张</strong>（四张全现）＞ <strong>跟打敲家摸切</strong> ＞ <strong>已出过 3 张的牌</strong>。</li>
+          </ol>
+          <div class="mnemonic">「有人敲了别慌张，绝张跟打最安全」</div>
+        </div>
+      </section>
+      <section id="tab-b-quiz" class="tab-content">
+        <div class="card">
+          <h2>入门测验</h2>
+          <p>测试你的基础知识。选择最佳方案，点击查看解析。</p>
+        </div>
+        <div id="practice-area-beginner"></div>
+        <div class="card" style="text-align:center; margin-top:2rem;">
+          <button id="next-quiz-beginner" class="btn-primary">下一题</button>
+          <div class="score-box">已答 <span id="answered-beginner">0</span> 题，正确 <span id="correct-beginner">0</span> 题</div>
+        </div>
+      </section>
+        </main>
+      </div>
+    </div>
+    <div id="tier-intermediate" class="tier-content">
+      <div class="tab-nav-bar">
+        <nav class="tab-nav">
+          <button type="button" class="tab-btn" data-tab="i-building">做牌攻略</button>
+          <button type="button" class="tab-btn" data-tab="i-efficiency">听牌效率</button>
+          <button type="button" class="tab-btn" data-tab="i-strategy">敲牌攻防</button>
+          <button type="button" class="tab-btn" data-tab="i-defense">防守体系</button>
+          <button type="button" class="tab-btn" data-tab="i-reading">读牌技巧</button>
+          <button type="button" class="tab-btn" data-tab="i-mistakes">避坑指南</button>
+          <button type="button" class="tab-btn" data-tab="i-quiz">进阶测验</button>
+        </nav>
+      </div>
+      <div class="layout-wrapper">
+        <aside class="sidebar"></aside>
+        <main class="container">
+      <section id="tab-i-building" class="tab-content">
         <div class="card">
           <h2>做牌方向选择</h2>
           <p>开局拿到手牌后，第一件事就是判断做什么番型。选对方向事半功倍，选错方向越打越乱。</p>
@@ -819,10 +846,9 @@
             <strong>决策原则：</strong>有现成字牌刻子时，混一色效率往往远高于清一色。除非某花色已有 9~10 张，否则「混一色 + 快速听牌」通常优于「清一色 + 漫长等待」。
           </div>
         </div>
+      
       </section>
-
-      <!-- ==================== 听牌效率 ==================== -->
-      <section id="tab-efficiency" class="tab-content">
+      <section id="tab-i-efficiency" class="tab-content">
         <div class="card">
           <h2>听牌形状与胡牌概率</h2>
           <p>同样是听牌，<strong>听什么形状</strong>直接决定你能胡牌的概率。听牌面越宽，每轮胡牌的机会就越大。</p>
@@ -1067,10 +1093,313 @@
             <strong>关键节奏：</strong>正常情况下，第 6~8 轮应该到达 1~2 向听。如果到第 10 轮还在 3 向听以上，且有人已敲，建议放弃进攻转防守。
           </div>
         </div>
+      
       </section>
+      <section id="tab-i-strategy" class="tab-content">
+        <div class="card callout">
+          <h2>上海敲麻的核心决策</h2>
+          <p>「敲」是上海敲麻的灵魂规则——<strong>不敲就永远不能胡</strong>，但敲了就丧失全部防守能力。何时敲、何时攻、何时守，是影响你长期收益（EV）最大的三个决策。</p>
+        </div>
 
-      <!-- ==================== 防守出牌 ==================== -->
-      <section id="tab-defense" class="tab-content">
+        <div class="card">
+          <h2>牌局三大阶段策略</h2>
+          <p>一局牌大约 <strong>18~20轮</strong>（每人摸打各18次左右），可以<strong>粗略</strong>按轮数分为三个阶段。但请注意：轮数只是参考，真正的攻防转换点取决于<strong>场上已敲家数</strong>（详见下方「动态阶段判断」）。</p>
+        </div>
+
+        <div class="phase-container">
+          <div class="phase-card phase-early">
+            <div class="phase-header">
+              <div class="phase-number">1</div>
+              <h3>前期（第1~6轮）</h3>
+              <span class="phase-tag">整理期 · 大胆出牌</span>
+            </div>
+            <div class="phase-body">
+              <h4>🎯 核心目标</h4>
+              <p>整理手牌，规划牌型方向</p>
+
+              <h4>📋 操作要点</h4>
+              <ul>
+                <li><strong>优先打字牌</strong>：除非你手里有对子/刻子的字牌，否则先把孤张字牌打出去</li>
+                <li><strong>打幺九牌</strong>：1和9的连接性最差，没有搭配就早出</li>
+                <li><strong>少打中间张</strong>：4/5/6留在手里，等摸到好的搭子再组合</li>
+                <li><strong>规划敲的时机</strong>：提前想好你的牌型方向，为后续敲牌做准备</li>
+              </ul>
+
+              <h4>⚠️ 防守提示</h4>
+              <div class="tip-box">
+                前期一般没人敲，点炮概率较低。但如果有人第一轮就碰牌，要警惕其牌型已经较好，可能很快就敲。
+              </div>
+
+              <h4>🃏 口诀</h4>
+              <div class="mnemonic">"前六轮，先理牌；字幺九，大胆甩；中间张，留下来"</div>
+            </div>
+          </div>
+
+          <div class="phase-card phase-mid">
+            <div class="phase-header">
+              <div class="phase-number">2</div>
+              <h3>中期（第7~12轮）</h3>
+              <span class="phase-tag">博弈期 · 攻守兼备</span>
+            </div>
+            <div class="phase-body">
+              <h4>🎯 核心目标</h4>
+              <p>判断自己能否听牌敲牌，同时密切关注有没有人敲了</p>
+
+              <h4>📋 操作要点</h4>
+              <ul>
+                <li><strong>评估自己的牌</strong>：如果离听牌还有3张以上，且已有人敲了，考虑转为防守</li>
+                <li><strong>跟打策略</strong>：尽量跟着上家或对面打过的牌出，减少点炮风险</li>
+                <li><strong>注意各家牌河</strong>：谁的牌河里没有某个花色？谁碰了很多牌？谁可能快敲了？</li>
+                <li><strong>关注敲家</strong>：一旦有人敲了，立即分析他的副露和牌河，推断他听什么</li>
+              </ul>
+
+              <h4>⚠️ 防守提示</h4>
+              <div class="tip-box">
+                中期往往开始出现第一个敲家。一旦有人敲了，这不再是猜测——他确定在等牌了！每打一张都要想一想：这张敲家可能要吗？
+              </div>
+
+              <h4>🃏 口诀</h4>
+              <div class="mnemonic">"中间段，看牌河；跟着打，少犯错；拿不定，打熟落"</div>
+            </div>
+          </div>
+
+          <div class="phase-card phase-late">
+            <div class="phase-header">
+              <div class="phase-number">3</div>
+              <h3>后期（第13轮以后）</h3>
+              <span class="phase-tag">决胜期 · 防守为主</span>
+            </div>
+            <div class="phase-body">
+              <h4>🎯 核心目标</h4>
+              <p>如果自己没有敲，以防守为第一要务</p>
+
+              <h4>📋 操作要点</h4>
+              <ul>
+                <li><strong>拆搭子求安全</strong>：如果你没敲且场上已有人敲了，果断拆搭子改打安全牌</li>
+                <li><strong>数牌</strong>：关注每张关键牌出了几张，优先打出已出3张的牌</li>
+                <li><strong>跟打敲家摸切</strong>：敲家敲后打出的牌就是他不需要的，跟打这些牌很安全</li>
+                <li><strong>绝不冒险</strong>：手里拿着危险牌宁可不敲不胡也不能放炮</li>
+              </ul>
+
+              <h4>⚠️ 防守提示</h4>
+              <div class="tip-box danger">
+                后期多家已敲时，你打出的任何一张生张都可能是炮！<br>
+                <strong>黄金法则：有人敲了你没敲，就老老实实打安全牌，能黄庄也是赢。</strong>
+              </div>
+
+              <h4>🃏 口诀</h4>
+              <div class="mnemonic">"后半场，保为先；危险牌，死不沾；能黄庄，也是赢"</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card callout">
+          <h2>动态阶段判断：看谁敲了！</h2>
+          <p>上面按轮数划分的前中后期只是一个<strong>粗略参考</strong>。上海敲麻最大的优势是——<strong>听牌是公开信息</strong>！真正决定你该进攻还是防守的核心信号是——</p>
+          <div class="key-insight">
+            <div class="key-insight-icon">🔑</div>
+            <div class="key-insight-text">
+              <strong>场上已经有多少家敲了？</strong><br>
+              在上海敲麻中，你不需要猜谁听牌了——有人敲了你就100%确定他在等牌。<br>
+              即使是第7轮（按轮数算中期），如果已有两家敲了，你就应该<strong>立即进入防守模式</strong>。<br>
+              反过来，如果到了第14轮但没人敲，你的进攻窗口仍然开着。
+            </div>
+          </div>
+
+          <h3>敲家的听牌范围推断</h3>
+          <p>虽然敲不亮牌，但你可以通过以下线索推断敲家在听什么：</p>
+          <div class="signal-grid">
+            <div class="signal-item signal-strong">
+              <div class="signal-label">高价值线索</div>
+              <ul>
+                <li><strong>副露花色</strong>：碰/杠了什么花色 → 他在做这个花色</li>
+                <li><strong>牌河缺色</strong>：某花色完全没打过 → 他在收集这个花色</li>
+                <li><strong>敲后摸切</strong>：敲了之后打出的牌 = 他不需要的牌 = 安全牌线索</li>
+                <li><strong>手牌数量</strong>：碰了多副？手里还剩几张？可推算搭子结构</li>
+              </ul>
+            </div>
+            <div class="signal-item signal-moderate">
+              <div class="signal-label">辅助线索</div>
+              <ul>
+                <li><strong>敲前最后打的牌</strong>：他拆掉了什么？说明那个方向他放弃了</li>
+                <li><strong>打牌顺序</strong>：先打字牌再打幺九 → 可能做平和；大量打某花色 → 不做这个花色</li>
+                <li><strong>场上已出牌统计</strong>：结合缺色推断，排除不可能的听牌</li>
+              </ul>
+            </div>
+            <div class="signal-item signal-weak">
+              <div class="signal-label">接近敲牌的预警</div>
+              <ul>
+                <li>碰了2~3副牌，手牌很少 → 可能马上就敲</li>
+                <li>突然开始打安全牌/字牌 → 在做最后整理</li>
+                <li>门清玩家突然打出中间张 → 可能在调整听口准备敲</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>已敲家数 × 攻防策略矩阵</h2>
+          <p class="card-desc">根据你<strong>自己的状态</strong>和<strong>场上已敲的家数</strong>，动态选择进攻或防守策略。上海敲麻的优势：敲是公开的，你不用猜！</p>
+
+          <table class="prob-table strategy-matrix">
+            <thead>
+              <tr>
+                <th>你的状态 ＼ 已敲家数</th>
+                <th>0家敲</th>
+                <th>1家敲</th>
+                <th>2家敲</th>
+                <th>3家敲</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>你已敲</strong></td>
+                <td><span class="strat-tag strat-attack">全力进攻</span><br><small>等自摸或吃牌胡</small></td>
+                <td><span class="strat-tag strat-attack">积极进攻</span><br><small>敲后锁定，安心等牌</small></td>
+                <td><span class="strat-tag strat-balance">等牌即可</span><br><small>敲后摸啥打啥，无法主动防守</small></td>
+                <td><span class="strat-tag strat-balance">等牌即可</span><br><small>摸啥打啥，看运气</small></td>
+              </tr>
+              <tr>
+                <td><strong>差1~2张听牌（未敲）</strong></td>
+                <td><span class="strat-tag strat-attack">积极进攻</span><br><small>加速组牌，争取敲牌</small></td>
+                <td><span class="strat-tag strat-balance">攻守兼备</span><br><small>推进但不打敲家可能要的牌</small></td>
+                <td><span class="strat-tag strat-defend">偏向防守</span><br><small>除非安全牌能推进，否则防守</small></td>
+                <td><span class="strat-tag strat-defend">放弃进攻</span><br><small>转全防，保不点炮</small></td>
+              </tr>
+              <tr>
+                <td><strong>差3张以上（未敲）</strong></td>
+                <td><span class="strat-tag strat-balance">正常整理</span><br><small>按前期策略整理手牌</small></td>
+                <td><span class="strat-tag strat-defend">偏向防守</span><br><small>整理时优先保留安全牌</small></td>
+                <td><span class="strat-tag strat-defend">全面防守</span><br><small>放弃胡牌，求平安</small></td>
+                <td><span class="strat-tag strat-full-defend">死守不出</span><br><small>打绝张和跟打，宁可黄庄</small></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="tip-box" style="margin-top: 1rem;">
+            <strong>核心原则：</strong>「已敲家数越多、你离敲牌越远 → 越要防守」。上海敲麻的好处是你不用猜——有人敲了就是100%确定的危险信号。注意：你敲了之后手牌锁定，摸啥打啥，已经无法主动防守了，所以<strong>敲之前要想清楚</strong>。
+          </div>
+
+          <h4>🃏 口诀</h4>
+          <div class="mnemonic">"敲了没有看得见，一家敲了心不慌，两家敲了要提防，三家敲了死守庄"</div>
+        </div>
+
+        <div class="card">
+          <h2>敲牌时机策略</h2>
+          <p class="card-desc">敲了就锁定手牌，是不可逆的决定。什么时候敲最合适？</p>
+
+          <div class="danger-level danger-low">
+            <div class="danger-header">
+              <span class="danger-badge safe">适合敲</span>
+              <span class="danger-title">听牌面宽 + 还没人敲</span>
+            </div>
+            <div class="danger-body">
+              <p class="danger-explain">你听的牌种类多（比如听两头），且场上剩余张数多，胡牌概率高。别人还没敲说明竞争小，此时果断敲。</p>
+            </div>
+          </div>
+
+          <div class="danger-level danger-low">
+            <div class="danger-header">
+              <span class="danger-badge low">可以敲</span>
+              <span class="danger-title">听牌面较窄但牌型番数高</span>
+            </div>
+            <div class="danger-body">
+              <p class="danger-explain">比如你做的清一色只差一张，虽然听口窄但胡了翻数高，赌一把值得。不敲就永远没法胡。</p>
+            </div>
+          </div>
+
+          <div class="danger-level danger-medium">
+            <div class="danger-header">
+              <span class="danger-badge medium">谨慎敲</span>
+              <span class="danger-title">听的牌场上已出很多 / 多家已敲</span>
+            </div>
+            <div class="danger-body">
+              <p class="danger-explain">你听的牌场上已出了2~3张，胡牌概率很低。而且一旦敲了手牌锁定，摸到危险牌也必须打出去——可能反而给别的敲家送炮。</p>
+            </div>
+          </div>
+
+          <div class="danger-level danger-high">
+            <div class="danger-header">
+              <span class="danger-badge high">不建议敲</span>
+              <span class="danger-title">听口极窄 + 已有多家敲了</span>
+            </div>
+            <div class="danger-body">
+              <p class="danger-explain">你听的牌几乎没希望了（比如听绝张），而且敲后锁定手牌，被迫摸啥打啥，面对其他敲家的等牌毫无防守能力。不如不敲，保持灵活防守。</p>
+            </div>
+          </div>
+
+          <div class="tip-box" style="margin-top: 1rem;">
+            <strong>敲牌的代价：</strong>手牌锁定后你丧失了防守能力！摸到什么就必须打什么，即使那张牌对敲家来说是极危险牌。所以敲之前一定要权衡：你胡牌的概率 vs 你被迫打出危险牌的风险。
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>有人敲了，我该怎么办？</h2>
+          <p class="card-desc">对手敲了是明确的危险信号。以下是针对性的防守策略：</p>
+
+          <h3>第一步：立即分析敲家听什么</h3>
+          <ul>
+            <li>看他的<strong>副露</strong>：碰了什么花色？碰碰胡还是顺子？</li>
+            <li>看他的<strong>牌河</strong>：哪个花色一张没打？那就是他在做的花色</li>
+            <li>看他<strong>敲后打出的牌</strong>：这些牌是他摸到的、不需要的 = 安全牌线索</li>
+            <li>算<strong>剩余牌</strong>：他可能听的那些牌，场上出了几张？</li>
+          </ul>
+
+          <h3>第二步：调整出牌策略</h3>
+          <ul>
+            <li><strong>绝对避开</strong>：敲家做的花色中未出现过的中间张</li>
+            <li><strong>优先打</strong>：敲家敲后刚摸切的同张牌、已出3~4张的牌、绝张</li>
+            <li><strong>跟打敲家</strong>：敲家敲后打出什么，你跟着打同张牌最安全</li>
+            <li><strong>必要时拆牌</strong>：宁可拆掉自己的好搭子，也不要给敲家送炮</li>
+          </ul>
+
+          <h3>第三步：多家敲了怎么办？</h3>
+          <div class="tip-box danger">
+            多家敲了时，你要同时避开<strong>所有敲家</strong>的危险牌。优先打绝张、已出3张的牌、所有敲家都摸切过的牌。如果手里全是危险牌，尝试拆搭子找安全出路。实在没有安全牌？优先打对付<strong>番数最高</strong>的那家最安全的方向。
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>防守决策流程图（有人敲了时）</h2>
+          <div class="flowchart">
+            <div class="flow-node start">有人敲了，你需要打出一张牌</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-node decision">手里有没有100%安全牌？<br><small>（已出4张的绝张 / 敲家敲后刚摸切的同张牌）</small></div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">有 →</span>
+                <div class="flow-node action safe">打安全牌</div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">没有 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node decision">有没有相对安全牌？<br><small>（已出3张的牌 / 敲家大量打过的花色的牌 / 已出2张的字牌）</small></div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">有 →</span>
+                <div class="flow-node action medium">打相对安全牌</div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">没有 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node decision">能否拆掉搭子换安全？</div>
+            <div class="flow-branch">
+              <div class="flow-path yes">
+                <span class="flow-label">能 →</span>
+                <div class="flow-node action medium">拆搭子，选择不在敲家做的花色里的牌</div>
+              </div>
+              <div class="flow-path no">
+                <span class="flow-label">不能 ↓</span>
+              </div>
+            </div>
+            <div class="flow-node action danger">选择最不可能被敲家需要的那张打<br><small>（优先避开敲家的花色；打幺九 > 打敲家已弃花色 > 最后才打敲家花色的生张中间张）</small></div>
+          </div>
+        </div>
+      
+      </section>
+      <section id="tab-i-defense" class="tab-content">
         <div class="card callout">
           <h2>防守出牌总览</h2>
           <p>上海敲麻中，有人敲了就是 100% 确定的危险信号。本章帮你完成两件事：<strong>识别危险牌</strong>（哪些牌最可能让你放炮）和<strong>安全出牌</strong>（该打什么牌才不会点炮）。</p>
@@ -1551,315 +1880,9 @@
           <div class="mnemonic">"没人敲，理牌快；有人敲，保命来；字幺九先滚蛋，中间张最后甩"</div>
           <div class="mnemonic" style="margin-top:.5rem">"绝张最安全，跟打也保险；生张中间张，打了就完蛋"</div>
         </div>
+      
       </section>
-
-      <!-- ==================== 敲牌与攻防 ==================== -->
-      <section id="tab-strategy" class="tab-content">
-        <div class="card callout">
-          <h2>上海敲麻的核心决策</h2>
-          <p>「敲」是上海敲麻的灵魂规则——<strong>不敲就永远不能胡</strong>，但敲了就丧失全部防守能力。何时敲、何时攻、何时守，是影响你长期收益（EV）最大的三个决策。</p>
-        </div>
-
-        <div class="card">
-          <h2>牌局三大阶段策略</h2>
-          <p>一局牌大约 <strong>18~20轮</strong>（每人摸打各18次左右），可以<strong>粗略</strong>按轮数分为三个阶段。但请注意：轮数只是参考，真正的攻防转换点取决于<strong>场上已敲家数</strong>（详见下方「动态阶段判断」）。</p>
-        </div>
-
-        <div class="phase-container">
-          <div class="phase-card phase-early">
-            <div class="phase-header">
-              <div class="phase-number">1</div>
-              <h3>前期（第1~6轮）</h3>
-              <span class="phase-tag">整理期 · 大胆出牌</span>
-            </div>
-            <div class="phase-body">
-              <h4>🎯 核心目标</h4>
-              <p>整理手牌，规划牌型方向</p>
-
-              <h4>📋 操作要点</h4>
-              <ul>
-                <li><strong>优先打字牌</strong>：除非你手里有对子/刻子的字牌，否则先把孤张字牌打出去</li>
-                <li><strong>打幺九牌</strong>：1和9的连接性最差，没有搭配就早出</li>
-                <li><strong>少打中间张</strong>：4/5/6留在手里，等摸到好的搭子再组合</li>
-                <li><strong>规划敲的时机</strong>：提前想好你的牌型方向，为后续敲牌做准备</li>
-              </ul>
-
-              <h4>⚠️ 防守提示</h4>
-              <div class="tip-box">
-                前期一般没人敲，点炮概率较低。但如果有人第一轮就碰牌，要警惕其牌型已经较好，可能很快就敲。
-              </div>
-
-              <h4>🃏 口诀</h4>
-              <div class="mnemonic">"前六轮，先理牌；字幺九，大胆甩；中间张，留下来"</div>
-            </div>
-          </div>
-
-          <div class="phase-card phase-mid">
-            <div class="phase-header">
-              <div class="phase-number">2</div>
-              <h3>中期（第7~12轮）</h3>
-              <span class="phase-tag">博弈期 · 攻守兼备</span>
-            </div>
-            <div class="phase-body">
-              <h4>🎯 核心目标</h4>
-              <p>判断自己能否听牌敲牌，同时密切关注有没有人敲了</p>
-
-              <h4>📋 操作要点</h4>
-              <ul>
-                <li><strong>评估自己的牌</strong>：如果离听牌还有3张以上，且已有人敲了，考虑转为防守</li>
-                <li><strong>跟打策略</strong>：尽量跟着上家或对面打过的牌出，减少点炮风险</li>
-                <li><strong>注意各家牌河</strong>：谁的牌河里没有某个花色？谁碰了很多牌？谁可能快敲了？</li>
-                <li><strong>关注敲家</strong>：一旦有人敲了，立即分析他的副露和牌河，推断他听什么</li>
-              </ul>
-
-              <h4>⚠️ 防守提示</h4>
-              <div class="tip-box">
-                中期往往开始出现第一个敲家。一旦有人敲了，这不再是猜测——他确定在等牌了！每打一张都要想一想：这张敲家可能要吗？
-              </div>
-
-              <h4>🃏 口诀</h4>
-              <div class="mnemonic">"中间段，看牌河；跟着打，少犯错；拿不定，打熟落"</div>
-            </div>
-          </div>
-
-          <div class="phase-card phase-late">
-            <div class="phase-header">
-              <div class="phase-number">3</div>
-              <h3>后期（第13轮以后）</h3>
-              <span class="phase-tag">决胜期 · 防守为主</span>
-            </div>
-            <div class="phase-body">
-              <h4>🎯 核心目标</h4>
-              <p>如果自己没有敲，以防守为第一要务</p>
-
-              <h4>📋 操作要点</h4>
-              <ul>
-                <li><strong>拆搭子求安全</strong>：如果你没敲且场上已有人敲了，果断拆搭子改打安全牌</li>
-                <li><strong>数牌</strong>：关注每张关键牌出了几张，优先打出已出3张的牌</li>
-                <li><strong>跟打敲家摸切</strong>：敲家敲后打出的牌就是他不需要的，跟打这些牌很安全</li>
-                <li><strong>绝不冒险</strong>：手里拿着危险牌宁可不敲不胡也不能放炮</li>
-              </ul>
-
-              <h4>⚠️ 防守提示</h4>
-              <div class="tip-box danger">
-                后期多家已敲时，你打出的任何一张生张都可能是炮！<br>
-                <strong>黄金法则：有人敲了你没敲，就老老实实打安全牌，能黄庄也是赢。</strong>
-              </div>
-
-              <h4>🃏 口诀</h4>
-              <div class="mnemonic">"后半场，保为先；危险牌，死不沾；能黄庄，也是赢"</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card callout">
-          <h2>动态阶段判断：看谁敲了！</h2>
-          <p>上面按轮数划分的前中后期只是一个<strong>粗略参考</strong>。上海敲麻最大的优势是——<strong>听牌是公开信息</strong>！真正决定你该进攻还是防守的核心信号是——</p>
-          <div class="key-insight">
-            <div class="key-insight-icon">🔑</div>
-            <div class="key-insight-text">
-              <strong>场上已经有多少家敲了？</strong><br>
-              在上海敲麻中，你不需要猜谁听牌了——有人敲了你就100%确定他在等牌。<br>
-              即使是第7轮（按轮数算中期），如果已有两家敲了，你就应该<strong>立即进入防守模式</strong>。<br>
-              反过来，如果到了第14轮但没人敲，你的进攻窗口仍然开着。
-            </div>
-          </div>
-
-          <h3>敲家的听牌范围推断</h3>
-          <p>虽然敲不亮牌，但你可以通过以下线索推断敲家在听什么：</p>
-          <div class="signal-grid">
-            <div class="signal-item signal-strong">
-              <div class="signal-label">高价值线索</div>
-              <ul>
-                <li><strong>副露花色</strong>：碰/杠了什么花色 → 他在做这个花色</li>
-                <li><strong>牌河缺色</strong>：某花色完全没打过 → 他在收集这个花色</li>
-                <li><strong>敲后摸切</strong>：敲了之后打出的牌 = 他不需要的牌 = 安全牌线索</li>
-                <li><strong>手牌数量</strong>：碰了多副？手里还剩几张？可推算搭子结构</li>
-              </ul>
-            </div>
-            <div class="signal-item signal-moderate">
-              <div class="signal-label">辅助线索</div>
-              <ul>
-                <li><strong>敲前最后打的牌</strong>：他拆掉了什么？说明那个方向他放弃了</li>
-                <li><strong>打牌顺序</strong>：先打字牌再打幺九 → 可能做平和；大量打某花色 → 不做这个花色</li>
-                <li><strong>场上已出牌统计</strong>：结合缺色推断，排除不可能的听牌</li>
-              </ul>
-            </div>
-            <div class="signal-item signal-weak">
-              <div class="signal-label">接近敲牌的预警</div>
-              <ul>
-                <li>碰了2~3副牌，手牌很少 → 可能马上就敲</li>
-                <li>突然开始打安全牌/字牌 → 在做最后整理</li>
-                <li>门清玩家突然打出中间张 → 可能在调整听口准备敲</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>已敲家数 × 攻防策略矩阵</h2>
-          <p class="card-desc">根据你<strong>自己的状态</strong>和<strong>场上已敲的家数</strong>，动态选择进攻或防守策略。上海敲麻的优势：敲是公开的，你不用猜！</p>
-
-          <table class="prob-table strategy-matrix">
-            <thead>
-              <tr>
-                <th>你的状态 ＼ 已敲家数</th>
-                <th>0家敲</th>
-                <th>1家敲</th>
-                <th>2家敲</th>
-                <th>3家敲</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>你已敲</strong></td>
-                <td><span class="strat-tag strat-attack">全力进攻</span><br><small>等自摸或吃牌胡</small></td>
-                <td><span class="strat-tag strat-attack">积极进攻</span><br><small>敲后锁定，安心等牌</small></td>
-                <td><span class="strat-tag strat-balance">等牌即可</span><br><small>敲后摸啥打啥，无法主动防守</small></td>
-                <td><span class="strat-tag strat-balance">等牌即可</span><br><small>摸啥打啥，看运气</small></td>
-              </tr>
-              <tr>
-                <td><strong>差1~2张听牌（未敲）</strong></td>
-                <td><span class="strat-tag strat-attack">积极进攻</span><br><small>加速组牌，争取敲牌</small></td>
-                <td><span class="strat-tag strat-balance">攻守兼备</span><br><small>推进但不打敲家可能要的牌</small></td>
-                <td><span class="strat-tag strat-defend">偏向防守</span><br><small>除非安全牌能推进，否则防守</small></td>
-                <td><span class="strat-tag strat-defend">放弃进攻</span><br><small>转全防，保不点炮</small></td>
-              </tr>
-              <tr>
-                <td><strong>差3张以上（未敲）</strong></td>
-                <td><span class="strat-tag strat-balance">正常整理</span><br><small>按前期策略整理手牌</small></td>
-                <td><span class="strat-tag strat-defend">偏向防守</span><br><small>整理时优先保留安全牌</small></td>
-                <td><span class="strat-tag strat-defend">全面防守</span><br><small>放弃胡牌，求平安</small></td>
-                <td><span class="strat-tag strat-full-defend">死守不出</span><br><small>打绝张和跟打，宁可黄庄</small></td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="tip-box" style="margin-top: 1rem;">
-            <strong>核心原则：</strong>「已敲家数越多、你离敲牌越远 → 越要防守」。上海敲麻的好处是你不用猜——有人敲了就是100%确定的危险信号。注意：你敲了之后手牌锁定，摸啥打啥，已经无法主动防守了，所以<strong>敲之前要想清楚</strong>。
-          </div>
-
-          <h4>🃏 口诀</h4>
-          <div class="mnemonic">"敲了没有看得见，一家敲了心不慌，两家敲了要提防，三家敲了死守庄"</div>
-        </div>
-
-        <div class="card">
-          <h2>敲牌时机策略</h2>
-          <p class="card-desc">敲了就锁定手牌，是不可逆的决定。什么时候敲最合适？</p>
-
-          <div class="danger-level danger-low">
-            <div class="danger-header">
-              <span class="danger-badge safe">适合敲</span>
-              <span class="danger-title">听牌面宽 + 还没人敲</span>
-            </div>
-            <div class="danger-body">
-              <p class="danger-explain">你听的牌种类多（比如听两头），且场上剩余张数多，胡牌概率高。别人还没敲说明竞争小，此时果断敲。</p>
-            </div>
-          </div>
-
-          <div class="danger-level danger-low">
-            <div class="danger-header">
-              <span class="danger-badge low">可以敲</span>
-              <span class="danger-title">听牌面较窄但牌型番数高</span>
-            </div>
-            <div class="danger-body">
-              <p class="danger-explain">比如你做的清一色只差一张，虽然听口窄但胡了翻数高，赌一把值得。不敲就永远没法胡。</p>
-            </div>
-          </div>
-
-          <div class="danger-level danger-medium">
-            <div class="danger-header">
-              <span class="danger-badge medium">谨慎敲</span>
-              <span class="danger-title">听的牌场上已出很多 / 多家已敲</span>
-            </div>
-            <div class="danger-body">
-              <p class="danger-explain">你听的牌场上已出了2~3张，胡牌概率很低。而且一旦敲了手牌锁定，摸到危险牌也必须打出去——可能反而给别的敲家送炮。</p>
-            </div>
-          </div>
-
-          <div class="danger-level danger-high">
-            <div class="danger-header">
-              <span class="danger-badge high">不建议敲</span>
-              <span class="danger-title">听口极窄 + 已有多家敲了</span>
-            </div>
-            <div class="danger-body">
-              <p class="danger-explain">你听的牌几乎没希望了（比如听绝张），而且敲后锁定手牌，被迫摸啥打啥，面对其他敲家的等牌毫无防守能力。不如不敲，保持灵活防守。</p>
-            </div>
-          </div>
-
-          <div class="tip-box" style="margin-top: 1rem;">
-            <strong>敲牌的代价：</strong>手牌锁定后你丧失了防守能力！摸到什么就必须打什么，即使那张牌对敲家来说是极危险牌。所以敲之前一定要权衡：你胡牌的概率 vs 你被迫打出危险牌的风险。
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>有人敲了，我该怎么办？</h2>
-          <p class="card-desc">对手敲了是明确的危险信号。以下是针对性的防守策略：</p>
-
-          <h3>第一步：立即分析敲家听什么</h3>
-          <ul>
-            <li>看他的<strong>副露</strong>：碰了什么花色？碰碰胡还是顺子？</li>
-            <li>看他的<strong>牌河</strong>：哪个花色一张没打？那就是他在做的花色</li>
-            <li>看他<strong>敲后打出的牌</strong>：这些牌是他摸到的、不需要的 = 安全牌线索</li>
-            <li>算<strong>剩余牌</strong>：他可能听的那些牌，场上出了几张？</li>
-          </ul>
-
-          <h3>第二步：调整出牌策略</h3>
-          <ul>
-            <li><strong>绝对避开</strong>：敲家做的花色中未出现过的中间张</li>
-            <li><strong>优先打</strong>：敲家敲后刚摸切的同张牌、已出3~4张的牌、绝张</li>
-            <li><strong>跟打敲家</strong>：敲家敲后打出什么，你跟着打同张牌最安全</li>
-            <li><strong>必要时拆牌</strong>：宁可拆掉自己的好搭子，也不要给敲家送炮</li>
-          </ul>
-
-          <h3>第三步：多家敲了怎么办？</h3>
-          <div class="tip-box danger">
-            多家敲了时，你要同时避开<strong>所有敲家</strong>的危险牌。优先打绝张、已出3张的牌、所有敲家都摸切过的牌。如果手里全是危险牌，尝试拆搭子找安全出路。实在没有安全牌？优先打对付<strong>番数最高</strong>的那家最安全的方向。
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>防守决策流程图（有人敲了时）</h2>
-          <div class="flowchart">
-            <div class="flow-node start">有人敲了，你需要打出一张牌</div>
-            <div class="flow-arrow">↓</div>
-            <div class="flow-node decision">手里有没有100%安全牌？<br><small>（已出4张的绝张 / 敲家敲后刚摸切的同张牌）</small></div>
-            <div class="flow-branch">
-              <div class="flow-path yes">
-                <span class="flow-label">有 →</span>
-                <div class="flow-node action safe">打安全牌</div>
-              </div>
-              <div class="flow-path no">
-                <span class="flow-label">没有 ↓</span>
-              </div>
-            </div>
-            <div class="flow-node decision">有没有相对安全牌？<br><small>（已出3张的牌 / 敲家大量打过的花色的牌 / 已出2张的字牌）</small></div>
-            <div class="flow-branch">
-              <div class="flow-path yes">
-                <span class="flow-label">有 →</span>
-                <div class="flow-node action medium">打相对安全牌</div>
-              </div>
-              <div class="flow-path no">
-                <span class="flow-label">没有 ↓</span>
-              </div>
-            </div>
-            <div class="flow-node decision">能否拆掉搭子换安全？</div>
-            <div class="flow-branch">
-              <div class="flow-path yes">
-                <span class="flow-label">能 →</span>
-                <div class="flow-node action medium">拆搭子，选择不在敲家做的花色里的牌</div>
-              </div>
-              <div class="flow-path no">
-                <span class="flow-label">不能 ↓</span>
-              </div>
-            </div>
-            <div class="flow-node action danger">选择最不可能被敲家需要的那张打<br><small>（优先避开敲家的花色；打幺九 > 打敲家已弃花色 > 最后才打敲家花色的生张中间张）</small></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==================== 读牌技巧 ==================== -->
-      <section id="tab-reading" class="tab-content">
+      <section id="tab-i-reading" class="tab-content">
         <div class="card callout">
           <h2>读牌：从「瞎猜」到「有据可依」</h2>
           <p>上海敲麻最大的特点：<strong>谁敲了是公开信息</strong>。但光知道谁敲了还不够，你需要读懂他在做什么、可能听什么。读牌不是天赋，是可以训练的系统技能。核心目标：<strong>用可见信息压缩对手的听口范围</strong>，从而判断该攻还是该守。</p>
@@ -2029,101 +2052,8 @@
             <strong>结论：</strong>混碰 2番 = ×4！点炮代价极大。筒子和字牌都是高危。注意：碰碰胡只需对子/刻子，<strong>筒子幺九（一筒、九筒）也很危险</strong>。
           </div>
         </div>
-
-        <div class="card">
-          <h2>案例 3：门清对手刚敲了</h2>
-          <h4>对手信息（第 10 轮）</h4>
-          <p><strong>副露：</strong>无（完全门清）。<strong>刚宣布敲！</strong></p>
-          <div class="river-display">
-            <span class="river-label">牌河：</span>
-            <span class="tile feng">东</span>
-            <span class="tile feng">南</span>
-            <span class="tile feng">白</span>
-            <span class="tile tiao">一条</span>
-            <span class="tile wan">九万</span>
-            <span class="tile tong">一筒</span>
-            <span class="tile tiao">九条</span>
-            <span class="tile wan">一万</span>
-            <span class="tile tong">九筒</span>
-            <span class="tile feng">西</span>
-          </div>
-          <div class="reading-step">
-            <div class="reading-step-num">1</div>
-            <div class="reading-step-content"><strong>看副露</strong>：没有副露 → 门清。信息最少的情况。</div>
-          </div>
-          <div class="reading-step">
-            <div class="reading-step-num">2</div>
-            <div class="reading-step-content"><strong>看牌河</strong>：大量字牌 + 大量幺九（三色的 1 和 9 都打了）→ 不像清/混一色（做清/混一色会保留目标花色的幺九）</div>
-          </div>
-          <div class="reading-step">
-            <div class="reading-step-num">3</div>
-            <div class="reading-step-content"><strong>推断</strong>：门清 + 三色幺九都打 → 手里留的是三色<strong>中间张搭子</strong>，可能多组两面搭子。听牌面可能很宽。</div>
-          </div>
-          <div class="reading-step">
-            <div class="reading-step-num">4</div>
-            <div class="reading-step-content"><strong>防守策略</strong>：打他已打过的牌（字牌、幺九），避开三色中间张。<strong>敲后摸切的牌是安全线索</strong>。</div>
-          </div>
-          <div class="tip-box">
-            <strong>门清是最难读的牌型：</strong>(1) 跟打他打过的牌；(2) 跟打他敲后摸切的牌；(3) 打绝张；(4) 避开所有花色的生张中间张。承认「读不准」，用防守赔率对抗。
-          </div>
-        </div>
-
-        <div class="card">
-          <h2>案例 4：两家方向不同</h2>
-          <h4>场上情况（第 11 轮）</h4>
-          <p><strong>下家：</strong>碰了 <span class="tile wan">二万</span>、碰了 <span class="tile wan">八万</span>，牌河全是条子和筒子。<strong>已敲。</strong></p>
-          <p><strong>对面：</strong>碰了 <span class="tile feng">中</span>、碰了 <span class="tile tong">三筒</span>，牌河大量万子和条子。<strong>快敲了。</strong></p>
-          <h4>分析</h4>
-          <ul>
-            <li><strong>下家</strong>：万子两副碰 + 牌河无万子 → <strong>万子清一色</strong>。已敲。万子高危。</li>
-            <li><strong>对面</strong>：碰中 + 碰筒子，牌河无筒子字牌 → <strong>筒子混一色</strong>或混碰。筒子和字牌高危。</li>
-          </ul>
-          <h4>💀 你的安全出牌范围</h4>
-          <table class="prob-table">
-            <thead>
-              <tr><th>花色</th><th>对下家</th><th>对对面</th><th>综合</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>万子</strong></td>
-                <td><span class="danger-badge critical">极危险</span></td>
-                <td><span class="danger-badge safe">安全</span></td>
-                <td><span class="danger-badge critical">不能打</span></td>
-              </tr>
-              <tr>
-                <td><strong>筒子</strong></td>
-                <td><span class="danger-badge safe">安全</span></td>
-                <td><span class="danger-badge critical">极危险</span></td>
-                <td><span class="danger-badge critical">不能打</span></td>
-              </tr>
-              <tr>
-                <td><strong>条子</strong></td>
-                <td><span class="danger-badge safe">安全</span></td>
-                <td><span class="danger-badge safe">安全</span></td>
-                <td><span class="danger-badge safe">✅ 最安全</span></td>
-              </tr>
-              <tr>
-                <td><strong>字牌</strong></td>
-                <td><span class="danger-badge safe">安全</span></td>
-                <td><span class="danger-badge high">危险</span></td>
-                <td><span class="danger-badge medium">谨慎</span></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="tip-box">
-            <strong>多人读牌核心：</strong>找<strong>对所有敲家都安全</strong>的花色。两家做的花色不同时，第三种花色就是避风港。多家敲时，<strong>绝张</strong>是唯一对所有敲家都安全的牌。
-          </div>
-        </div>
-
-        <div class="card callout">
-          <h2>读牌口诀</h2>
-          <div class="mnemonic">"副露看方向，牌河看缺色；关键牌要数，听口靠排除"</div>
-          <div class="mnemonic" style="margin-top:.5rem">"碰了啥就做啥，没打啥就要啥；敲后打的是废牌，跟着打就最安全"</div>
-        </div>
       </section>
-
-      <!-- ==================== 避坑指南 ==================== -->
-      <section id="tab-mistakes" class="tab-content">
+      <section id="tab-i-mistakes" class="tab-content">
         <div class="card callout">
           <h2>初级玩家十大常见错误</h2>
           <p>这些错误几乎每个新手都会犯。认识到自己在犯哪些错，是进步最快的方式。对照自己的对局习惯，重点看「错误做法 → 正确做法」。</p>
@@ -2290,10 +2220,167 @@
             <li><strong>安全</strong>：我是否为后期预留了安全牌，避免无牌可垫？</li>
           </ul>
         </div>
+      
       </section>
-
-      <!-- ==================== 概率速查表 ==================== -->
-      <section id="tab-probability" class="tab-content">
+      <section id="tab-i-quiz" class="tab-content">
+        <div class="card">
+          <h2>进阶测验</h2>
+          <p>涵盖做牌、听牌、攻防与读牌。选择最佳方案，点击查看解析。</p>
+        </div>
+        <div id="practice-area-intermediate"></div>
+        <div class="card" style="text-align:center; margin-top:2rem;">
+          <button id="next-quiz-intermediate" class="btn-primary">下一题</button>
+          <div class="score-box">已答 <span id="answered-intermediate">0</span> 题，正确 <span id="correct-intermediate">0</span> 题</div>
+        </div>
+      </section>
+        </main>
+      </div>
+    </div>
+    <div id="tier-master" class="tier-content">
+      <div class="tab-nav-bar">
+        <nav class="tab-nav">
+          <button type="button" class="tab-btn" data-tab="m-ev">EV决策</button>
+          <button type="button" class="tab-btn" data-tab="m-scoring">花数最大化</button>
+          <button type="button" class="tab-btn" data-tab="m-position">位置策略</button>
+          <button type="button" class="tab-btn" data-tab="m-tempo">节奏控制</button>
+          <button type="button" class="tab-btn" data-tab="m-opponent">对手识别</button>
+          <button type="button" class="tab-btn" data-tab="m-probability">概率速查</button>
+          <button type="button" class="tab-btn" data-tab="m-reading">高级读牌</button>
+          <button type="button" class="tab-btn" data-tab="m-replay">牌谱复盘</button>
+          <button type="button" class="tab-btn" data-tab="m-quiz">大师测验</button>
+        </nav>
+      </div>
+      <div class="layout-wrapper">
+        <aside class="sidebar"></aside>
+        <main class="container">
+      <section id="tab-m-ev" class="tab-content">
+        <div class="card callout">
+          <h2>EV 决策框架</h2>
+          <p>短期有运气，长期看<strong>期望值（EV）</strong>：每一类决策在重复无数次后，平均是赚还是亏。敲麻里可把「胡牌收益」与「放炮损失」放进同一套天平。</p>
+        </div>
+        <div class="card">
+          <h2>数值化直觉：一例</h2>
+          <p>假设你估算本局若胡牌：<strong>花数 8</strong>、<strong>混一色 1 番</strong>，则基础分 = 8 × 2¹ = <strong>16</strong>。</p>
+          <ul>
+            <li><strong>自摸</strong>：三家各付一份 → 你总收入 ≈ 16 × 3 = <strong>48</strong>。</li>
+            <li><strong>点炮</strong>（你放炮赔一家）：通常付 <strong>一份</strong> 基础分 → 损失 16（若抢杠等规则另论）。</li>
+          </ul>
+          <p>若你打出某张牌被胡的概率约 20%，期望损失 ≈ 0.2 × 16 = 3.2；若换一张安全牌，损失接近 0，但可能延缓你听牌——EV 思维就是比较<strong>「进攻增量」</strong>与<strong>「放炮风险×赔付」</strong>。</p>
+        </div>
+        <div class="card">
+          <h2>听口宽度 × 场面风险</h2>
+          <table class="prob-table">
+            <thead>
+              <tr><th>听口</th><th>无人敲 / 低威胁</th><th>1 家敲</th><th>多家敲</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>宽听（两面以上）</td><td>倾向进攻、可早敲</td><td>仍可敲，但出牌要绕开敲家花色生张</td><td>敲前自问：锁定后摸切是否常遇危张？</td></tr>
+              <tr><td>窄听（单骑、嵌张）</td><td>权衡番数与概率再敲</td><td>谨慎敲；优先用安全牌过渡</td><td>多半不敲，转守更 EV</td></tr>
+            </tbody>
+          </table>
+          <div class="tip-box"><strong>长期视角：</strong>一两次「该守没守」的放炮，在账面上可能吃掉多次小胡。EV 不是让你算准每一张，而是养成<strong>风险加权</strong>的习惯。</div>
+        </div>
+      </section>
+      <section id="tab-m-scoring" class="tab-content">
+        <div class="card">
+          <h2>花数最大化思路</h2>
+          <div class="feature-grid">
+            <div class="feature-item"><div class="feature-icon">字</div><h3>碰字牌</h3><p>风箭刻子常带花数，且利于混一色/混碰路线，与「花×2^番」相乘后收益显著。</p></div>
+            <div class="feature-item"><div class="feature-icon">🎴</div><h3>暗杠优于明杠（有时）</h3><p>暗杠花数更高、信息少；明杠加速但暴露节奏，需结合听口与场面。</p></div>
+            <div class="feature-item"><div class="feature-icon">✖</div><h3>花与番的乘数</h3><p>花数与番数在公式里相乘：多做 1 番或多攒几花，在自摸×3 下会被放大。</p></div>
+            <div class="feature-item"><div class="feature-icon">⚖</div><h3>贪花 vs 求胡</h3><p>硬贪花导致晚听或不听，期望可能反降；听口宽、易胡时，先胡再论下一局。</p></div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>收入对比（基础分 = 花 × 2^番）</h2>
+          <p class="card-desc">下表为<strong>单份</strong>基础分；自摸总入约为 ×3（三家各付一份）。</p>
+          <table class="prob-table">
+            <thead>
+              <tr><th>花数 ＼ 番</th><th>0番 (×1)</th><th>1番 (×2)</th><th>2番 (×4)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>6 花</td><td>6</td><td>12</td><td>24</td></tr>
+              <tr><td>8 花</td><td>8</td><td>16</td><td>32</td></tr>
+              <tr><td>10 花</td><td>10</td><td>20</td><td>40</td></tr>
+              <tr><td>12 花</td><td>12</td><td>24</td><td>48</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id="tab-m-position" class="tab-content">
+        <div class="card">
+          <h2>三家关系与信息</h2>
+          <div class="feature-grid">
+            <div class="feature-item"><div class="feature-icon">上</div><h3>上家</h3><p>决定你能否吃到牌；上家若快敲，你吃牌窗口变窄，宜更早定方向。</p></div>
+            <div class="feature-item"><div class="feature-icon">下</div><h3>下家</h3><p>吃你的牌最多；扣下家、少喂生张，可直接压低其听牌速度。</p></div>
+            <div class="feature-item"><div class="feature-icon">对</div><h3>对面</h3><p>与你互动以碰杠为主；对面大副露时，读牌优先级往往最高。</p></div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>位置与防守</h2>
+          <p><strong>下家快敲</strong>时，你打出的每一张生张都更容易变成他的进张；宜优先打字牌、现物、上家刚打的跟张。<strong>上家做清一色</strong>时，你吃牌机会下降，不宜再拖慢自己节奏。</p>
+        </div>
+        <div class="card">
+          <h2>扣下家：实操读牌步</h2>
+          <div class="reading-step">
+            <div class="reading-step-num">1</div>
+            <div class="reading-step-content"><strong>看下家副露</strong>：是否已两副同花色？是否碰碰胡节奏？</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">2</div>
+            <div class="reading-step-content"><strong>看他牌河缺色</strong>：哪门完全没打，多半在收那门。</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">3</div>
+            <div class="reading-step-content"><strong>扣牌原则</strong>：优先把<strong>他可能在等的生张</strong>扣在手中改打安全牌；必要时牺牲一步听牌。</div>
+          </div>
+          <div class="tip-box">扣下家的本质是<strong>用时间换他的进张效率</strong>；若你已听或可敲，再评估是否值得继续扣。</div>
+        </div>
+      </section>
+      <section id="tab-m-tempo" class="tab-content">
+        <div class="card">
+          <h2>快攻 vs 缓攻</h2>
+          <p><strong>快攻</strong>：早副露、早听、早敲，抢在他人防守收紧前胡牌。<strong>缓攻</strong>：门清或少副露，隐藏信息，等自摸宽听与高番成型。无人敲时可偏快；多人副露多时宜根据自己听口决定。</p>
+        </div>
+        <div class="card">
+          <h2>用碰打断节奏</h2>
+          <p>在<strong>不破坏自己路线</strong>的前提下，关键碰可打断下家摸牌节奏、改写牌墙顺序；但若暴露方向、损失门清，需用 EV 权衡。</p>
+        </div>
+        <div class="card">
+          <h2>牌墙与终局感</h2>
+          <p>牌墙变薄时，生张越来越「毒」。后期即使自己未敲，也应假设<strong>至少一家已接近听牌</strong>，自动降速、优先现物与绝张。</p>
+        </div>
+        <div class="card">
+          <h2>与 EV 结合：「不胡也是赢」</h2>
+          <p>在多家已敲、自己离听远时，<strong>黄庄不输分</strong> 往往优于硬出生张。长期看，少点一炮可能比勉强胡一把小番更划算。</p>
+        </div>
+      </section>
+      <section id="tab-m-opponent" class="tab-content">
+        <div class="card callout">
+          <h2>对手识别</h2>
+          <p>同一张牌，对不同风格对手意义不同。快速贴标签，调整攻防权重。</p>
+        </div>
+        <div class="card">
+          <div class="signal-grid">
+            <div class="signal-item signal-strong">
+              <div class="signal-label">激进型</div>
+              <p><strong>识别：</strong>早碰多、爱追清一色/大番，常早敲。</p>
+              <p><strong>应对：</strong>其敲前即开始避其主攻花色；被敲后绝张与跟切优先。</p>
+            </div>
+            <div class="signal-item signal-moderate">
+              <div class="signal-label">保守型</div>
+              <p><strong>识别：</strong>副露少、打字牌快，胡了即可。</p>
+              <p><strong>应对：</strong>读牌信息少，勿过度解读；你可用速度或番型压制，但仍防其突然宽听。</p>
+            </div>
+            <div class="signal-item signal-weak">
+              <div class="signal-label">新手型</div>
+              <p><strong>识别：</strong>乱碰、牌序怪、中后期才清字牌。</p>
+              <p><strong>应对：</strong>不宜依赖其「理性弃牌」；生张危险度仍按概率表，少喂明显进张。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="tab-m-probability" class="tab-content">
         <div class="card">
           <h2>危险牌概率速查表</h2>
           <p>以下概率基于数学模型计算，结合上海敲麻的实际场景。注意：有人敲了之后，对应敲家花色方向的牌危险度会<strong>大幅上升</strong>，需结合敲家信息综合判断。</p>
@@ -2499,33 +2586,179 @@
             <li><strong>决策</strong>：有人敲了且风险>15%时要谨慎，>25%时建议换牌；没人敲时可适当放宽</li>
           </ol>
         </div>
+      
       </section>
-
-      <!-- ==================== 实战练习 ==================== -->
-      <section id="tab-practice" class="tab-content">
-        <div class="card">
-          <h2>实战场景练习</h2>
-          <p>共 22 道题，涵盖防守、读牌、做牌、敲牌时机、计分等多个维度。每题标有难度（⭐入门 / ⭐⭐进阶 / ⭐⭐⭐高手）。随机出题，选择你认为最佳的方案，点击选项查看详细分析。</p>
+      <section id="tab-m-reading" class="tab-content">
+        <div class="card callout">
+          <h2>高级读牌：门清与多人场面</h2>
+          <p>进阶篇已掌握四步读牌法与前两个案例。本篇延续同一套方法，专攻<strong>信息最少</strong>与<strong>多家同时有方向</strong>的难点。</p>
         </div>
 
-        <div id="practice-area"></div>
-
-        <div class="card" style="text-align:center; margin-top:2rem;">
-          <button id="next-quiz" class="btn-primary">下一题</button>
-          <div id="score-display" class="score-box">
-            已答 <span id="answered">0</span> 题，正确 <span id="correct">0</span> 题
+<div class="card">
+          <h2>案例 3：门清对手刚敲了</h2>
+          <h4>对手信息（第 10 轮）</h4>
+          <p><strong>副露：</strong>无（完全门清）。<strong>刚宣布敲！</strong></p>
+          <div class="river-display">
+            <span class="river-label">牌河：</span>
+            <span class="tile feng">东</span>
+            <span class="tile feng">南</span>
+            <span class="tile feng">白</span>
+            <span class="tile tiao">一条</span>
+            <span class="tile wan">九万</span>
+            <span class="tile tong">一筒</span>
+            <span class="tile tiao">九条</span>
+            <span class="tile wan">一万</span>
+            <span class="tile tong">九筒</span>
+            <span class="tile feng">西</span>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">1</div>
+            <div class="reading-step-content"><strong>看副露</strong>：没有副露 → 门清。信息最少的情况。</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">2</div>
+            <div class="reading-step-content"><strong>看牌河</strong>：大量字牌 + 大量幺九（三色的 1 和 9 都打了）→ 不像清/混一色（做清/混一色会保留目标花色的幺九）</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">3</div>
+            <div class="reading-step-content"><strong>推断</strong>：门清 + 三色幺九都打 → 手里留的是三色<strong>中间张搭子</strong>，可能多组两面搭子。听牌面可能很宽。</div>
+          </div>
+          <div class="reading-step">
+            <div class="reading-step-num">4</div>
+            <div class="reading-step-content"><strong>防守策略</strong>：打他已打过的牌（字牌、幺九），避开三色中间张。<strong>敲后摸切的牌是安全线索</strong>。</div>
+          </div>
+          <div class="tip-box">
+            <strong>门清是最难读的牌型：</strong>(1) 跟打他打过的牌；(2) 跟打他敲后摸切的牌；(3) 打绝张；(4) 避开所有花色的生张中间张。承认「读不准」，用防守赔率对抗。
           </div>
         </div>
+
+        <div class="card">
+          <h2>案例 4：两家方向不同</h2>
+          <h4>场上情况（第 11 轮）</h4>
+          <p><strong>下家：</strong>碰了 <span class="tile wan">二万</span>、碰了 <span class="tile wan">八万</span>，牌河全是条子和筒子。<strong>已敲。</strong></p>
+          <p><strong>对面：</strong>碰了 <span class="tile feng">中</span>、碰了 <span class="tile tong">三筒</span>，牌河大量万子和条子。<strong>快敲了。</strong></p>
+          <h4>分析</h4>
+          <ul>
+            <li><strong>下家</strong>：万子两副碰 + 牌河无万子 → <strong>万子清一色</strong>。已敲。万子高危。</li>
+            <li><strong>对面</strong>：碰中 + 碰筒子，牌河无筒子字牌 → <strong>筒子混一色</strong>或混碰。筒子和字牌高危。</li>
+          </ul>
+          <h4>💀 你的安全出牌范围</h4>
+          <table class="prob-table">
+            <thead>
+              <tr><th>花色</th><th>对下家</th><th>对对面</th><th>综合</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>万子</strong></td>
+                <td><span class="danger-badge critical">极危险</span></td>
+                <td><span class="danger-badge safe">安全</span></td>
+                <td><span class="danger-badge critical">不能打</span></td>
+              </tr>
+              <tr>
+                <td><strong>筒子</strong></td>
+                <td><span class="danger-badge safe">安全</span></td>
+                <td><span class="danger-badge critical">极危险</span></td>
+                <td><span class="danger-badge critical">不能打</span></td>
+              </tr>
+              <tr>
+                <td><strong>条子</strong></td>
+                <td><span class="danger-badge safe">安全</span></td>
+                <td><span class="danger-badge safe">安全</span></td>
+                <td><span class="danger-badge safe">✅ 最安全</span></td>
+              </tr>
+              <tr>
+                <td><strong>字牌</strong></td>
+                <td><span class="danger-badge safe">安全</span></td>
+                <td><span class="danger-badge high">危险</span></td>
+                <td><span class="danger-badge medium">谨慎</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="tip-box">
+            <strong>多人读牌核心：</strong>找<strong>对所有敲家都安全</strong>的花色。两家做的花色不同时，第三种花色就是避风港。多家敲时，<strong>绝张</strong>是唯一对所有敲家都安全的牌。
+          </div>
+        </div>
+
+        <div class="card callout">
+          <h2>读牌口诀</h2>
+          <div class="mnemonic">"副露看方向，牌河看缺色；关键牌要数，听口靠排除"</div>
+          <div class="mnemonic" style="margin-top:.5rem">"碰了啥就做啥，没打啥就要啥；敲后打的是废牌，跟着打就最安全"</div>
+        </div>
       </section>
-
-    </main>
+      <section id="tab-m-replay" class="tab-content">
+        <div class="card callout">
+          <h2>牌谱复盘：一局 18 巡（筒子混一色视角）</h2>
+          <p>以下为第一人称简化复盘，展示如何从起手到终局连续做决策。数字巡目为约数，重点在<strong>转折点</strong>。</p>
+        </div>
+        <div class="card">
+          <h2>起手（计划筒子混一色）</h2>
+          <div class="hand-display">
+            <span class="hand-tile tong">二筒</span><span class="hand-tile tong">三筒</span><span class="hand-tile tong">五筒</span><span class="hand-tile tong">六筒</span><span class="hand-tile tong">八筒</span><span class="hand-tile tong">九筒</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile zi">发</span><span class="hand-tile zi">发</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile wan">四万</span><span class="hand-tile wan">七万</span>
+            <div class="hand-spacer"></div>
+            <span class="hand-tile tiao">一条</span><span class="hand-tile tiao">六条</span>
+          </div>
+          <p>筒子 6 张 + 发对子 → 明确混一色。万条为清理对象。</p>
+        </div>
+        <div class="card">
+          <h2>节点 A（约第 3 巡）：清杂优先</h2>
+          <div class="river-display">
+            <span class="river-label">已打：</span>
+            <span class="tile wan">四万</span><span class="tile tiao">一条</span>
+          </div>
+          <p>先打孤张万、条，保留筒搭与发对，符合「字幺九、边张先走」。</p>
+        </div>
+        <div class="card">
+          <h2>节点 B（约第 7 巡）：有人碰筒</h2>
+          <div class="tip-box">对家碰 <span class="tile tong">六筒</span> → 六筒剩余张数下降，你听口若依赖六筒需早改；此处转而强化 235 筒与 89 筒两侧搭子。</div>
+        </div>
+        <div class="card">
+          <h2>节点 C（约第 11 巡）：碰发</h2>
+          <p>有人打 <span class="tile feng">发</span>，果断碰：加花、定刻子、加速混一色，损失门清可接受。</p>
+        </div>
+        <div class="card">
+          <h2>节点 D（约第 14 巡）：下家已敲</h2>
+          <div class="tip-box danger"><strong>转折：</strong>下家敲做万子。你尚未听牌，立即降速：手剩万子相关生张一律扣住，改打字牌现物与跟打其摸切。</div>
+        </div>
+        <div class="card">
+          <h2>节点 E（约第 16 巡）：听牌与敲</h2>
+          <p>听 <span class="tile tong">四筒</span><span class="tile tong">七筒</span> 两面，待牌尚多、下家虽敲但非筒子 → <strong>宣布敲</strong>，进入摸切。</p>
+        </div>
+        <div class="card">
+          <h2>节点 F（第 18 巡前后）：终局</h2>
+          <div class="river-display">
+            <span class="river-label">你打出（摸切节选）：</span>
+            <span class="tile feng">北</span><span class="tile tiao">六条</span><span class="tile wan">七万</span>
+          </div>
+          <p>摸切阶段无选择，靠听口宽度撑到最后；若自摸四筒或七筒，混一色 1 番入账。</p>
+        </div>
+        <div class="card callout">
+          <h2>小结</h2>
+          <p>本局主线：<strong>方向早定 → 副露加速 → 外家敲后让渡节奏 → 宽听再敲</strong>。复盘时对照你自己的局，只改「转折点」的一手，比重打十局更有效。</p>
+        </div>
+      </section>
+      <section id="tab-m-quiz" class="tab-content">
+        <div class="card">
+          <h2>大师测验</h2>
+          <p>高难度场景，侧重多因素权衡。选择后查看解析。</p>
+        </div>
+        <div id="practice-area-master"></div>
+        <div class="card" style="text-align:center; margin-top:2rem;">
+          <button id="next-quiz-master" class="btn-primary">下一题</button>
+          <div class="score-box">已答 <span id="answered-master">0</span> 题，正确 <span id="correct-master">0</span> 题</div>
+        </div>
+      </section>
+        </main>
+      </div>
     </div>
-
     <footer>
-      <p>🀄 上海敲麻新手宝典 · 入门到进阶 · 祝你少点炮，多自摸！</p>
+      <p>🀄 上海敲麻全阶宝典 · 入门→进阶→大师 · 祝你少点炮，多自摸！</p>
     </footer>
   </div>
 
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

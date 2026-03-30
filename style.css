@@ -41,6 +41,49 @@ body {
 .hero h1 { font-size: 1.8rem; letter-spacing: .05em; }
 .hero .subtitle { color: var(--text-dim); margin: .3rem 0 0; font-size: 1rem; }
 
+/* ===== Tier Navigation ===== */
+.tier-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: var(--bg-card);
+  border-bottom: 2px solid var(--border);
+}
+.tier-btn {
+  flex: 1;
+  max-width: 280px;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .25s;
+  position: relative;
+  letter-spacing: .03em;
+}
+.tier-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  transition: background .25s;
+}
+.tier-btn:hover { color: var(--text); }
+.tier-btn.active[data-tier="beginner"] { color: var(--safe); }
+.tier-btn.active[data-tier="beginner"]::after { background: var(--safe); }
+.tier-btn.active[data-tier="intermediate"] { color: var(--primary); }
+.tier-btn.active[data-tier="intermediate"]::after { background: var(--primary); }
+.tier-btn.active[data-tier="master"] { color: var(--accent-warm); }
+.tier-btn.active[data-tier="master"]::after { background: var(--accent-warm); }
+
+.tier-content { display: none; }
+.tier-content.active { display: block; }
+
 /* ===== Tab Nav Bar (Sticky) ===== */
 .tab-nav-bar {
   position: sticky;
@@ -807,6 +850,7 @@ footer {
 @media (max-width: 700px) {
   .hero h1 { font-size: 1.4rem; }
   .hero .subtitle { font-size: .85rem; }
+  .tier-btn { font-size: .85rem; padding: .65rem .5rem; }
   .tab-nav-bar { padding: 0.5rem 0.8rem; }
   .tab-btn { padding: .4rem .8rem; font-size: .8rem; }
   .container { padding: 1rem; }
