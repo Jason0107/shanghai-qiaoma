@@ -841,9 +841,9 @@ footer {
 }
 .footer-meta { margin-top: .5rem; font-size: .8rem; }
 .footer-meta strong { color: var(--primary); }
-.footer-stats-link { margin-top: .4rem; font-size: .78rem; }
-.footer-stats-link a { color: var(--text-dim); text-decoration: none; opacity: .7; transition: opacity .2s; }
-.footer-stats-link a:hover { opacity: 1; color: var(--primary); }
+.footer-admin { margin-top: .4rem; font-size: .78rem; color: var(--text-dim); }
+.footer-admin a { color: var(--text-dim); text-decoration: none; opacity: .7; transition: opacity .2s; }
+.footer-admin a:hover { opacity: 1; color: var(--primary); }
 
 /* ===== Stats Overlay ===== */
 .stats-overlay {

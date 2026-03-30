@@ -53,6 +53,14 @@ npx wrangler pages deploy . --project-name shanghai-qiaoma --branch main
 - 如果 token 泄露，立即在上述页面删除并重新生成
 - 新 token 需更新到 GitHub Secrets：`gh secret set CLOUDFLARE_API_TOKEN`
 
+## 快捷键
+
+| 快捷键 | 功能 |
+|--------|------|
+| `Ctrl+Shift+S`（Mac 上 `Cmd+Shift+S`） | 显示/隐藏管理员统计行（访问量、访客数、内容热度统计入口） |
+
+也可以通过 URL 参数 `?stats` 直接打开统计面板。
+
 ## 相关链接
 
 - GitHub 仓库：https://github.com/Jason0107/shanghai-qiaoma

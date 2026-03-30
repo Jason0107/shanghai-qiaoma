@@ -626,9 +626,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("stats-close").addEventListener("click", closeStats);
   statsOverlay.addEventListener("click", (e) => { if (e.target === statsOverlay) closeStats(); });
-  document.querySelector(".footer-stats-link a").addEventListener("click", openStats);
 
-  if (location.search.includes("stats")) openStats();
+  const adminRow = document.querySelector(".footer-admin");
+  const statsTrigger = document.querySelector(".footer-stats-trigger");
+  if (statsTrigger) statsTrigger.addEventListener("click", openStats);
+
+  /* Ctrl+Shift+S (or Cmd+Shift+S) toggles admin stats row */
+  document.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === "s") {
+      e.preventDefault();
+      if (!adminRow) return;
+      const visible = adminRow.style.display !== "none";
+      adminRow.style.display = visible ? "none" : "block";
+    }
+  });
+
+  if (location.search.includes("stats")) {
+    if (adminRow) adminRow.style.display = "block";
+    openStats();
+  }
 
   /* ===================== Hash-based Route Restore ===================== */
   function restoreFromHash() {
