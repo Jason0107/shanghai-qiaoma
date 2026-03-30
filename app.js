@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "场景二十二：抢杠胡",
       difficulty: 2,
       scenario:
-        "第11轮，你已敲听 <span class='tile wan'>六万</span>(剩2张)。对面有六万明碰，这轮要加杠。你可以抢杠胡，该不该？",
+        "第11轮，你已敲听 <span class='tile wan'>六万</span>(剩1张)。对面有六万明碰，这轮要加杠。你可以抢杠胡，该不该？",
       options: ["A. 不胡", "B. 必须胡 — 抢杠=对方付三份！", "C. 看番型", "D. 不确定能不能抢"],
       correct: 1,
       explanation:
