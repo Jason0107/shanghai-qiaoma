@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="tileGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f0e8"/>
+      <stop offset="100%" stop-color="#e8dfd0"/>
+    </linearGradient>
+    <linearGradient id="sideGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4cab8"/>
+      <stop offset="100%" stop-color="#b8a890"/>
+    </linearGradient>
+  </defs>
+  <!-- tile shadow -->
+  <rect x="12" y="14" width="104" height="112" rx="12" fill="#9a8e7a" opacity="0.35"/>
+  <!-- tile side (3D effect) -->
+  <rect x="10" y="12" width="104" height="112" rx="12" fill="url(#sideGrad)"/>
+  <!-- tile face -->
+  <rect x="8" y="8" width="104" height="108" rx="12" fill="url(#tileGrad)" stroke="#c4b8a0" stroke-width="2"/>
+  <!-- inner border -->
+  <rect x="18" y="18" width="84" height="88" rx="6" fill="none" stroke="#d4cab8" stroke-width="1.5"/>
+  <!-- - character (Red Dragon / Chun) -->
+  <text x="60" y="80" font-family="serif" font-size="62" font-weight="bold" fill="#c0392b" text-anchor="middle" dominant-baseline="central">-</text>
+</svg>
