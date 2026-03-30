@@ -504,23 +504,41 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===================== Graphical Tile Transform ===================== */
   function transformTiles() {
     var NUM = {'一':1,'二':2,'三':3,'四':4,'五':5,'六':6,'七':7,'八':8,'九':9};
+    var SUIT = {'万':'Man','筒':'Pin','条':'Sou'};
     var WIND = {'东':'Ton','南':'Nan','西':'Shaa','北':'Pei','中':'Chun','发':'Hatsu','白':'Haku'};
+    function img(file, alt) {
+      return '<img src="tiles/' + file + '.svg" alt="' + alt + '" draggable="false">';
+    }
     document.querySelectorAll('.hand-tile:not([data-t]),.tile:not([data-t])').forEach(function(el) {
       var raw = el.textContent.trim();
       if (!raw) return;
-      var file = null;
-      if (raw.length === 2 && raw[1] === '风') file = WIND[raw[0]];
-      else if (raw.length === 1) file = WIND[raw];
-      else if (raw.length === 2) {
-        var n = NUM[raw[0]], s = raw[1];
-        if (n && s === '万') file = 'Man' + n;
-        else if (n && s === '筒') file = 'Pin' + n;
-        else if (n && s === '条') file = 'Sou' + n;
+      var html = null;
+
+      if (raw.length === 1 && WIND[raw]) {
+        html = img(WIND[raw], raw);
+      } else if (raw.length === 2 && raw[1] === '风' && WIND[raw[0]]) {
+        html = img(WIND[raw[0]], raw[0]);
+      } else if (raw.length === 2 && NUM[raw[0]] && SUIT[raw[1]]) {
+        html = img(SUIT[raw[1]] + NUM[raw[0]], raw);
+      } else {
+        var suit = raw[raw.length - 1];
+        var prefix = SUIT[suit];
+        if (prefix && raw.length >= 3) {
+          var chars = raw.slice(0, -1);
+          var parts = [];
+          for (var i = 0; i < chars.length; i++) {
+            var n = NUM[chars[i]];
+            if (!n) { parts = []; break; }
+            parts.push(img(prefix + n, chars[i] + suit));
+          }
+          if (parts.length) html = parts.join('');
+        }
       }
-      if (!file) return;
+
+      if (!html) return;
       el.setAttribute('data-t', '1');
       el.title = raw;
-      el.innerHTML = '<img src="tiles/' + file + '.svg" alt="' + raw + '" draggable="false">';
+      el.innerHTML = html;
     });
   }
   transformTiles();
