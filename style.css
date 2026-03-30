@@ -729,127 +729,44 @@ body {
 .hand-spacer { width: 12px; }
 .hand-label { width: 100%; font-size: 0.8rem; color: var(--text-dim); margin-top: 0.5rem; }
 
-/* ===== Graphical Tile Faces ===== */
-.hand-tile[data-t] {
+/* ===== Graphical Tile Faces (SVG images) ===== */
+.hand-tile[data-t],
+.tile[data-t] {
   writing-mode: horizontal-tb;
   text-orientation: mixed;
-  flex-direction: column;
-  letter-spacing: 0;
-  gap: 0;
+  overflow: hidden;
+  background: #f5f0e8;
+  border: 1px solid #c9bfa6;
+  border-radius: 5px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,.35), inset 0 0 4px rgba(255,255,255,.5);
+}
+.hand-tile[data-t] img,
+.tile[data-t] img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.hand-tile[data-t] {
+  width: 40px;
+  min-height: 0;
+  padding: 4px 3px;
+}
+.hand-tile[data-t] img {
+  height: 52px;
+  width: 34px;
 }
 .tile[data-t] {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
+  display: inline-block;
+  padding: 2px 1px;
+  margin: 0 1px;
+  vertical-align: middle;
 }
-.tile[data-suit="tong"],
-.tile[data-suit="tiao"] {
-  padding: 2px 3px;
-  min-width: 26px;
-  min-height: 28px;
+.tile[data-t] img {
+  height: 1.5em;
+  width: auto;
 }
-
-/* 万子: number + 万 stacked */
-.tf-num {
-  display: block;
-  font-weight: 900;
-  text-align: center;
-  line-height: 1.1;
-}
-.tf-label {
-  display: block;
-  font-weight: 800;
-  text-align: center;
-  line-height: 1;
-}
-.hand-tile .tf-num { font-size: 1.2em; }
-.hand-tile .tf-label { font-size: 0.72em; margin-top: 1px; }
-.tile .tf-num { font-size: 0.88em; }
-.tile .tf-label { font-size: 0.62em; }
-[data-suit="wan"] .tf-num,
-[data-suit="wan"] .tf-label { color: #b5251a; }
-
-/* 风牌 character */
-.tf-char {
-  font-weight: 900;
-  line-height: 1;
-  color: #333;
-}
-.hand-tile .tf-char { font-size: 1.4em; }
-.tile .tf-char { font-size: 0.9em; }
-.tf-char.zhong { color: #c0392b; }
-.tf-char.fa { color: #1a7d45; }
-
-/* 筒子: concentric-circle grid */
-.tf-dots {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  place-items: center;
-  width: 100%;
-  height: 100%;
-  flex: 1;
-}
-.hand-tile .tf-dots { gap: 1px; padding: 2px 1px; }
-.tile .tf-dots { gap: 0; padding: 1px 0; }
-
-.td {
-  display: block;
-  border-radius: 50%;
-  aspect-ratio: 1;
-}
-.td.e { visibility: hidden; }
-
-.hand-tile .td { width: 9px; height: 9px; }
-.tile .td { width: 5.5px; height: 5.5px; }
-
-.td:not(.e) {
-  background: radial-gradient(circle, #e8f0fa 18%, #3a8fd4 26%, #1a5fa0 40%, #6ab4e0 50%, #1a5fa0 62%, #3a8fd4 72%, #e8f0fa 80%);
-  box-shadow: 0 0 1px rgba(0,0,0,.25);
-}
-
-/* 条子: bamboo sticks */
-.tf-bars {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  flex: 1;
-}
-.hand-tile .tf-bars { gap: 3px; padding: 3px 2px; }
-.tile .tf-bars { gap: 1.5px; padding: 1px 0; }
-
-.tf-row {
-  display: flex;
-  justify-content: center;
-}
-.hand-tile .tf-row { gap: 3px; }
-.tile .tf-row { gap: 2px; }
-
-.tb {
-  display: block;
-  border-radius: 1.5px;
-  position: relative;
-  background: linear-gradient(90deg, #0d5a24 0%, #1a8c42 30%, #34c759 50%, #1a8c42 70%, #0d5a24 100%);
-}
-.hand-tile .tb { width: 5px; height: 13px; }
-.tile .tb { width: 3px; height: 8px; }
-
-.tb::before, .tb::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 1.5px;
-  background: #07401a;
-  border-radius: 1px;
-}
-.tb::before { top: 30%; }
-.tb::after { top: 65%; }
-.tile .tb::before, .tile .tb::after { height: 1px; }
 
 /* ===== Difficulty Tags ===== */
 .difficulty-tag {
@@ -1042,10 +959,9 @@ footer {
   .container { padding: 1rem; }
   .hand-display { padding: 0.6rem; gap: 2px; }
   .hand-tile { font-size: 0.78rem; width: 28px; min-height: 40px; padding: 3px 1px; letter-spacing: 1px; }
-  .hand-tile .td { width: 6px; height: 6px; }
-  .hand-tile .tb { width: 4px; height: 10px; }
-  .hand-tile .tf-row { gap: 2px; }
-  .hand-tile .tf-bars { gap: 2px; }
+  .hand-tile[data-t] { width: 30px; padding: 3px 2px; }
+  .hand-tile[data-t] img { height: 36px; width: 24px; }
+  .tile[data-t] img { height: 1.3em; }
   .hand-spacer { width: 6px; }
   .mistake-card { flex-direction: column; gap: 0.6rem; }
   .review-step { flex-direction: column; gap: 0.6rem; }

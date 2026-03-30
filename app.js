@@ -504,54 +504,23 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===================== Graphical Tile Transform ===================== */
   function transformTiles() {
     var NUM = {'一':1,'二':2,'三':3,'四':4,'五':5,'六':6,'七':7,'八':8,'九':9};
-    var DOTS = {
-      1:[4], 2:[1,7], 3:[0,4,8], 4:[0,2,6,8], 5:[0,2,4,6,8],
-      6:[0,2,3,5,6,8], 7:[0,2,3,4,5,6,8], 8:[0,1,2,3,5,6,7,8], 9:[0,1,2,3,4,5,6,7,8]
-    };
-    var BARS = {
-      1:[1], 2:[2], 3:[3], 4:[2,2], 5:[3,2], 6:[3,3], 7:[4,3], 8:[4,4], 9:[3,3,3]
-    };
-    document.querySelectorAll('.hand-tile:not([data-t]),.tile:not([data-t])').forEach(el => {
-      const raw = el.textContent.trim();
+    var WIND = {'东':'Ton','南':'Nan','西':'Shaa','北':'Pei','中':'Chun','发':'Hatsu','白':'Haku'};
+    document.querySelectorAll('.hand-tile:not([data-t]),.tile:not([data-t])').forEach(function(el) {
+      var raw = el.textContent.trim();
       if (!raw) return;
+      var file = null;
+      if (raw.length === 2 && raw[1] === '风') file = WIND[raw[0]];
+      else if (raw.length === 1) file = WIND[raw];
+      else if (raw.length === 2) {
+        var n = NUM[raw[0]], s = raw[1];
+        if (n && s === '万') file = 'Man' + n;
+        else if (n && s === '筒') file = 'Pin' + n;
+        else if (n && s === '条') file = 'Sou' + n;
+      }
+      if (!file) return;
       el.setAttribute('data-t', '1');
       el.title = raw;
-
-      if (raw.length === 2 && raw[1] === '风') {
-        el.setAttribute('data-suit', 'feng');
-        el.innerHTML = '<span class="tf-char">' + raw[0] + '</span>';
-        return;
-      }
-      if (raw.length === 1) {
-        el.setAttribute('data-suit', 'feng');
-        const cc = raw === '中' ? ' zhong' : raw === '发' ? ' fa' : '';
-        el.innerHTML = '<span class="tf-char' + cc + '">' + raw + '</span>';
-        return;
-      }
-      if (raw.length !== 2) return;
-
-      const nc = raw[0], suit = raw[1], n = NUM[nc];
-      if (!n) return;
-
-      if (suit === '万') {
-        el.setAttribute('data-suit', 'wan');
-        el.innerHTML = '<span class="tf-num">' + nc + '</span><span class="tf-label">万</span>';
-      } else if (suit === '筒') {
-        el.setAttribute('data-suit', 'tong');
-        const pos = DOTS[n];
-        let h = '<span class="tf-dots">';
-        for (let i = 0; i < 9; i++) h += pos.includes(i) ? '<i class="td"></i>' : '<i class="td e"></i>';
-        el.innerHTML = h + '</span>';
-      } else if (suit === '条') {
-        el.setAttribute('data-suit', 'tiao');
-        let h = '<span class="tf-bars">';
-        BARS[n].forEach(c => {
-          h += '<span class="tf-row">';
-          for (let i = 0; i < c; i++) h += '<i class="tb"></i>';
-          h += '</span>';
-        });
-        el.innerHTML = h + '</span>';
-      }
+      el.innerHTML = '<img src="tiles/' + file + '.svg" alt="' + raw + '" draggable="false">';
     });
   }
   transformTiles();
