@@ -1,39 +1,91 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  /* ===================== Click Tracking ===================== */
+  const STORAGE_KEY = "qiaoma_tab_clicks";
+  const TAB_LABELS = {
+    "b-tiles":"牌面组成","b-winning":"胡牌条件","b-actions":"吃碰杠",
+    "b-flow":"一局流程","b-rules":"敲牌规则","b-scoring":"番型计分",
+    "b-discard":"基础出牌","b-quiz":"入门测验",
+    "i-building":"做牌攻略","i-efficiency":"听牌效率","i-strategy":"敲牌攻防",
+    "i-defense":"防守体系","i-reading":"读牌技巧","i-mistakes":"避坑指南","i-quiz":"进阶测验",
+    "m-ev":"EV决策","m-scoring":"花数最大化","m-position":"位置策略",
+    "m-tempo":"节奏控制","m-opponent":"对手识别","m-probability":"概率速查",
+    "m-reading":"高级读牌","m-replay":"牌谱复盘","m-quiz":"大师测验"
+  };
+  const TIER_LABELS = { beginner:"入门篇", intermediate:"进阶篇", master:"大师篇" };
+  const TIER_CSS = { beginner:"tier-beginner", intermediate:"tier-intermediate", master:"tier-master" };
+
+  function getClicks() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+    catch { return {}; }
+  }
+  function trackClick(tabId) {
+    const clicks = getClicks();
+    clicks[tabId] = (clicks[tabId] || 0) + 1;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(clicks));
+  }
+  function currentTierId() {
+    const active = document.querySelector(".tier-btn.active");
+    return active ? active.dataset.tier : "beginner";
+  }
+  function currentTabId() {
+    const tier = document.querySelector(".tier-content.active");
+    if (!tier) return null;
+    const active = tier.querySelector(".tab-btn.active");
+    return active ? active.dataset.tab : null;
+  }
+  function updateHash(skipHistory) {
+    const hash = "#" + currentTierId() + "/" + (currentTabId() || "");
+    if (skipHistory) history.replaceState(null, "", hash);
+    else history.replaceState(null, "", hash);
+  }
+
   /* ===================== Tier Switching ===================== */
   const tierBtns = document.querySelectorAll(".tier-btn");
   const tierContents = document.querySelectorAll(".tier-content");
 
-  tierBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const target = btn.dataset.tier;
-      tierBtns.forEach(b => b.classList.remove("active"));
-      tierContents.forEach(c => c.classList.remove("active"));
-      btn.classList.add("active");
-      document.getElementById("tier-" + target).classList.add("active");
+  function activateTier(target, scroll) {
+    tierBtns.forEach(b => b.classList.remove("active"));
+    tierContents.forEach(c => c.classList.remove("active"));
+    const btn = document.querySelector(`.tier-btn[data-tier="${target}"]`);
+    if (btn) btn.classList.add("active");
+    const el = document.getElementById("tier-" + target);
+    if (el) el.classList.add("active");
 
-      const firstTab = document.querySelector("#tier-" + target + " .tab-btn");
-      if (firstTab && !document.querySelector("#tier-" + target + " .tab-btn.active")) {
-        firstTab.click();
-      } else {
-        buildSidebar();
-      }
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    const firstTab = document.querySelector("#tier-" + target + " .tab-btn");
+    if (firstTab && !document.querySelector("#tier-" + target + " .tab-btn.active")) {
+      activateTab(firstTab.dataset.tab, target, false);
+    } else {
+      buildSidebar();
+    }
+    updateHash();
+    if (scroll) window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  tierBtns.forEach(btn => {
+    btn.addEventListener("click", () => activateTier(btn.dataset.tier, true));
   });
 
   /* ===================== Tab Switching (within tiers) ===================== */
+  function activateTab(tabId, tierId, doTrack) {
+    const tierEl = document.getElementById("tier-" + tierId);
+    if (!tierEl) return;
+    tierEl.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    tierEl.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+    const tabBtn = tierEl.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+    if (tabBtn) tabBtn.classList.add("active");
+    const section = document.getElementById("tab-" + tabId);
+    if (section) section.classList.add("active");
+    buildSidebar();
+    updateHash();
+    if (doTrack) trackClick(tabId);
+  }
+
   document.querySelectorAll(".tab-nav").forEach(nav => {
     nav.querySelectorAll(".tab-btn").forEach(btn => {
       btn.addEventListener("click", () => {
-        const target = btn.dataset.tab;
-        const tier = btn.closest(".tier-content");
-        tier.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-        tier.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
-        btn.classList.add("active");
-        const section = document.getElementById("tab-" + target);
-        if (section) section.classList.add("active");
-        buildSidebar();
+        const tierId = btn.closest(".tier-content").id.replace("tier-", "");
+        activateTab(btn.dataset.tab, tierId, true);
       });
     });
   });
@@ -535,4 +587,61 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   buildSidebar();
+
+  /* ===================== Stats Panel ===================== */
+  const statsOverlay = document.getElementById("stats-overlay");
+  const statsBody = document.getElementById("stats-body");
+
+  function renderStats() {
+    const clicks = getClicks();
+    const maxVal = Math.max(1, ...Object.values(clicks));
+    const tiers = [
+      { id: "beginner", tabs: ["b-tiles","b-winning","b-actions","b-flow","b-rules","b-scoring","b-discard","b-quiz"] },
+      { id: "intermediate", tabs: ["i-building","i-efficiency","i-strategy","i-defense","i-reading","i-mistakes","i-quiz"] },
+      { id: "master", tabs: ["m-ev","m-scoring","m-position","m-tempo","m-opponent","m-probability","m-reading","m-replay","m-quiz"] }
+    ];
+    let total = Object.values(clicks).reduce((a, b) => a + b, 0);
+    let html = `<p style="font-size:.9rem;margin-bottom:1rem;">总 Tab 点击次数：<strong>${total}</strong></p>`;
+    tiers.forEach(t => {
+      html += `<div class="stats-tier-title">${TIER_LABELS[t.id]}</div>`;
+      t.tabs.forEach(tabId => {
+        const count = clicks[tabId] || 0;
+        const pct = (count / maxVal * 100).toFixed(1);
+        html += `<div class="stats-row">
+          <span class="stats-label">${TAB_LABELS[tabId] || tabId}</span>
+          <div class="stats-bar-wrap"><div class="stats-bar ${TIER_CSS[t.id]}" style="width:${pct}%"></div></div>
+          <span class="stats-count">${count}</span>
+        </div>`;
+      });
+    });
+    statsBody.innerHTML = html;
+  }
+
+  function openStats(e) {
+    if (e) e.preventDefault();
+    renderStats();
+    statsOverlay.style.display = "flex";
+  }
+  function closeStats() { statsOverlay.style.display = "none"; }
+
+  document.getElementById("stats-close").addEventListener("click", closeStats);
+  statsOverlay.addEventListener("click", (e) => { if (e.target === statsOverlay) closeStats(); });
+  document.querySelector(".footer-stats-link a").addEventListener("click", openStats);
+
+  if (location.search.includes("stats")) openStats();
+
+  /* ===================== Hash-based Route Restore ===================== */
+  function restoreFromHash() {
+    const h = location.hash.replace("#", "");
+    if (!h) return;
+    const [tier, tab] = h.split("/");
+    if (tier && TIER_LABELS[tier]) {
+      activateTier(tier, false);
+      if (tab && TAB_LABELS[tab]) {
+        activateTab(tab, tier, false);
+      }
+    }
+  }
+  restoreFromHash();
+  window.addEventListener("hashchange", restoreFromHash);
 });
