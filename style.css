@@ -276,21 +276,26 @@ body {
 .danger-low { border-color: var(--low); }
 .danger-safe { border-color: var(--safe); }
 
-/* ===== Tile Examples ===== */
+/* ===== Tile Inline (text-flow) ===== */
 .tile {
   display: inline-block;
-  background: #f0e6d2;
+  background: linear-gradient(170deg, #fefcf5 0%, #f2e8d0 50%, #e5d9bf 100%);
   color: #333;
-  padding: .1rem .45rem;
+  padding: .15rem .45rem;
   border-radius: 4px;
-  font-weight: 700;
-  font-size: .85rem;
-  margin: 0 .15rem;
-  border-bottom: 2px solid #c4b89a;
+  font-weight: 800;
+  font-size: .82rem;
+  margin: 0 .12rem;
+  border: 1px solid #cfc4a6;
+  border-bottom: 2.5px solid #b5a888;
+  box-shadow: 0 1px 2px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.7);
+  vertical-align: middle;
+  letter-spacing: .5px;
 }
-.tile.wan { color: #c0392b; }
-.tile.tiao { color: #27ae60; }
-.tile.tong { color: #2980b9; }
+.tile.wan { color: #b5251a; }
+.tile.tiao { color: #1d8c4e; }
+.tile.tong { color: #1f6fb5; }
+.tile.feng { color: #444; }
 
 /* ===== Danger Chart ===== */
 .tile-danger-chart { margin-top: 1rem; }
@@ -679,10 +684,10 @@ body {
 .hand-display {
   display: flex;
   flex-wrap: wrap;
-  gap: 3px;
-  padding: 1rem;
-  background: rgba(0,0,0,0.25);
-  border-radius: 10px;
+  gap: 4px;
+  padding: 1rem 1rem 1rem;
+  background: linear-gradient(180deg, rgba(0,0,0,.3) 0%, rgba(0,0,0,.2) 100%);
+  border-radius: 12px;
   margin: 1rem 0;
   align-items: flex-end;
 }
@@ -690,25 +695,161 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #faf3e3 0%, #e8dcc8 100%);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  background:
+    linear-gradient(170deg, #fffef8 0%, #f7f0dc 35%, #ede3c8 70%, #e2d6b8 100%);
   color: #333;
-  padding: 0.45rem 0.3rem;
-  border-radius: 4px;
-  font-weight: 800;
-  font-size: 0.85rem;
-  border: 1px solid #c4b89a;
-  border-bottom: 3px solid #b0a080;
-  min-width: 30px;
+  width: 36px;
+  min-height: 52px;
+  padding: 5px 2px;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  border: 1px solid #c8bc9e;
+  border-bottom: 3.5px solid #a89870;
   text-align: center;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  line-height: 1.2;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.85),
+    inset 0 -2px 3px rgba(0,0,0,.06),
+    1px 2px 5px rgba(0,0,0,.28),
+    0 0 0 .5px rgba(0,0,0,.08);
+  line-height: 1;
+  position: relative;
+  transition: transform .15s ease;
+  cursor: default;
 }
-.hand-tile.wan { color: #c0392b; }
-.hand-tile.tiao { color: #27ae60; }
-.hand-tile.tong { color: #2980b9; }
-.hand-tile.zi { color: #555; }
-.hand-spacer { width: 10px; }
+.hand-tile:hover { transform: translateY(-3px); }
+.hand-tile.wan { color: #b5251a; }
+.hand-tile.tiao { color: #1a7d45; }
+.hand-tile.tong { color: #1a5fa0; }
+.hand-tile.zi { color: #333; }
+.hand-tile.feng { color: #333; }
+.hand-spacer { width: 12px; }
 .hand-label { width: 100%; font-size: 0.8rem; color: var(--text-dim); margin-top: 0.5rem; }
+
+/* ===== Graphical Tile Faces ===== */
+.hand-tile[data-t] {
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  flex-direction: column;
+  letter-spacing: 0;
+  gap: 0;
+}
+.tile[data-t] {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.tile[data-suit="tong"],
+.tile[data-suit="tiao"] {
+  padding: 2px 3px;
+  min-width: 26px;
+  min-height: 28px;
+}
+
+/* 万子: number + 万 stacked */
+.tf-num {
+  display: block;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.1;
+}
+.tf-label {
+  display: block;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1;
+}
+.hand-tile .tf-num { font-size: 1.2em; }
+.hand-tile .tf-label { font-size: 0.72em; margin-top: 1px; }
+.tile .tf-num { font-size: 0.88em; }
+.tile .tf-label { font-size: 0.62em; }
+[data-suit="wan"] .tf-num,
+[data-suit="wan"] .tf-label { color: #b5251a; }
+
+/* 风牌 character */
+.tf-char {
+  font-weight: 900;
+  line-height: 1;
+  color: #333;
+}
+.hand-tile .tf-char { font-size: 1.4em; }
+.tile .tf-char { font-size: 0.9em; }
+.tf-char.zhong { color: #c0392b; }
+.tf-char.fa { color: #1a7d45; }
+
+/* 筒子: concentric-circle grid */
+.tf-dots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+.hand-tile .tf-dots { gap: 1px; padding: 2px 1px; }
+.tile .tf-dots { gap: 0; padding: 1px 0; }
+
+.td {
+  display: block;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+.td.e { visibility: hidden; }
+
+.hand-tile .td { width: 9px; height: 9px; }
+.tile .td { width: 5.5px; height: 5.5px; }
+
+.td:not(.e) {
+  background: radial-gradient(circle, #e8f0fa 18%, #3a8fd4 26%, #1a5fa0 40%, #6ab4e0 50%, #1a5fa0 62%, #3a8fd4 72%, #e8f0fa 80%);
+  box-shadow: 0 0 1px rgba(0,0,0,.25);
+}
+
+/* 条子: bamboo sticks */
+.tf-bars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+.hand-tile .tf-bars { gap: 3px; padding: 3px 2px; }
+.tile .tf-bars { gap: 1.5px; padding: 1px 0; }
+
+.tf-row {
+  display: flex;
+  justify-content: center;
+}
+.hand-tile .tf-row { gap: 3px; }
+.tile .tf-row { gap: 2px; }
+
+.tb {
+  display: block;
+  border-radius: 1.5px;
+  position: relative;
+  background: linear-gradient(90deg, #0d5a24 0%, #1a8c42 30%, #34c759 50%, #1a8c42 70%, #0d5a24 100%);
+}
+.hand-tile .tb { width: 5px; height: 13px; }
+.tile .tb { width: 3px; height: 8px; }
+
+.tb::before, .tb::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: #07401a;
+  border-radius: 1px;
+}
+.tb::before { top: 30%; }
+.tb::after { top: 65%; }
+.tile .tb::before, .tile .tb::after { height: 1px; }
 
 /* ===== Difficulty Tags ===== */
 .difficulty-tag {
@@ -900,7 +1041,11 @@ footer {
   .tab-btn { padding: .4rem .8rem; font-size: .8rem; }
   .container { padding: 1rem; }
   .hand-display { padding: 0.6rem; gap: 2px; }
-  .hand-tile { font-size: 0.75rem; padding: 0.35rem 0.2rem; min-width: 26px; }
+  .hand-tile { font-size: 0.78rem; width: 28px; min-height: 40px; padding: 3px 1px; letter-spacing: 1px; }
+  .hand-tile .td { width: 6px; height: 6px; }
+  .hand-tile .tb { width: 4px; height: 10px; }
+  .hand-tile .tf-row { gap: 2px; }
+  .hand-tile .tf-bars { gap: 2px; }
   .hand-spacer { width: 6px; }
   .mistake-card { flex-direction: column; gap: 0.6rem; }
   .review-step { flex-direction: column; gap: 0.6rem; }
