@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "<strong>正确答案：B. 打北风</strong><br><br>" +
         "下家碰两副筒子，极可能做筒子清一色。<br>" +
         "• A 六筒 = 筒子中间张生张，送牌！<br>" +
-        "• B 北风已出2张 + 字牌无顺子连接 → 最安全<br>" +
+        "• B 北风已出2张 + 风牌无顺子连接 → 最安全<br>" +
         "• 即使对手还没敲，碰了两副同花色就是强烈信号"
     },
     {
@@ -86,10 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
       correct: 0,
       explanation:
         "<strong>正确答案：A. 先打东风</strong><br><br>" +
-        "整理优先级：孤张字牌 > 孤张幺九 > 中间张。<br>" +
-        "• 字牌只能做刻子，连接性最差<br>" +
+        "整理优先级：孤张风牌 > 孤张幺九 > 中间张。<br>" +
+        "• 风牌只能做刻子，连接性最差<br>" +
         "• 五万是中间张连接性最强，留下<br>" +
-        "• 口诀：「字幺九，大胆甩；中间张，留下来」"
+        "• 口诀：「风牌幺九，大胆甩；中间张，留下来」"
     },
     {
       title: "场景四：要不要敲？",
@@ -120,14 +120,14 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "场景六：读牌推理",
       difficulty: 2,
       scenario:
-        "第10轮，上家一直打条子（1/3/6/8条），万子筒子没打过。碰了 <span class='tile feng'>发</span>，刚敲了。<br>" +
+        "第10轮，上家一直打条子（1/3/6/8条），万子筒子没打过。碰了 <span class='tile feng'>北</span>，刚敲了。<br>" +
         "你选：A) <span class='tile tiao'>七条</span>(出1张) B) <span class='tile wan'>六万</span>(0张) C) <span class='tile tong'>四筒</span>(0张)",
       options: ["A. 打七条", "B. 打六万", "C. 打四筒", "D. A最安全"],
       correct: 0,
       explanation:
         "<strong>正确答案：A. 打七条</strong><br><br>" +
         "上家大量打条子 → 不做条子 → 条子安全。<br>" +
-        "碰了发 + 没打万子筒子 → 做万/筒混一色。<br>" +
+        "碰了北 + 没打万子筒子 → 做万/筒混一色。<br>" +
         "B和C都是敲家可能在做的花色的生张 → 极危险。"
     },
     {
@@ -187,14 +187,14 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "场景十一：做牌方向选择",
       difficulty: 1,
       scenario:
-        "第2轮，你手牌：万子6张(23/5678)、条子2张(4/9)、筒子2张(1/6)、字牌3张(东/发/发)。做什么方向？",
+        "第2轮，你手牌：万子6张(23/5678)、条子2张(4/9)、筒子2张(1/6)、风牌3张(东/东/北)。做什么方向？",
       options: ["A. 做门清", "B. 做混一色", "C. 做碰碰胡", "D. 随便打"],
       correct: 1,
       explanation:
         "<strong>正确答案：B. 做万子混一色</strong><br><br>" +
-        "万子6张搭子丰富(23/56/78全是两面) + 发有一对可碰 → 混一色1番。<br>" +
+        "万子6张搭子丰富(23/56/78全是两面) + 东有一对可碰 → 混一色1番。<br>" +
         "条子筒子零散 → 打掉。<br>" +
-        "规则：单色5~7张 + 字牌对子 → 优先混一色。"
+        "规则：单色5~7张 + 风牌对子 → 优先混一色。"
     },
     {
       title: "场景十二：搭子取舍",
@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
       correct: 2,
       explanation:
         "<strong>正确答案：C. 打四条</strong><br><br>" +
-        "下家做万子 → A排除。对面做筒子混一色 → B排除，D字牌有风险。<br>" +
+        "下家做万子 → A排除。对面做筒子混一色 → B排除，D风牌有风险。<br>" +
         "C 四条：两家都不做条子 → 双重安全。<br>" +
         "多家敲核心：找两家都不做的花色。"
     },
@@ -253,21 +253,21 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "场景十六：从牌河反推",
       difficulty: 3,
       scenario:
-        "第12轮，上家碰了 <span class='tile tiao'>六条</span> 和 <span class='tile feng'>发</span>，刚敲了。<br>" +
+        "第12轮，上家碰了 <span class='tile tiao'>六条</span> 和 <span class='tile feng'>东</span>，刚敲了。<br>" +
         "牌河：<span class='tile wan'>一万</span><span class='tile wan'>五万</span><span class='tile wan'>九万</span><span class='tile tong'>二筒</span><span class='tile tong'>七筒</span><span class='tile feng'>北</span><span class='tile tong'>九筒</span><br>他最可能做什么？",
       options: ["A. 条子清一色", "B. 条子混一色", "C. 碰碰胡", "D. 不好判断"],
       correct: 1,
       explanation:
         "<strong>正确答案：B. 条子混一色</strong><br><br>" +
-        "碰了条子+发 → 条子和字牌。牌河大量万筒，条子一张没打。<br>" +
-        "碰了字牌「发」→ 不是清一色（清一色不留字牌）。<br>" +
+        "碰了条子+东 → 条子和风牌。牌河大量万筒，条子一张没打。<br>" +
+        "碰了风牌「东」→ 不是清一色（清一色不留风牌）。<br>" +
         "结论：条子混一色。你的条子中间张是极高危牌。"
     },
     {
       title: "场景十七：宽听 vs 高番",
       difficulty: 3,
       scenario:
-        "第11轮没人敲。两种听法：<br>A) 拆发对 → 听三条/六条（两面，0番）<br>B) 拆搭子 → 听发（单骑，门清1番=×2）<br>三条出1张，六条0张，发出1张。",
+        "第11轮没人敲。两种听法：<br>A) 拆北对 → 听三条/六条（两面，0番）<br>B) 拆搭子 → 听北（单骑，门清1番=×2）<br>三条出1张，六条0张，北出1张。",
       options: ["A. 选宽听", "B. 选高番", "C. 先不听", "D. 随便选"],
       correct: 0,
       explanation:
@@ -292,14 +292,14 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "场景十九：碰不碰",
       difficulty: 3,
       scenario:
-        "第6轮，做万子混一色，万子6张 + <span class='tile feng'>中</span><span class='tile feng'>中</span>。门清状态。<br>有人打了中，碰不碰？",
+        "第6轮，做万子混一色，万子6张 + <span class='tile feng'>东</span><span class='tile feng'>东</span>。门清状态。<br>有人打了东，碰不碰？",
       options: ["A. 碰 — 加花加速", "B. 不碰 — 保门清", "C. 碰 — 有就碰", "D. 看情况"],
       correct: 0,
       explanation:
-        "<strong>正确答案：A. 碰中</strong><br><br>" +
-        "碰中 → 刻子加花(风向碰1花)，混一色保留字牌价值大。<br>" +
-        "不碰 → 中只剩1张，后面可能没人打。<br>" +
-        "做混一色时字牌刻子是核心资产，碰字牌收益通常大于保门清。"
+        "<strong>正确答案：A. 碰东</strong><br><br>" +
+        "碰东 → 刻子加花(风向碰1花)，混一色保留风牌价值大。<br>" +
+        "不碰 → 东只剩1张，后面可能没人打。<br>" +
+        "做混一色时风牌刻子是核心资产，碰风牌收益通常大于保门清。"
     },
     {
       title: "场景二十：差一步 vs 防守",
@@ -318,8 +318,8 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "场景二十一：全是危险牌",
       difficulty: 3,
       scenario:
-        "第16轮，下家做万子已敲，对面做筒子混一色已敲。手里全危险：<br>A) <span class='tile wan'>三万</span>(0张) B) <span class='tile tong'>七筒</span>(0张) C) <span class='tile feng'>白</span>(出1张) D) <span class='tile wan'>九万</span>(出2张)",
-      options: ["A. 打三万", "B. 打七筒", "C. 打白", "D. 打九万(幺九+出2张)"],
+        "第16轮，下家做万子已敲，对面做筒子混一色已敲。手里全危险：<br>A) <span class='tile wan'>三万</span>(0张) B) <span class='tile tong'>七筒</span>(0张) C) <span class='tile feng'>南</span>(出1张) D) <span class='tile wan'>九万</span>(出2张)",
+      options: ["A. 打三万", "B. 打七筒", "C. 打南风", "D. 打九万(幺九+出2张)"],
       correct: 3,
       explanation:
         "<strong>正确答案：D. 打九万</strong><br><br>" +
