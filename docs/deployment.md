@@ -10,7 +10,7 @@
 ## 架构
 
 ```
-本地改代码 → git push → GitHub Actions → 自动部署到 Cloudflare Pages
+本地改代码 → git push → GitHub Actions 自动校验 → 自动部署到 Cloudflare Pages
 ```
 
 整个站是纯静态的（HTML + CSS + JS），无需构建步骤、无后端、无数据库。
@@ -26,6 +26,8 @@ git push
 ```
 
 推送后约 30 秒自动生效，无需其他操作。
+
+部署前会自动检查 JavaScript 语法、重复 HTML ID、导航与内容页对应关系、SEO 元数据和测验数量；校验失败时不会发布有问题的版本。
 
 ## 自动部署原理
 

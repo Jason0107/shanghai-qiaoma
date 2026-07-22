@@ -3,9 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="上海敲麻入门到进阶教程：学习敲牌、花数与番型、出牌效率、防守读牌、计分和实战测验。">
+  <meta name="theme-color" content="#8b1e2d">
+  <meta name="robots" content="index, follow">
   <title>上海敲麻 · 全阶宝典</title>
+  <link rel="canonical" href="https://shanghai-qiaoma.pages.dev/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css?v=8">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="上海敲麻 · 全阶宝典">
+  <meta property="og:title" content="上海敲麻 · 全阶宝典">
+  <meta property="og:description" content="从零学习上海敲麻：规则、计分、攻防、读牌与分级实战测验。">
+  <meta property="og:url" content="https://shanghai-qiaoma.pages.dev/">
 </head>
 <body>
   <div id="app">
@@ -36,9 +46,18 @@
         <aside class="sidebar"></aside>
         <main class="container">
       <section id="tab-b-tiles" class="tab-content active">
+        <div class="card callout">
+          <h2>先确认规则口径</h2>
+          <p>上海敲麻没有覆盖所有牌友圈的唯一桌规。本教程采用你们实际使用的口径：<strong>144 张、无百搭、中发白按花处理、不打七对、听牌后先敲再胡、敲后有胡必胡</strong>；番型按本站表格累计。</p>
+          <p><strong>胡牌门槛：</strong>只有 1 花时只能自摸；达到 2 花，才可以胡别人打出的牌或抢杠胡。这里的两花<strong>不包括固定底分</strong>；底分只在最后结算时计入。</p>
+          <p><strong>辣子：</strong>有些资料也写作“勒子”或“喇子”，指本局约定的结算上限，并不是固定分数。你们每次和不同的人打可以临时定，开局先说清“多少花/多少分算辣子”以及特殊牌型怎样结算。</p>
+          <p><strong>无花果：</strong>没有摸到实体花牌或中发白时，按 10 花计算。<strong>一炮多响：</strong>允许多人同时胡同一张牌，放炮者分别向每位合法胡牌者付款，各自按各自牌型结算。</p>
+          <p>其他仍建议开局确认：<strong>荒番/开宝、包牌和敲后上杠</strong>。这些项目在不同平台和牌友圈可能不同。</p>
+          <p class="card-desc">参考资料：<a href="https://www.17dp.com/down/gamelist/id/207" target="_blank" rel="noopener noreferrer">弈棋耍大牌·上海敲麻规则</a>、<a href="https://m.tcy365.com/news/d25048.html" target="_blank" rel="noopener noreferrer">同城游·上海敲麻规则说明</a>。本站策略部分是决策框架，不把经验判断伪装成固定概率。</p>
+        </div>
         <div class="card">
           <h2>一副牌的组成</h2>
-          <p>上海敲麻使用标准<strong>144 张</strong>麻将牌，<strong>没有百搭牌（财神）</strong>。</p>
+          <p>上海敲麻使用标准<strong>144 张</strong>麻将牌，<strong>没有百搭牌（财神）</strong>。其中春夏秋冬梅兰竹菊是 8 张实体花牌；中发白虽然通常称箭牌，但在本玩法中也按花处理、摸到即补。</p>
           <table class="prob-table">
             <thead><tr><th>类别</th><th>内容</th><th>张数</th><th>小计</th></tr></thead>
             <tbody>
@@ -47,16 +66,16 @@
               <tr><td>筒子 <span class="tile tong">一筒</span>～<span class="tile tong">九筒</span>，每种4张</td><td>9×4</td><td>36</td></tr>
               <tr><td colspan="3"><strong>数牌合计</strong></td><td><strong>108</strong></td></tr>
               <tr><td>字牌</td><td>风牌 <span class="tile feng">东</span><span class="tile feng">南</span><span class="tile feng">西</span><span class="tile feng">北</span>，各4张</td><td>4×4</td><td><strong>16</strong></td></tr>
-              <tr><td rowspan="2">花牌</td><td>春夏秋冬梅兰竹菊，各1张</td><td>8×1</td><td>8</td></tr>
-              <tr><td><span class="tile feng">中</span><span class="tile feng">发</span><span class="tile feng">白</span>，各4张（也算花牌）</td><td>3×4</td><td>12</td></tr>
-              <tr><td colspan="3"><strong>花牌合计</strong></td><td><strong>20</strong></td></tr>
+              <tr><td rowspan="2">按花处理</td><td>春夏秋冬梅兰竹菊，各1张（实体花牌）</td><td>8×1</td><td>8</td></tr>
+              <tr><td><span class="tile feng">中</span><span class="tile feng">发</span><span class="tile feng">白</span>，各4张（箭牌，本玩法按花处理）</td><td>3×4</td><td>12</td></tr>
+              <tr><td colspan="3"><strong>按花处理的牌合计</strong></td><td><strong>20</strong></td></tr>
               <tr><td colspan="3"><strong>总计</strong></td><td><strong>144</strong></td></tr>
             </tbody>
           </table>
           <div class="feature-grid">
             <div class="feature-item"><div class="feature-icon">🔢</div><h3>数牌</h3><p>万、条、筒三种花色。可组<strong>顺子</strong>（如<span class="tile wan">四万</span><span class="tile wan">五万</span><span class="tile wan">六万</span>），也可组刻子、杠子。</p></div>
             <div class="feature-item"><div class="feature-icon">风</div><h3>字牌（风牌）</h3><p>东南西北，<strong>不能组顺子</strong>，只能做对子、刻子或杠子。</p></div>
-            <div class="feature-item"><div class="feature-icon">花</div><h3>花牌</h3><p>春夏秋冬梅兰竹菊 + <strong>中发白</strong>，共20张。摸到自动亮出补张，不参与手牌组合。</p></div>
+            <div class="feature-item"><div class="feature-icon">花</div><h3>按花处理的牌</h3><p>8 张实体花牌 + <strong>中发白</strong> 12 张，共20张。摸到自动亮出补张，不参与手牌组合。</p></div>
           </div>
         </div>
       </section>
@@ -70,6 +89,7 @@
             <li><strong>杠子</strong>：四张相同（算一组面子）</li>
             <li><strong>将头</strong>：一对相同的牌（2张）</li>
           </ul>
+          <div class="tip-box"><strong>本站不打七对：</strong>七组对子不是合法胡牌型，必须整理成“4 组面子 + 1 对将头”。</div>
           <h3>胡牌示例</h3>
           <div class="hand-display">
             <span class="hand-tile wan">二万</span><span class="hand-tile wan">三万</span><span class="hand-tile wan">四万</span>
@@ -124,7 +144,7 @@
             <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>向听牌推进</h3><p>不断调整搭子，接近听牌状态。</p></div></div>
             <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>宣布「敲」</h3><p>听牌后在自己回合宣布<strong>敲</strong>（只说听了不亮牌）。</p></div></div>
             <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>摸啥打啥</h3><p>敲后手牌锁定，摸到胡牌就胡，否则打出摸到的牌。</p></div></div>
-            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>胡牌或流局</h3><p>自摸、点炮或抢杠胡牌；牌墙摸完无人胡则流局。</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>胡牌或流局</h3><p>1 花时只能自摸；达到 2 花才可点炮或抢杠胡，固定底分不计入门槛。牌墙摸完无人胡则流局。</p></div></div>
             <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>算分</h3><p>基础分 = 花数 × 2^番数。点炮付1份，自摸三家各付1份。</p></div></div>
           </div>
           <div class="tip-box">看完这个流程就可以上桌了！记住核心：<strong>先敲后胡</strong>。</div>
@@ -169,6 +189,12 @@
         </div>
       </section>
       <section id="tab-b-scoring" class="tab-content">
+        <div class="card callout">
+          <h2>先判断能不能胡，再计算分数</h2>
+          <p><strong>1 花：</strong>只能自摸，别人打出你的胡牌张不能点炮胡，也不能抢杠胡。</p>
+          <p><strong>2 花及以上：</strong>可以自摸、点炮胡或抢杠胡。固定底分不计入这两花；底分只在确认可以胡之后参与最后算分。</p>
+          <p><strong>无七对：</strong>七组对子不能胡。合法牌型仍须满足“4 组面子 + 1 对将头”。</p>
+        </div>
         <div class="card">
           <h2>番型一览（入门速记）</h2>
           <div class="feature-grid">
@@ -181,11 +207,11 @@
             <div class="feature-item"><div class="feature-icon">🟣</div><h3>混碰 · 2番</h3><p>混一色 + 碰碰胡。</p></div>
             <div class="feature-item"><div class="feature-icon">💎</div><h3>清碰 · 3番</h3><p>清一色 + 碰碰胡。</p></div>
           </div>
-          <p style="margin-top:1rem;"><strong>特殊计收：</strong>自摸与抢杠均为「一家付三份」量级；<strong>风一色</strong>、<strong>天胡</strong>、<strong>八花齐</strong>按封顶处理。</p>
+          <p style="margin-top:1rem;"><strong>特殊计收：</strong>抢杠不是自摸，须先满足两花门槛；但合法抢杠后按自摸金额计收，由被抢杠者独付三份。自摸则由三家各付一份。一炮多响时，放炮者分别向每位合法胡牌者付一份。<strong>风一色</strong>、<strong>天胡</strong>、<strong>八花齐</strong>达到上限时，按本局开打前约定的辣子结算。</p>
         </div>
         <div class="card">
           <h2>计分速查表</h2>
-          <p class="card-desc">番数决定倍数，花数决定底分。点炮：赢家收 1 份基础分；自摸：三家各付 1 份。</p>
+          <p class="card-desc">番数决定倍数，花数决定底分。达到两花才可点炮胡：赢家收 1 份基础分；自摸：三家各付 1 份。</p>
           <table class="prob-table">
             <thead>
               <tr>
@@ -222,19 +248,19 @@
               </tr>
               <tr>
                 <td>风一色（全东南西北）/ 天胡</td>
-                <td>封顶</td>
-                <td>封顶值</td>
-                <td>最高分</td>
+                <td>辣子</td>
+                <td>本局约定上限</td>
+                <td>按开局约定</td>
               </tr>
             </tbody>
           </table>
           <div class="tip-box" style="margin-top: 1rem;">
-            <strong>叠加：</strong>番型可叠加（如门清+混一色=2番）。自摸再按规则×3 计收。具体以同桌约定为准。
+            <strong>叠加与辣子：</strong>番型可叠加（如门清+混一色=2番），自摸由三家各付一份；计算结果达到本局约定上限后，按辣子结算。辣子数值每桌临时约定，本站不写死。
           </div>
         </div>
         <div class="card">
           <h2>花牌与花数</h2>
-          <p>上海敲麻共有 <strong>20 张花牌</strong>：春夏秋冬梅兰竹菊（各1张，共8张）+ 中发白（各4张，共12张）。摸到花牌自动亮出并从牌墙补一张。花数是计分的底分基础。</p>
+          <p>本站口径中共有 <strong>20 张按花处理的牌</strong>：春夏秋冬梅兰竹菊（各1张，共8张实体花牌）+ 中发白（各4张，共12张箭牌）。摸到后自动亮出并从牌墙补一张。花数是计分的底分基础。</p>
           <table class="prob-table">
             <thead>
               <tr>
@@ -250,9 +276,9 @@
                 <td>摸到自动亮出补张，共20张</td>
               </tr>
               <tr>
-                <td>底花</td>
+                <td>固定底分（折作 1 花）</td>
                 <td>1 花</td>
-                <td>每局固定底花</td>
+                <td>每局固定底分；参与结算，但不计入点炮/抢杠的两花门槛</td>
               </tr>
               <tr>
                 <td>风向碰 / 风暗刻</td>
@@ -282,12 +308,12 @@
               <tr>
                 <td>无花果</td>
                 <td>直接计 10 花</td>
-                <td>胡牌时一朵花都没有</td>
+                <td>胡牌时没有摸到实体花牌或中发白；本站已确认按 10 花算</td>
               </tr>
               <tr>
                 <td>八花齐</td>
-                <td>直接胡牌（封顶）</td>
-                <td>集齐全部 8 朵花牌</td>
+                <td>直接胡牌（按辣子结算）</td>
+                <td>集齐全部 8 朵花牌；辣子数值以本局约定为准</td>
               </tr>
             </tbody>
           </table>
@@ -301,7 +327,7 @@
             <li>先打<strong>孤张风牌</strong>（难以组成顺子）</li>
             <li>再打<strong>孤张幺九</strong>（1、9，仅一种顺子连接）</li>
             <li>然后<strong>孤张 2、8</strong>（比幺九略灵活，仍弱于中间张）</li>
-            <li><strong>中间张 4/5/6</strong>与<strong>对子</strong>尽量保留，便于组两面搭</li>
+            <li><strong>中间张 3～7</strong>与<strong>对子</strong>通常更值得保留，便于改良为两面搭</li>
           </ol>
           <div class="mnemonic">「字幺九，大胆甩；中间张，留下来」</div>
         </div>
@@ -311,9 +337,10 @@
           <ol>
             <li><strong>不要慌</strong>：敲只说明他在等牌，你仍有安全出牌手段。</li>
             <li><strong>少打他家「主攻花色」的生张</strong>：尤其中间张，放炮概率陡增。</li>
-            <li><strong>安全牌优先级</strong>：<strong>绝张</strong>（四张全现）＞ <strong>跟打敲家摸切</strong> ＞ <strong>已出过 3 张的牌</strong>。</li>
+            <li><strong>先找强证据</strong>：优先跟打该敲家<strong>敲后摸切</strong>的同张牌；多家敲时，必须分别确认对每一家是否安全。</li>
+            <li><strong>别把“已见三张数牌”当绝对安全</strong>：最后一张数牌仍可能补成顺子；只有你手中的第四张风牌且另外三张都已明见时，才因风牌不能组成顺子而确定安全。</li>
           </ol>
-          <div class="mnemonic">「有人敲了别慌张，绝张跟打最安全」</div>
+          <div class="mnemonic">「敲后摸切是强证，多家逐个再确认；数牌见三仍能成顺，不能当成零风险」</div>
         </div>
       </section>
       <section id="tab-b-quiz" class="tab-content">
@@ -398,7 +425,7 @@
             <div class="danger-level danger-safe">
               <div class="danger-header">
                 <span class="danger-badge safe">推荐</span>
-                <span class="danger-title">门清 — 最安全、最灵活的打法</span>
+                <span class="danger-title">门清 — 信息最隐蔽、调整最灵活的打法</span>
               </div>
               <div class="danger-body">
                 <h4>适合条件</h4>
@@ -857,7 +884,7 @@
         </div>
 
         <div class="card">
-          <h3>一、听牌形状概率表</h3>
+          <h3>一、听牌形状效率表</h3>
           <p class="card-desc">假设听的牌全部没出过（最理想情况），各种听牌形状的最大可胡张数</p>
           <table class="prob-table">
             <thead>
@@ -913,46 +940,36 @@
         </div>
 
         <div class="card">
-          <h3>二、实际胡牌概率参考</h3>
-          <p class="card-desc">考虑场上已出牌情况后，各听牌形状在敲了之后的大致每轮胡牌概率</p>
+          <h3>二、用“有效待牌数”比较听口</h3>
+          <p class="card-desc">没有完整牌墙、各家手牌和摸牌顺序时，不能给出固定“每轮胡牌概率”。实战应数还没有明见的有效待牌。</p>
           <table class="prob-table">
             <thead>
               <tr>
-                <th>听牌形状</th>
-                <th>听的牌剩余多</th>
-                <th>听的牌剩余少</th>
-                <th>听的牌近绝张</th>
+                <th>步骤</th>
+                <th>怎么做</th>
+                <th>例子</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>两面听</strong></td>
-                <td><span class="cell-prob p-safe">10~18%/轮</span></td>
-                <td><span class="cell-prob p-low">5~10%/轮</span></td>
-                <td><span class="cell-prob p-medium">2~5%/轮</span></td>
+                <td><strong>1. 列出听牌种类</strong></td>
+                <td>先确认每一种能胡的牌，避免漏算复合听口</td>
+                <td>45 听 3、6，共两种</td>
               </tr>
               <tr>
-                <td><strong>双碰听</strong></td>
-                <td><span class="cell-prob p-low">5~10%/轮</span></td>
-                <td><span class="cell-prob p-medium">3~6%/轮</span></td>
-                <td><span class="cell-prob p-high">1~3%/轮</span></td>
+                <td><strong>2. 扣除已知牌</strong></td>
+                <td>每种牌从 4 张中扣除自己手里、各家副露、牌河和已亮明的牌</td>
+                <td>3 已见 2 张、6 已见 1 张，则最多还有 2+3=5 张有效待牌</td>
               </tr>
               <tr>
-                <td><strong>嵌张/边张</strong></td>
-                <td><span class="cell-prob p-medium">4~8%/轮</span></td>
-                <td><span class="cell-prob p-high">2~4%/轮</span></td>
-                <td><span class="cell-prob p-critical">≤1%/轮</span></td>
-              </tr>
-              <tr>
-                <td><strong>单骑</strong></td>
-                <td><span class="cell-prob p-medium">3~6%/轮</span></td>
-                <td><span class="cell-prob p-high">1~3%/轮</span></td>
-                <td><span class="cell-prob p-critical">≤1%/轮</span></td>
+                <td><strong>3. 比较收益与锁定代价</strong></td>
+                <td>待牌越多越适合敲；待牌少时，还要看番数、牌墙剩余、其他敲家和摸切风险</td>
+                <td>同为听牌，5 张有效待牌通常优于只剩 1 张的单骑</td>
               </tr>
             </tbody>
           </table>
           <div class="tip-box" style="margin-top: 1rem;">
-            <strong>敲牌决策参考：</strong>两面听且剩余张多 → 果断敲；单骑或嵌张且剩余张少 → 三思而后敲（见「阶段策略」中的敲牌时机）。
+            <strong>注意：</strong>“还有 5 张没看见”不等于这 5 张都在牌墙里，它们也可能在别人手中。这个数字用于比较听口宽窄，不是精确胜率。
           </div>
         </div>
 
@@ -1035,8 +1052,8 @@
               </tr>
               <tr>
                 <td><span class="danger-badge low">中等</span></td>
-                <td>孤张中间张（4/5/6）</td>
-                <td>连接性最强，后续容易摸到搭配</td>
+                <td>孤张中间张（3～7）</td>
+                <td>连接性较强，后续容易摸到搭配；仍要结合已知张数</td>
                 <td>一张五筒，周围还没搭配</td>
               </tr>
             </tbody>
@@ -1123,7 +1140,7 @@
               <ul>
                 <li><strong>优先打风牌</strong>：除非你手里有对子/刻子的风牌，否则先把孤张风牌打出去</li>
                 <li><strong>打幺九牌</strong>：1和9的连接性最差，没有搭配就早出</li>
-                <li><strong>少打中间张</strong>：4/5/6留在手里，等摸到好的搭子再组合</li>
+                <li><strong>少打中间张</strong>：3～7 通常留在手里，等摸到好的搭子再组合</li>
                 <li><strong>规划敲的时机</strong>：提前想好你的牌型方向，为后续敲牌做准备</li>
               </ul>
 
@@ -1178,15 +1195,15 @@
               <h4>📋 操作要点</h4>
               <ul>
                 <li><strong>拆搭子求安全</strong>：如果你没敲且场上已有人敲了，果断拆搭子改打安全牌</li>
-                <li><strong>数牌</strong>：关注每张关键牌出了几张，优先打出已出3张的牌</li>
-                <li><strong>跟打敲家摸切</strong>：敲家敲后打出的牌就是他不需要的，跟打这些牌很安全</li>
-                <li><strong>绝不冒险</strong>：手里拿着危险牌宁可不敲不胡也不能放炮</li>
+                <li><strong>数已知牌</strong>：风牌与数牌要分开判断；数牌即使已有 3 张明见，最后一张仍可能补成顺子</li>
+                <li><strong>跟打敲家摸切</strong>：在本站“敲后有胡必胡”的口径下，同张牌对该敲家是强安全线索；多家敲时不能直接照搬</li>
+                <li><strong>降低风险</strong>：自己离听较远时，可牺牲部分进张效率换取更可靠的出牌</li>
               </ul>
 
               <h4>⚠️ 防守提示</h4>
               <div class="tip-box danger">
-                后期多家已敲时，你打出的任何一张生张都可能是炮！<br>
-                <strong>黄金法则：有人敲了你没敲，就老老实实打安全牌，能黄庄也是赢。</strong>
+                后期多家已敲时，不能只验证一家的安全线索。<br>
+                <strong>黄金法则：先确认自己是否仍值得进攻，再逐家排除危险；没有绝对安全牌时，只能比较相对风险。</strong>
               </div>
 
               <h4>🃏 口诀</h4>
@@ -1203,7 +1220,7 @@
             <div class="key-insight-text">
               <strong>场上已经有多少家敲了？</strong><br>
               在上海敲麻中，你不需要猜谁听牌了——有人敲了你就100%确定他在等牌。<br>
-              即使是第7轮（按轮数算中期），如果已有两家敲了，你就应该<strong>立即进入防守模式</strong>。<br>
+              即使是第7轮（按轮数算中期），如果已有两家敲了，也应<strong>立即提高防守权重</strong>，再结合自己的向听数与收益决定是否继续进攻。<br>
               反过来，如果到了第14轮但没人敲，你的进攻窗口仍然开着。
             </div>
           </div>
@@ -1273,7 +1290,7 @@
                 <td><span class="strat-tag strat-balance">正常整理</span><br><small>按前期策略整理手牌</small></td>
                 <td><span class="strat-tag strat-defend">偏向防守</span><br><small>整理时优先保留安全牌</small></td>
                 <td><span class="strat-tag strat-defend">全面防守</span><br><small>放弃胡牌，求平安</small></td>
-                <td><span class="strat-tag strat-full-defend">死守不出</span><br><small>打绝张和跟打，宁可黄庄</small></td>
+                <td><span class="strat-tag strat-full-defend">全面收缩</span><br><small>逐家核对敲后摸切，必要时拆搭</small></td>
               </tr>
             </tbody>
           </table>
@@ -1296,7 +1313,7 @@
               <span class="danger-title">听牌面宽 + 还没人敲</span>
             </div>
             <div class="danger-body">
-              <p class="danger-explain">你听的牌种类多（比如听两头），且场上剩余张数多，胡牌概率高。别人还没敲说明竞争小，此时果断敲。</p>
+              <p class="danger-explain">你听的牌种类多（比如听两头），有效待牌数也较多；别人尚未敲说明公开压力较小，此时通常适合及时敲。</p>
             </div>
           </div>
 
@@ -1306,7 +1323,7 @@
               <span class="danger-title">听牌面较窄但牌型番数高</span>
             </div>
             <div class="danger-body">
-              <p class="danger-explain">比如你做的清一色只差一张，虽然听口窄但胡了翻数高，赌一把值得。不敲就永远没法胡。</p>
+              <p class="danger-explain">比如清一色听口虽窄但收益较高，可以把有效待牌、牌墙余量和锁定风险放在一起比较；只有预期收益足以覆盖风险时才值得敲。</p>
             </div>
           </div>
 
@@ -1326,7 +1343,7 @@
               <span class="danger-title">听口极窄 + 已有多家敲了</span>
             </div>
             <div class="danger-body">
-              <p class="danger-explain">你听的牌几乎没希望了（比如听绝张），而且敲后锁定手牌，被迫摸啥打啥，面对其他敲家的等牌毫无防守能力。不如不敲，保持灵活防守。</p>
+              <p class="danger-explain">你的有效待牌已经全部明见，或只剩极少且牌墙接近末段；敲后还会锁定手牌、失去主动防守能力。此时通常不如保持灵活防守。</p>
             </div>
           </div>
 
@@ -1342,22 +1359,22 @@
           <h3>第一步：立即分析敲家听什么</h3>
           <ul>
             <li>看他的<strong>副露</strong>：碰了什么花色？碰碰胡还是顺子？</li>
-            <li>看他的<strong>牌河</strong>：哪个花色一张没打？那就是他在做的花色</li>
+            <li>看他的<strong>牌河</strong>：哪个花色很少打？这是做该花色的线索，不是确定结论</li>
             <li>看他<strong>敲后打出的牌</strong>：这些牌是他摸到的、不需要的 = 安全牌线索</li>
             <li>算<strong>剩余牌</strong>：他可能听的那些牌，场上出了几张？</li>
           </ul>
 
           <h3>第二步：调整出牌策略</h3>
           <ul>
-            <li><strong>绝对避开</strong>：敲家做的花色中未出现过的中间张</li>
-            <li><strong>优先打</strong>：敲家敲后刚摸切的同张牌、已出3~4张的牌、绝张</li>
-            <li><strong>跟打敲家</strong>：敲家敲后打出什么，你跟着打同张牌最安全</li>
+            <li><strong>优先避开</strong>：敲家明显主攻花色中未出现过的中间张</li>
+            <li><strong>优先考虑</strong>：该敲家敲后刚摸切的同张牌；若是风牌，还可结合另外三张是否全部明见</li>
+            <li><strong>不要误判</strong>：敲前打过的原张、已见 3 张的数牌，都不能单独证明安全</li>
             <li><strong>必要时拆牌</strong>：宁可拆掉自己的好搭子，也不要给敲家送炮</li>
           </ul>
 
           <h3>第三步：多家敲了怎么办？</h3>
           <div class="tip-box danger">
-            多家敲了时，你要同时避开<strong>所有敲家</strong>的危险牌。优先打绝张、已出3张的牌、所有敲家都摸切过的牌。如果手里全是危险牌，尝试拆搭子找安全出路。实在没有安全牌？优先打对付<strong>番数最高</strong>的那家最安全的方向。
+            多家敲了时，要分别核对<strong>每一家</strong>。所有敲家都在敲后摸切过的同张牌，才是跨多家的强安全线索；你手中的第四张风牌且另外三张全部明见，也可确定没人能用它成组。数牌不能只凭“见了三张”判定安全。没有强证据时，再结合各家副露方向、牌河和自己进攻价值比较相对风险。
           </div>
         </div>
 
@@ -1366,7 +1383,7 @@
           <div class="flowchart">
             <div class="flow-node start">有人敲了，你需要打出一张牌</div>
             <div class="flow-arrow">↓</div>
-            <div class="flow-node decision">手里有没有100%安全牌？<br><small>（已出4张的绝张 / 敲家敲后刚摸切的同张牌）</small></div>
+            <div class="flow-node decision">手里有没有对当前敲家有强证据的牌？<br><small>（该敲家敲后摸切过的同张 / 你持第四张风牌且另外三张全明见）</small></div>
             <div class="flow-branch">
               <div class="flow-path yes">
                 <span class="flow-label">有 →</span>
@@ -1376,11 +1393,11 @@
                 <span class="flow-label">没有 ↓</span>
               </div>
             </div>
-            <div class="flow-node decision">有没有相对安全牌？<br><small>（已出3张的牌 / 敲家大量打过的花色的牌 / 已出2张的风牌）</small></div>
+            <div class="flow-node decision">多家敲时，是否对每一家都验证过？<br><small>（只对一家安全，不代表对全场安全）</small></div>
             <div class="flow-branch">
               <div class="flow-path yes">
                 <span class="flow-label">有 →</span>
-                <div class="flow-node action medium">打相对安全牌</div>
+                <div class="flow-node action medium">选对所有敲家都有依据的牌</div>
               </div>
               <div class="flow-path no">
                 <span class="flow-label">没有 ↓</span>
@@ -1404,7 +1421,7 @@
       <section id="tab-i-defense" class="tab-content">
         <div class="card callout">
           <h2>防守出牌总览</h2>
-          <p>上海敲麻中，有人敲了就是 100% 确定的危险信号。本章帮你完成两件事：<strong>识别危险牌</strong>（哪些牌最可能让你放炮）和<strong>安全出牌</strong>（该打什么牌才不会点炮）。</p>
+          <p>上海敲麻中，有人敲了就能确定他已经听牌。本章帮你完成两件事：<strong>识别危险牌</strong>（哪些牌更可能让你放炮）和<strong>比较候选牌</strong>（哪张牌的安全证据更强、相对风险更低）。</p>
         </div>
 
         <div class="card">
@@ -1453,23 +1470,23 @@
           <div class="danger-level danger-low">
             <div class="danger-header">
               <span class="danger-badge low">较安全</span>
-              <span class="danger-title">敲家摸切的牌（敲后打出的）/ 牌河已出3~4张的牌</span>
+              <span class="danger-title">敲家摸切的牌（敲后打出的同张）</span>
             </div>
             <div class="danger-body">
               <div class="tile-example">
                 <p>敲家敲了之后打出 <span class="tile tong">八筒</span>（摸啥打啥），你也有 <span class="tile tong">八筒</span>，这张跟打相对安全</p>
               </div>
-              <p class="danger-explain">敲后手牌锁定，打出的牌就是他摸到的、不需要的牌。跟打敲家刚摸切的牌是重要防守手段</p>
+              <p class="danger-explain">敲后手牌锁定且有胡必胡时，他摸切的同张牌对该敲家是强安全线索。注意它对其他敲家未必安全</p>
             </div>
           </div>
 
           <div class="danger-level danger-safe">
             <div class="danger-header">
               <span class="danger-badge safe">安全</span>
-              <span class="danger-title">已经出现4张的风牌 / 对手打过的原张</span>
+              <span class="danger-title">你持第四张风牌，另外三张都已明见</span>
             </div>
             <div class="danger-body">
-              <p class="danger-explain">4张全出 = 物理上不可能有人再用这张牌胡牌。这是100%安全的</p>
+              <p class="danger-explain">风牌不能组成顺子；另外三张都已明见时，其他玩家手里没有同张可做将或刻子。数牌不适用：第四张数牌仍可能补成顺子</p>
             </div>
           </div>
         </div>
@@ -1485,14 +1502,14 @@
             </div>
             <div class="chart-row">
               <span class="chart-cell tile-label">4、5、6（中间张）</span>
-              <span class="chart-cell">最强</span>
+              <span class="chart-cell">强</span>
               <span class="chart-cell">可构成顺子数：3种</span>
               <span class="chart-cell"><span class="bar bar-5"></span></span>
             </div>
             <div class="chart-row">
               <span class="chart-cell tile-label">3、7</span>
-              <span class="chart-cell">较强</span>
-              <span class="chart-cell">可构成顺子数：2种</span>
+              <span class="chart-cell">强</span>
+              <span class="chart-cell">可构成顺子数：3种</span>
               <span class="chart-cell"><span class="bar bar-4"></span></span>
             </div>
             <div class="chart-row">
@@ -1535,7 +1552,7 @@
               <div class="priority-body">
                 <div class="priority-title">先打孤张风牌</div>
                 <div class="priority-desc">
-                  <p>手里没有对子的风牌最先出，连接性最差只能碰成刻子。越早打越安全——前期出风牌基本没有放炮风险。</p>
+                  <p>手里没有对子的风牌通常先出，因为连接性最差，只能组成对子、刻子或杠子。前期无人敲、无人明显做牌时，孤张风牌的相对风险通常较低，但不是零风险。</p>
                   <div class="priority-example">
                     <span class="tile feng">东风</span> <span class="tile feng">北风</span> 手里各只有一张 → 第一时间打掉
                   </div>
@@ -1574,7 +1591,7 @@
               <div class="priority-body">
                 <div class="priority-title">拆弱搭留强搭</div>
                 <div class="priority-desc">
-                  <p>搭子太多必须拆时，优先拆效率低的搭子。搭子效率：<strong>两面搭（如 56）&gt; 对子 &gt; 边搭（如 12）≥ 嵌搭（如 35）</strong>。</p>
+                  <p>搭子太多必须拆时，先保留两面搭。边搭（如 12）和嵌搭（如 35）当前都只有一种直接进张；再结合位置、已知张数和改良空间判断，不能固定说边搭一定优于嵌搭。</p>
                   <div class="priority-example">
                     <span class="tile wan">一万</span><span class="tile wan">二万</span>（边搭，只听三万）vs <span class="tile tiao">五条</span><span class="tile tiao">六条</span>（两面搭，听四条和七条）→ 拆边搭，留两面搭
                   </div>
@@ -1595,9 +1612,9 @@
             <div class="priority-item">
               <div class="priority-rank rank-6">6</div>
               <div class="priority-body">
-                <div class="priority-title">中间张（4/5/6）最后打</div>
+                <div class="priority-title">中间张（3～7）通常后打</div>
                 <div class="priority-desc">
-                  <p>4、5、6 连接性最强，能组成最多种顺子。即使暂时是孤张，后续摸到搭配的概率也最高，留到最后。</p>
+                  <p>3～7 都能进入三种顺子，作为孤张的改良空间通常好于 1、2、8、9；但若关键相邻牌已大量明见，也应及时调整。</p>
                 </div>
               </div>
             </div>
@@ -1669,7 +1686,7 @@
               <div class="signal-label">关注点3：敲后代价</div>
               <ul>
                 <li>敲了之后摸啥打啥，听牌越宽越好</li>
-                <li>听面太窄（如单骑绝张）不如先不敲，保留灵活性</li>
+                <li>听面太窄、有效待牌已全部明见或所剩极少时，不如先不敲，保留灵活性</li>
                 <li>多家已敲时更要三思——敲后失去防守能力</li>
               </ul>
             </div>
@@ -1679,16 +1696,16 @@
         <!-- 防守阶段 -->
         <div class="card">
           <h2>四、防守阶段（有人敲了之后）</h2>
-          <p>有人敲了就是 100% 确定的危险信号。这时候出牌的首要原则是<strong>安全</strong>，不是效率。</p>
+          <p>有人敲了就确定对方已经听牌。这时候要提高安全权重，但仍需结合自己的听口、收益和牌墙进度，不能机械地把所有进攻都放弃。</p>
 
           <div class="priority-list defense">
             <div class="priority-item">
               <div class="priority-rank rank-def-1">1</div>
               <div class="priority-body">
-                <div class="priority-title">绝张（已出 4 张的牌）</div>
+                <div class="priority-title">所有敲家都在敲后摸切过的同张牌</div>
                 <div class="priority-desc">
-                  <p>物理上不可能有人用这张牌胡牌。<strong>对所有人都 100% 安全</strong>，多家敲了时的最优先选择。</p>
-                  <div class="priority-tag"><span class="danger-badge safe">0% 风险</span> 对所有人安全</div>
+                  <p>在敲后锁定且有胡必胡的口径下，这张牌已经分别对每个敲家验证过。只要没有尚未敲但也可能听牌的玩家，证据最强。</p>
+                  <div class="priority-tag"><span class="danger-badge safe">强证据</span> 仍要核对全部玩家</div>
                 </div>
               </div>
             </div>
@@ -1696,7 +1713,7 @@
             <div class="priority-item">
               <div class="priority-rank rank-def-2">2</div>
               <div class="priority-body">
-                <div class="priority-title">敲家的摸切牌（敲后打出的同张牌）</div>
+                <div class="priority-title">目标敲家的摸切牌（敲后打出的同张牌）</div>
                 <div class="priority-desc">
                   <p>敲家敲后手牌锁定，摸啥打啥。他打出来的牌 = 他不需要的牌。跟打同张牌对<strong>该敲家</strong>安全。</p>
                   <div class="priority-tag"><span class="danger-badge safe">极低风险</span> 对该敲家安全 <span class="danger-badge medium" style="margin-left:.5rem">注意</span> 多家敲时对其他敲家不一定安全</div>
@@ -1707,10 +1724,10 @@
             <div class="priority-item">
               <div class="priority-rank rank-def-3">3</div>
               <div class="priority-body">
-                <div class="priority-title">已出 3 张的牌</div>
+                <div class="priority-title">你持第四张风牌，另外三张都已明见</div>
                 <div class="priority-desc">
-                  <p>最多只剩 1 张在别人手里，只有做将头或单骑才用得上，放炮概率约 2~5%。</p>
-                  <div class="priority-tag"><span class="danger-badge low">2~5% 风险</span></div>
+                  <p>风牌不能组成顺子，其他三张又都已知，因此没人手里有同张可与它组成将头或刻子。这是风牌特有的判断。</p>
+                  <div class="priority-tag"><span class="danger-badge safe">确定安全</span> 不适用于数牌</div>
                 </div>
               </div>
             </div>
@@ -1720,7 +1737,7 @@
               <div class="priority-body">
                 <div class="priority-title">敲家已弃花色的牌</div>
                 <div class="priority-desc">
-                  <p>敲家大量打出某花色 → 他不做这个花色。该花色的牌对他来说相对安全，但要注意对其他人是否危险。</p>
+                  <p>敲家大量打出某花色，通常降低其做该花色清一色/混一色的可能，但仍可能是普通顺子牌或将头。只能作为相对风险线索。</p>
                   <div class="priority-tag"><span class="danger-badge low">较低风险</span> 需结合全场判断</div>
                 </div>
               </div>
@@ -1732,7 +1749,7 @@
                 <div class="priority-title">已出 2 张的幺九/风牌</div>
                 <div class="priority-desc">
                   <p>幺九本身连接性弱，加上已出 2 张，被用到的可能性较低。</p>
-                  <div class="priority-tag"><span class="danger-badge medium">8~15% 风险</span></div>
+                  <div class="priority-tag"><span class="danger-badge medium">相对较低</span> 不是固定概率</div>
                 </div>
               </div>
             </div>
@@ -1751,22 +1768,22 @@
             <div class="priority-item priority-danger">
               <div class="priority-rank rank-def-x">✗</div>
               <div class="priority-body">
-                <div class="priority-title">绝对避免：敲家花色的生张中间张</div>
+                <div class="priority-title">优先避免：敲家花色的生张中间张</div>
                 <div class="priority-desc">
-                  <p>敲家做的花色中、全场从未出现过的 4/5/6，放炮概率可能高达 <strong>35~50%</strong>。这是最危险的牌，除非万不得已绝不能打。</p>
-                  <div class="priority-tag"><span class="danger-badge critical">35~50% 风险</span> 极度危险</div>
+                  <p>敲家明显主攻花色中、全场从未出现过的 3～7 可进入三种顺子，应列为高风险候选。没有完整牌局数据，不能给出固定放炮百分比。</p>
+                  <div class="priority-tag"><span class="danger-badge critical">高风险</span> 结合副露、牌河与已知张数</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="mnemonic" style="margin-top:1.2rem">"绝张第一跟打二，三张已出排第三；敲家弃色可以碰，生张中间死不沾"</div>
+          <div class="mnemonic" style="margin-top:1.2rem">"敲后摸切先核对，多家逐个不能漏；风牌见三手持四，数牌见三仍防顺"</div>
         </div>
 
         <!-- 多家敲了 -->
         <div class="card callout">
           <h2>五、多家敲了怎么办？</h2>
-          <p>两家甚至三家都敲了时，危险成倍增加。你需要找到<strong>对所有敲家都安全</strong>的牌：</p>
+          <p>两家甚至三家都敲了时，风险会叠加。你需要逐家核对，优先寻找<strong>对所有敲家都有直接安全证据</strong>的牌：</p>
 
           <table class="prob-table">
             <thead>
@@ -1778,19 +1795,19 @@
             </thead>
             <tbody>
               <tr>
-                <td><span class="danger-badge safe">最安全</span></td>
-                <td>绝张（已出 4 张）</td>
-                <td>对所有人都 0% 风险，唯一的绝对安全牌</td>
+                <td><span class="danger-badge safe">证据最强</span></td>
+                <td>所有敲家都在敲后摸切过的同张牌</td>
+                <td>已经分别对每个敲家验证；仍要留意未敲但可能听牌者</td>
               </tr>
               <tr>
                 <td><span class="danger-badge low">很安全</span></td>
-                <td>所有敲家都摸切过的同张牌</td>
-                <td>对每个敲家分别验证过安全</td>
+                <td>你持第四张风牌，另外三张都已明见</td>
+                <td>风牌不能成顺，且其他玩家没有同张可组成将或刻</td>
               </tr>
               <tr>
                 <td><span class="danger-badge low">较安全</span></td>
-                <td>已出 3 张的牌</td>
-                <td>最多剩 1 张，放炮概率极低</td>
+                <td>连接性较弱且已有多张明见的牌</td>
+                <td>只是相对风险较低；数牌仍可能补成顺子</td>
               </tr>
               <tr>
                 <td><span class="danger-badge medium">谨慎</span></td>
@@ -1800,7 +1817,7 @@
               <tr>
                 <td><span class="danger-badge critical">极危险</span></td>
                 <td>任何敲家花色方向的生张</td>
-                <td>可能同时命中多家，绝对不打</td>
+                <td>可能同时命中多家；除非进攻收益足够高，否则优先回避</td>
               </tr>
             </tbody>
           </table>
@@ -1832,7 +1849,7 @@
             <div class="feature-item">
               <div class="feature-icon">📊</div>
               <h3>数牌的习惯</h3>
-              <p>养成数关键牌的习惯：出了几张？还剩几张？4 张全出 = 绝对安全，3 张已出 = 基本安全</p>
+              <p>养成数关键牌的习惯：自己手里几张、场面明见几张、它是风牌还是数牌？你持第四张风牌且另三张明见时可确定安全；第四张数牌仍可能补成顺子</p>
             </div>
             <div class="feature-item">
               <div class="feature-icon">⚖️</div>
@@ -1857,7 +1874,7 @@
             <div class="flow-branch">
               <div class="flow-path yes">
                 <span class="flow-label">有人敲了 →</span>
-                <div class="flow-node action danger">进入防守出牌<br><small>绝张 > 跟打摸切 > 已出3张 > 弃色牌 > 拆搭子</small></div>
+                <div class="flow-node action danger">提高防守权重<br><small>逐家核对敲后摸切 → 检查第四张风牌 → 看副露与连接性 → 必要时拆搭</small></div>
               </div>
               <div class="flow-path no">
                 <span class="flow-label">没人敲 ↓</span>
@@ -1880,7 +1897,7 @@
         <div class="card callout">
           <h2>一句话总结</h2>
           <div class="mnemonic">"没人敲，理牌快；有人敲，保命来；字幺九先滚蛋，中间张最后甩"</div>
-          <div class="mnemonic" style="margin-top:.5rem">"绝张最安全，跟打也保险；生张中间张，打了就完蛋"</div>
+          <div class="mnemonic" style="margin-top:.5rem">"敲后摸切证据强，第四风牌看三张；数牌仍能补成顺，多家逐个再衡量"</div>
         </div>
       
       </section>
@@ -2003,7 +2020,7 @@
           </div>
           <div class="reading-step">
             <div class="reading-step-num">2</div>
-            <div class="reading-step-content"><strong>看缺色</strong>：牌河里条子、筒子、风牌都打了，但<strong>万子一张没打</strong> → 100% 在收集万子</div>
+            <div class="reading-step-content"><strong>看缺色</strong>：牌河里条子、筒子、风牌都打了，但<strong>万子一张没打</strong> → 强烈指向万子路线，但仍不是 100% 证明</div>
           </div>
           <div class="reading-step">
             <div class="reading-step-num">3</div>
@@ -2011,10 +2028,10 @@
           </div>
           <div class="reading-step">
             <div class="reading-step-num">4</div>
-            <div class="reading-step-content"><strong>推听口</strong>：手里万子搭子可能在 1/2/4/5/6/8/9 中组合。<strong>四万、五万、六万</strong>（中间张）最危险，二万、八万次之</div>
+            <div class="reading-step-content"><strong>推听口</strong>：手里万子搭子可能分布很广。<strong>三万到七万</strong>都具有较强顺子连接性，但真实危险顺序还要扣除碰出的三万、七万与牌河已知张数</div>
           </div>
           <div class="tip-box danger">
-            <strong>结论：</strong>几乎确定做清一色万子（2番 = ×4）。如果已敲，你手里<strong>任何万子</strong>都是高危牌。四五六万放炮概率 35~50%！
+            <strong>结论：</strong>高度怀疑清一色万子（2番 = ×4）。如果已敲，万子应整体提高风险等级，其中四五六万连接方式更多；但没有完整手牌信息，不能给出固定放炮概率。
           </div>
         </div>
 
@@ -2067,7 +2084,7 @@
             <div class="mistake-title">前期不清风牌幺九</div>
             <p>开局觉得风牌、幺九「说不定有用」一直扣着。到中盘牌墙变薄，被迫在危险期打出，容易点炮。</p>
             <div class="mistake-wrong">❌ 错误做法：风牌幺九全留，想着「以后再说」，结果后期集中处理全变危险牌</div>
-            <div class="mistake-right">✅ 正确做法：开局就确认做牌方向，不需要的风牌幺九前 3~4 轮尽早出掉，这时出牌最安全</div>
+            <div class="mistake-right">✅ 正确做法：开局尽早判断做牌方向；在无人敲、无人明显做牌时，优先处理不需要的孤张风牌和幺九，通常比拖到后期风险更低</div>
           </div>
         </div>
 
@@ -2077,7 +2094,7 @@
             <div class="mistake-title">有人敲了还在猛攻</div>
             <p>敲是公开信息——你明确知道对方已具备胡牌资格。此时继续猛打生张 = 送分。</p>
             <div class="mistake-wrong">❌ 错误做法：无视敲家，继续冲大牌或随手打生张</div>
-            <div class="mistake-right">✅ 正确做法：有人敲后默认进入防守模式。优先打已出现过的牌（现物）、敲家摸切的牌、绝张。非必要不出生张</div>
+            <div class="mistake-right">✅ 正确做法：有人敲后提高防守权重。优先核对敲后摸切同张、风牌已知张数和副露方向；不要把敲前打过的原张或已见三张数牌误当成绝对安全</div>
           </div>
         </div>
 
@@ -2107,7 +2124,7 @@
             <div class="mistake-title">敲得太早（听口窄）</div>
             <p>敲后锁定摸啥打啥，听口太窄时可能十几轮都胡不了，还让对手知道你敲了开始防守。</p>
             <div class="mistake-wrong">❌ 错误做法：刚听牌、只听 1~2 张就急着敲</div>
-            <div class="mistake-right">✅ 正确做法：评估待牌张数——如果待牌 4 张以上再敲，或听口虽窄但待牌是生张也可以敲。核心是权衡「锁定的代价」和「能胡的概率」</div>
+            <div class="mistake-right">✅ 正确做法：先数有效待牌，再看牌墙余量、番数和其他敲家。待牌多通常更适合敲；待牌少也不是一律不敲，关键是权衡锁定代价与预期收益</div>
           </div>
         </div>
 
@@ -2115,7 +2132,7 @@
           <div class="mistake-number">6</div>
           <div class="mistake-body">
             <div class="mistake-title">该敲不敲错失良机</div>
-            <p><strong>不敲 = 永远不能胡</strong>。该敲的时候犹豫，摸进能胡的牌也只能打出去，白白浪费自摸×3 的收益。</p>
+            <p><strong>不敲 = 永远不能胡</strong>。该敲的时候犹豫，摸进能胡的牌也只能打出去；自摸时三家各付一份，总收入是单家点炮的一份分值的三倍。</p>
             <div class="mistake-wrong">❌ 错误做法：听牌了还想「再改一改听口」，结果摸到能胡的牌也不能胡</div>
             <div class="mistake-right">✅ 正确做法：听牌且听口合理时及时敲。如果明确要改听就先不敲，但要有时间窗意识——别拖到牌墙末期</div>
           </div>
@@ -2145,7 +2162,7 @@
           <div class="mistake-number">9</div>
           <div class="mistake-body">
             <div class="mistake-title">不数关键牌</div>
-            <p>某张牌出了几张、是否已绝，直接决定这张牌安全还是高危。不数就只能凭感觉。</p>
+            <p>某张牌已经明见几张，会改变刻子、将头和剩余待牌判断；但数牌还要考虑顺子连接，不能只数同张。</p>
             <div class="mistake-wrong">❌ 错误做法：不记得关键牌出了几张，把生张当安全牌打</div>
             <div class="mistake-right">✅ 正确做法：养成扫视牌河习惯。重点跟踪：(1) 敲家做的花色出了几张；(2) 风牌各出了几张；(3) 自己听口相关的牌还剩几张</div>
           </div>
@@ -2191,7 +2208,7 @@
           <div class="review-step-num">3</div>
           <div class="review-step-body">
             <h4>对照计分复盘</h4>
-            <p>回忆本局的花数和番数，用<strong>花数 × 2^番数</strong>算一下输赢的实际金额。自摸是 ×3，放炮是 ×1。有时候一次放炮的代价 = 三次普通胡牌的收入。</p>
+            <p>回忆本局的花数和番数，用<strong>花数 × 2^番数</strong>算单份分值，再按付款关系复盘：点炮由一人付一份，自摸由三家各付一份，抢杠由一人付三份。不要把“赢家总收入 ×3”误当成每位玩家都付三倍。</p>
           </div>
         </div>
 
@@ -2199,7 +2216,7 @@
           <div class="review-step-num">4</div>
           <div class="review-step-body">
             <h4>写出替代方案</h4>
-            <p>针对最大一手，写「当时如果……会更合理」。每条替代必须可执行（如「有人敲后改打现物」），不写空话。</p>
+            <p>针对最大一手，写「当时如果……会更合理」。每条替代必须可执行（如「有人敲后改打其敲后摸切过的同张」），不写空话。</p>
           </div>
         </div>
 
@@ -2207,7 +2224,7 @@
           <div class="review-step-num">5</div>
           <div class="review-step-body">
             <h4>设定下一局唯一重点</h4>
-            <p>从复盘只带走<strong>一个</strong>改进目标（如「听口少于 3 张不敲」或「有人敲后先找现物」），下一局专注执行。一次改一个习惯。</p>
+            <p>从复盘只带走<strong>一个</strong>改进目标（如「敲前先数有效待牌」或「有人敲后逐家核对摸切线索」），下一局专注执行。一次改一个习惯。</p>
           </div>
         </div>
 
@@ -2267,7 +2284,7 @@
             <li><strong>自摸</strong>：三家各付一份 → 你总收入 ≈ 16 × 3 = <strong>48</strong>。</li>
             <li><strong>点炮</strong>（你放炮赔一家）：通常付 <strong>一份</strong> 基础分 → 损失 16（若抢杠等规则另论）。</li>
           </ul>
-          <p>若你打出某张牌被胡的概率约 20%，期望损失 ≈ 0.2 × 16 = 3.2；若换一张安全牌，损失接近 0，但可能延缓你听牌——EV 思维就是比较<strong>「进攻增量」</strong>与<strong>「放炮风险×赔付」</strong>。</p>
+          <p>设你有可靠牌谱模型估出的放炮概率为 <strong>p</strong>，那么这张牌的期望损失约为 <strong>p × 16</strong>。没有模型时不要硬猜 p 的小数点，而应比较候选牌的副露方向、连接性、已知张数和敲后摸切证据——EV 思维是比较<strong>「进攻增量」</strong>与<strong>「风险×赔付」</strong>，不是制造伪精确数字。</p>
         </div>
         <div class="card">
           <h2>听口宽度 × 场面风险</h2>
@@ -2320,7 +2337,7 @@
         </div>
         <div class="card">
           <h2>位置与防守</h2>
-          <p><strong>下家快敲</strong>时，你打出的每一张生张都更容易变成他的进张；宜优先打风牌、现物、上家刚打的跟张。<strong>上家做清一色</strong>时，你吃牌机会下降，不宜再拖慢自己节奏。</p>
+          <p><strong>下家快敲</strong>时，你打出的牌也可能直接成为他的吃牌进张；宜少喂其明显主攻花色，并优先处理已有可靠安全依据的牌。<strong>上家做清一色</strong>时，你吃牌机会下降，不宜再拖慢自己节奏。</p>
         </div>
         <div class="card">
           <h2>扣下家：实操读牌步</h2>
@@ -2350,7 +2367,7 @@
         </div>
         <div class="card">
           <h2>牌墙与终局感</h2>
-          <p>牌墙变薄时，生张越来越「毒」。后期即使自己未敲，也应假设<strong>至少一家已接近听牌</strong>，自动降速、优先现物与绝张。</p>
+          <p>牌墙变薄时，尚未明见的中间张通常更值得警惕。后期即使自己未敲，也应提高防守权重，优先使用有明确依据的牌，而不是套用日麻“现物”或把数牌“绝张”当作零风险。</p>
         </div>
         <div class="card">
           <h2>与 EV 结合：「不胡也是赢」</h2>
@@ -2367,7 +2384,7 @@
             <div class="signal-item signal-strong">
               <div class="signal-label">激进型</div>
               <p><strong>识别：</strong>早碰多、爱追清一色/大番，不惜多巡凑番型。</p>
-              <p><strong>应对：</strong>其敲前即开始避其主攻花色；被敲后绝张与跟切优先。</p>
+              <p><strong>应对：</strong>其敲前即开始留意主攻花色；被敲后优先核对敲后摸切同张与副露方向。</p>
             </div>
             <div class="signal-item signal-moderate">
               <div class="signal-label">保守型</div>
@@ -2377,149 +2394,122 @@
             <div class="signal-item signal-weak">
               <div class="signal-label">新手型</div>
               <p><strong>识别：</strong>乱碰、牌序怪、中后期才清风牌。</p>
-              <p><strong>应对：</strong>不宜依赖其「理性弃牌」；生张危险度仍按概率表，少喂明显进张。</p>
+              <p><strong>应对：</strong>不宜依赖其「理性弃牌」；少喂明显的中间张进张，并承认读牌的不确定性。</p>
             </div>
           </div>
         </div>
       </section>
       <section id="tab-m-probability" class="tab-content">
         <div class="card">
-          <h2>危险牌概率速查表</h2>
-          <p>以下概率基于数学模型计算，结合上海敲麻的实际场景。注意：有人敲了之后，对应敲家花色方向的牌危险度会<strong>大幅上升</strong>，需结合敲家信息综合判断。</p>
+          <h2>危险牌判断速查表</h2>
+          <p>本站没有足够的实战样本与完整牌局状态，不能诚实地给每张牌标固定放炮概率。下面改用可核对的事实：<strong>顺子连接数、同张已知数、敲后摸切与副露方向</strong>。</p>
 
           <p class="card-hint">💡 鼠标悬停在表格的行或列上可高亮查看</p>
         </div>
 
         <div class="card">
-          <h3>一、按牌面位置分类的固有危险度</h3>
-          <p class="card-desc">不考虑场上信息时，每张牌被别人用来组成胡牌组合的理论概率</p>
+          <h3>一、数牌的顺子连接性</h3>
+          <p class="card-desc">这里只数一张牌能进入多少种顺子，不把它冒充为放炮概率</p>
           <table class="prob-table" id="position-table">
             <thead>
               <tr>
                 <th>牌面位置</th>
                 <th>可组成的顺子</th>
-                <th>连接性评分</th>
-                <th>固有危险指数</th>
+                <th>连接性</th>
+                <th>防守含义</th>
                 <th>示例</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>5（正中）</strong></td>
-                <td>345, 456, 567</td>
-                <td class="score-5">★★★★★</td>
-                <td><span class="prob-bar" style="--w:100%">100%</span></td>
-                <td>五万、五条、五筒</td>
-              </tr>
-              <tr>
-                <td><strong>4 和 6</strong></td>
-                <td>234/345/456 或 456/567/678</td>
-                <td class="score-5">★★★★★</td>
-                <td><span class="prob-bar" style="--w:100%">100%</span></td>
-                <td>四万、六条</td>
-              </tr>
-              <tr>
-                <td><strong>3 和 7</strong></td>
-                <td>123/234/345 或 567/678/789</td>
-                <td class="score-4">★★★★</td>
-                <td><span class="prob-bar" style="--w:80%">80%</span></td>
-                <td>三筒、七万</td>
+                <td><strong>3～7</strong></td>
+                <td>每张都可进入 3 种顺子</td>
+                <td class="score-5">高</td>
+                <td>生张时通常更值得警惕；5 的两侧都能形成两面搭，进张价值尤其高</td>
+                <td>三筒、五万、七条</td>
               </tr>
               <tr>
                 <td><strong>2 和 8</strong></td>
                 <td>123/234 或 678/789</td>
-                <td class="score-3">★★★</td>
-                <td><span class="prob-bar" style="--w:60%">60%</span></td>
+                <td class="score-3">中</td>
+                <td>连接少于 3～7，但仍可补成两类顺子</td>
                 <td>二条、八筒</td>
               </tr>
               <tr>
                 <td><strong>1 和 9（幺九）</strong></td>
                 <td>仅123 或 789</td>
-                <td class="score-2">★★</td>
-                <td><span class="prob-bar" style="--w:35%">35%</span></td>
+                <td class="score-2">较低</td>
+                <td>只能进入一种顺子；仍可能成为刻子或将头</td>
                 <td>一万、九条</td>
               </tr>
               <tr>
                 <td><strong>字牌（风牌）</strong></td>
                 <td>无顺子，仅刻子</td>
-                <td class="score-1">★</td>
-                <td><span class="prob-bar" style="--w:20%">20%</span></td>
+                <td class="score-1">不成顺</td>
+                <td>只能用于刻子或将头，已知同张数量更关键</td>
                 <td>东南西北</td>
-              </tr>
-              <tr>
-                <td><strong>花牌</strong></td>
-                <td>中发白 + 春夏秋冬梅兰竹菊</td>
-                <td class="score-1">花数</td>
-                <td><span class="prob-bar" style="--w:14%">14%</span></td>
-                <td>摸到自动补张，每张计1花</td>
               </tr>
             </tbody>
           </table>
+          <div class="tip-box" style="margin-top:1rem;">花牌及本规则按花处理的中发白会自动亮出补张，不属于“选择打哪张”的危险牌比较。</div>
         </div>
 
         <div class="card">
-          <h3>二、场上已出张数 × 剩余危险概率</h3>
-          <p class="card-desc">某张牌在场上已出现的张数越多，剩余牌对你的威胁就越小</p>
+          <h3>二、同张已知数应该怎么用</h3>
+          <p class="card-desc">下表假设你手里正拿着要考虑打出的那一张；“明见”包括牌河、副露与亮明的牌</p>
           <table class="prob-table" id="seen-table">
             <thead>
               <tr>
                 <th>场上已出张数</th>
-                <th>剩余张数</th>
-                <th>对手持有概率</th>
-                <th>放炮危险评估</th>
-                <th>建议</th>
+                <th>除你手牌外未明见同张</th>
+                <th>能排除什么</th>
+                <th>不能排除什么</th>
+                <th>结论</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>0张（生张）</td>
-                <td>最多3张在对手手中</td>
-                <td><span class="prob-bar danger" style="--w:95%">~70-95%</span></td>
-                <td><span class="danger-badge critical">极危险</span></td>
-                <td>尽量不打，尤其是中间张</td>
+                <td>3张</td>
+                <td>不能排除刻子、将头或顺子</td>
+                <td>几乎所有常见听型</td>
+                <td>结合敲家方向；中间张通常提高警惕</td>
               </tr>
               <tr>
                 <td>1张</td>
-                <td>最多2张在对手手中</td>
-                <td><span class="prob-bar high" style="--w:65%">~45-65%</span></td>
-                <td><span class="danger-badge high">高危险</span></td>
-                <td>谨慎，结合牌河判断</td>
+                <td>2张</td>
+                <td>信息增加，但仍能形成刻子、将头或顺子</td>
+                <td>多数听型</td>
+                <td>只能相对降权，不能判安全</td>
               </tr>
               <tr>
                 <td>2张</td>
-                <td>最多1张在对手手中</td>
-                <td><span class="prob-bar medium" style="--w:35%">~20-35%</span></td>
-                <td><span class="danger-badge medium">中危险</span></td>
-                <td>相对可打，但中间张仍需注意</td>
+                <td>1张</td>
+                <td>排除对手持有同张对子</td>
+                <td>单张将头等待、数牌顺子等待</td>
+                <td>风牌与数牌要分开判断</td>
               </tr>
               <tr>
                 <td>3张</td>
-                <td>最多1张（仅可能被单骑/做将）</td>
-                <td><span class="prob-bar low" style="--w:12%">~5-12%</span></td>
-                <td><span class="danger-badge low">较安全</span></td>
-                <td>基本安全，可优先出</td>
-              </tr>
-              <tr>
-                <td>4张（绝张）</td>
                 <td>0张</td>
-                <td><span class="prob-bar safe" style="--w:0%">0%</span></td>
-                <td><span class="danger-badge safe">绝对安全</span></td>
-                <td>100%安全，放心出</td>
+                <td>风牌：排除将头与刻子，因此可确定安全</td>
+                <td>数牌：仍可能补成顺子</td>
+                <td><strong>第四张风牌安全；第四张数牌不等于安全</strong></td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <div class="card">
-          <h3>三、阶段 × 牌型综合放炮概率</h3>
-          <p class="card-desc">综合考虑牌局阶段和牌面位置的放炮概率参考值。注意：表中概率基于一般情况，有人敲了之后对应方向的牌实际危险度更高</p>
+          <h3>三、阶段 × 线索的定性风险</h3>
+          <p class="card-desc">阶段只改变风险权重，不会凭空产生一个固定百分比；敲牌信息通常比“第几轮”更重要</p>
           <table class="prob-table has-hover" id="combined-table">
             <colgroup>
               <col><col><col><col>
             </colgroup>
             <thead>
               <tr>
-                <th>牌面 ＼ 阶段</th>
+                <th>线索 ＼ 阶段</th>
                 <th>前期 (1~6轮)</th>
                 <th>中期 (7~12轮)</th>
                 <th>后期 (13+轮)</th>
@@ -2527,66 +2517,55 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong>中间张生张 (4/5/6)</strong></td>
-                <td><span class="cell-prob p-medium">8~12%</span></td>
-                <td><span class="cell-prob p-high">18~30%</span></td>
-                <td><span class="cell-prob p-critical">35~50%</span></td>
+                <td><strong>敲家主攻花色的 3～7 生张</strong></td>
+                <td><span class="cell-prob p-medium">留意</span></td>
+                <td><span class="cell-prob p-high">高风险候选</span></td>
+                <td><span class="cell-prob p-critical">优先回避</span></td>
               </tr>
               <tr>
-                <td><strong>边张生张 (3/7)</strong></td>
-                <td><span class="cell-prob p-low">5~8%</span></td>
-                <td><span class="cell-prob p-medium">12~22%</span></td>
-                <td><span class="cell-prob p-high">25~40%</span></td>
+                <td><strong>敲家敲后摸切过的同张</strong></td>
+                <td><span class="cell-prob p-safe">对该家有强证据</span></td>
+                <td><span class="cell-prob p-safe">对该家有强证据</span></td>
+                <td><span class="cell-prob p-safe">对该家有强证据</span></td>
               </tr>
               <tr>
-                <td><strong>幺九生张 (1/9)</strong></td>
-                <td><span class="cell-prob p-low">3~5%</span></td>
-                <td><span class="cell-prob p-medium">8~15%</span></td>
-                <td><span class="cell-prob p-medium">15~25%</span></td>
+                <td><strong>你持第四张风牌，另三张明见</strong></td>
+                <td><span class="cell-prob p-safe">确定安全</span></td>
+                <td><span class="cell-prob p-safe">确定安全</span></td>
+                <td><span class="cell-prob p-safe">确定安全</span></td>
               </tr>
               <tr>
-                <td><strong>风牌生张</strong></td>
-                <td><span class="cell-prob p-safe">2~4%</span></td>
-                <td><span class="cell-prob p-low">5~10%</span></td>
-                <td><span class="cell-prob p-medium">10~18%</span></td>
+                <td><strong>敲前打过的原张</strong></td>
+                <td><span class="cell-prob p-low">弱线索</span></td>
+                <td><span class="cell-prob p-medium">不能判安全</span></td>
+                <td><span class="cell-prob p-medium">不能判安全</span></td>
               </tr>
               <tr>
-                <td><strong>已出1张的中间张</strong></td>
-                <td><span class="cell-prob p-low">4~7%</span></td>
-                <td><span class="cell-prob p-medium">10~18%</span></td>
-                <td><span class="cell-prob p-high">20~32%</span></td>
+                <td><strong>你持第四张数牌，另三张明见</strong></td>
+                <td><span class="cell-prob p-low">同张结构减少</span></td>
+                <td><span class="cell-prob p-medium">仍可补顺子</span></td>
+                <td><span class="cell-prob p-high">仍可点炮</span></td>
               </tr>
               <tr>
-                <td><strong>已出2张的任意牌</strong></td>
-                <td><span class="cell-prob p-safe">2~3%</span></td>
-                <td><span class="cell-prob p-low">5~10%</span></td>
-                <td><span class="cell-prob p-medium">8~15%</span></td>
-              </tr>
-              <tr>
-                <td><strong>跟打（上家刚出的牌）</strong></td>
-                <td><span class="cell-prob p-safe">1~2%</span></td>
-                <td><span class="cell-prob p-safe">2~5%</span></td>
-                <td><span class="cell-prob p-low">3~8%</span></td>
-              </tr>
-              <tr>
-                <td><strong>已出3张的牌</strong></td>
-                <td><span class="cell-prob p-safe">&lt;1%</span></td>
-                <td><span class="cell-prob p-safe">1~3%</span></td>
-                <td><span class="cell-prob p-safe">2~5%</span></td>
+                <td><strong>多家敲，仅对一家验证安全</strong></td>
+                <td><span class="cell-prob p-medium">逐家检查</span></td>
+                <td><span class="cell-prob p-high">不可直接打</span></td>
+                <td><span class="cell-prob p-critical">优先找交集</span></td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <div class="card callout">
-          <h3>💡 如何使用概率表</h3>
+          <h3>💡 如何使用判断表</h3>
           <ol>
             <li><strong>先看谁敲了</strong>：场上有没有人敲？敲了几家？</li>
             <li><strong>再看牌面</strong>：你要打的牌是中间张、边张还是风牌？</li>
             <li><strong>查已出张数</strong>：这张牌场上出了几张？</li>
             <li><strong>对照敲家信息</strong>：这张牌是否在敲家做的花色方向上？如果是，危险度再上浮一档</li>
-            <li><strong>决策</strong>：有人敲了且风险>15%时要谨慎，>25%时建议换牌；没人敲时可适当放宽</li>
+            <li><strong>决策</strong>：先排除有强安全证据的牌，再比较剩余候选对自己进攻价值与各敲家的相对风险</li>
           </ol>
+          <p class="card-desc">如果以后积累了真实牌谱，可按“完整局面 → 实际是否点炮”训练或统计；在此之前，不应凭感觉发布精确百分比。</p>
         </div>
       
       </section>
@@ -2627,10 +2606,10 @@
           </div>
           <div class="reading-step">
             <div class="reading-step-num">4</div>
-            <div class="reading-step-content"><strong>防守策略</strong>：打他已打过的牌（风牌、幺九），避开三色中间张。<strong>敲后摸切的牌是安全线索</strong>。</div>
+            <div class="reading-step-content"><strong>防守策略</strong>：他敲前打过的风牌、幺九只说明当时不需要，不保证现在不能胡；<strong>敲后摸切的同张</strong>才是更强的安全线索。</div>
           </div>
           <div class="tip-box">
-            <strong>门清是最难读的牌型：</strong>(1) 跟打他打过的牌；(2) 跟打他敲后摸切的牌；(3) 打绝张；(4) 避开所有花色的生张中间张。承认「读不准」，用防守赔率对抗。
+            <strong>门清是最难读的牌型：</strong>(1) 优先使用他敲后摸切过的同张；(2) 数风牌与关键数牌的已知张数；(3) 提高中间张生张的风险权重；(4) 承认「读不准」，比较相对风险而非追求伪精确。
           </div>
         </div>
 
@@ -2653,38 +2632,38 @@
               <tr>
                 <td><strong>万子</strong></td>
                 <td><span class="danger-badge critical">极危险</span></td>
-                <td><span class="danger-badge safe">安全</span></td>
-                <td><span class="danger-badge critical">不能打</span></td>
+                <td><span class="danger-badge low">相对较低</span></td>
+                <td><span class="danger-badge critical">优先回避</span></td>
               </tr>
               <tr>
                 <td><strong>筒子</strong></td>
-                <td><span class="danger-badge safe">安全</span></td>
+                <td><span class="danger-badge low">相对较低</span></td>
                 <td><span class="danger-badge critical">极危险</span></td>
-                <td><span class="danger-badge critical">不能打</span></td>
+                <td><span class="danger-badge critical">优先回避</span></td>
               </tr>
               <tr>
                 <td><strong>条子</strong></td>
-                <td><span class="danger-badge safe">安全</span></td>
-                <td><span class="danger-badge safe">安全</span></td>
-                <td><span class="danger-badge safe">✅ 最安全</span></td>
+                <td><span class="danger-badge low">相对较低</span></td>
+                <td><span class="danger-badge low">相对较低</span></td>
+                <td><span class="danger-badge low">较好候选</span></td>
               </tr>
               <tr>
                 <td><strong>风牌</strong></td>
-                <td><span class="danger-badge safe">安全</span></td>
+                <td><span class="danger-badge low">相对较低</span></td>
                 <td><span class="danger-badge high">危险</span></td>
                 <td><span class="danger-badge medium">谨慎</span></td>
               </tr>
             </tbody>
           </table>
           <div class="tip-box">
-            <strong>多人读牌核心：</strong>找<strong>对所有敲家都安全</strong>的花色。两家做的花色不同时，第三种花色就是避风港。多家敲时，<strong>绝张</strong>是唯一对所有敲家都安全的牌。
+            <strong>多人读牌核心：</strong>分别验证每一家。两家明显主攻不同花色时，第三种花色通常是相对更好的候选，但普通听牌仍可能包含该花色，不能称为绝对安全；所有敲家都在敲后摸切过的同张，证据更强。
           </div>
         </div>
 
         <div class="card callout">
           <h2>读牌口诀</h2>
           <div class="mnemonic">"副露看方向，牌河看缺色；关键牌要数，听口靠排除"</div>
-          <div class="mnemonic" style="margin-top:.5rem">"碰了啥就做啥，没打啥就要啥；敲后打的是废牌，跟着打就最安全"</div>
+          <div class="mnemonic" style="margin-top:.5rem">"碰了啥看方向，没打啥是线索；敲后摸切证据强，多家还要逐个量"</div>
         </div>
       </section>
       <section id="tab-m-replay" class="tab-content">
@@ -2723,7 +2702,7 @@
         </div>
         <div class="card">
           <h2>节点 D（约第 14 巡）：下家已敲</h2>
-          <div class="tip-box danger"><strong>转折：</strong>下家敲做万子。你尚未听牌，立即降速：手剩万子相关生张一律扣住，改打风牌现物与跟打其摸切。</div>
+          <div class="tip-box danger"><strong>转折：</strong>下家敲做万子。你尚未听牌，立即降速：提高万子生张风险权重，优先核对其敲后摸切同张；风牌则根据已明见的另外几张判断。</div>
         </div>
         <div class="card">
           <h2>节点 E（约第 16 巡）：听牌与敲</h2>
@@ -2779,6 +2758,6 @@
   </div>
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <script src="app.js?v=9"></script>
+  <script src="app.js?v=10"></script>
 </body>
 </html>

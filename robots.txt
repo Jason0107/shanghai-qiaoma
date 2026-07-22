@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shanghai-qiaoma.pages.dev/sitemap.xml
